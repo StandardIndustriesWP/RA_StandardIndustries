@@ -1,0 +1,17 @@
+{
+  "name": "standard-industries",
+  "version": "1.0.0",
+  "description": "Wordpress theme for Standard Industries.",
+  "main": "index.js",
+  "repository": "git@github.com:redantler/standard-industries.git",
+  "author": "Red Antler",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.15.1",
+    "node-sass": "^4.11.0",
+    "prettier": "^1.16.4",
+    "stylelint": "^9.10.1",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-order": "^2.1.0"
+  }
+}
