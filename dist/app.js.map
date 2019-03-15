@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":["jQuery","document","ready","$"],"mappings":"AAAAA,OAAOC,UAAUC,MAAM,SAASC","file":"app.js","sourcesContent":["jQuery(document).ready(function($) {\n  // Your JavaScript goes here\n});\n"]}
