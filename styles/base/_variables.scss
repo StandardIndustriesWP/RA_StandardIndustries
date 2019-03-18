@@ -1,0 +1,28 @@
+/*
+ * Colors
+ * ======================================================================== */
+
+$black: #000;
+$white: #FFF;
+
+$black-20: rgba(0, 0, 0, 0.2);
+$black-60: rgba(0, 0, 0, 0.6);
+
+/*
+ * Typography
+ * ======================================================================== */
+
+$weight-bold: 700;
+$weight-medium: 500;
+$weight-regular: 400;
+
+/*
+ * Media Queries
+ * ======================================================================== */
+
+$small-max-width: 767px;
+$medium-min-width: 768px;
+$medium-max-width: 1024px;
+$large-min-width: 1025px;
+$large-max-width: 1440px;
+$extra-large-min-width: 1441px;

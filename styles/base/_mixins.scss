@@ -1,0 +1,111 @@
+/*
+ * Media Queries
+ * ======================================================================== */
+
+@mixin small-only {
+  @media (max-width: #{$small-max-width}) {
+    @content;
+  }
+}
+
+@mixin medium-only {
+  @media (min-width: #{$medium-min-width}) and (max-width: #{$medium-max-width}) {
+    @content;
+  }
+}
+
+@mixin medium-and-up {
+  @media (min-width: #{$medium-min-width}) {
+    @content;
+  }
+}
+
+@mixin large-only {
+  @media (min-width: #{$large-min-width}) and (max-width: #{$large-max-width}) {
+    @content;
+  }
+}
+
+@mixin large-and-up {
+  @media (min-width: #{$large-min-width}) {
+    @content;
+  }
+}
+
+@mixin extra-large-only {
+  @media (min-width: #{$extra-large-min-width}) {
+    @content;
+  }
+}
+
+/*
+ * Misc
+ * ======================================================================== */
+
+@mixin btn-reset {
+  background: none;
+  background-repeat: no-repeat;
+  border: 0;
+  cursor: pointer;
+  font-family: $family-untitled-serif;
+  font-weight: $weight-regular;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  &[type='button'] {
+    appearance: none;
+  }
+}
+
+/*
+ * Layout
+ * ======================================================================== */
+
+@mixin flex-column {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+@mixin clear-last-child {
+  *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@mixin image-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+@mixin image {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute !important;
+  top: 0;
+  width: 100%;
+}
+
+@mixin bg-image {
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+@mixin visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
