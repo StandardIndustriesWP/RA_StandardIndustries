@@ -1,1 +1,1 @@
-{"version":3,"sources":["index.js"],"names":["console","log"],"mappings":"AAAAA,QAAQC,IAAI","file":"app.js","sourcesContent":["console.log('This is enqueued!');\n"]}
+{"version":3,"sources":["app.js"],"names":[],"mappings":"AAAA,MAAO,6BAAP,CACA,MAAO,oCAAP","file":"app.js","sourcesContent":["import 'core-js/modules/es6.promise';\nimport 'core-js/modules/es6.array.iterator';\n"]}

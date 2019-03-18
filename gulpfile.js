@@ -7,7 +7,6 @@ const concat = require('gulp-concat');
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const sourceMaps = require('gulp-sourcemaps');
-const uglify = require('gulp-uglify');
 
 // Compile SCSS
 gulp.task('scss', () => {
@@ -34,7 +33,6 @@ gulp.task('js', () => {
     .pipe(sourceMaps.init())
     .pipe(babel())
     .pipe(concat('app.js'))
-    .pipe(uglify())
     .pipe(sourceMaps.write('./'))
     .pipe(gulp.dest('./dist'));
 });
