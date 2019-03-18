@@ -12,8 +12,8 @@
                 <h1>
                     <a href="{{ site.url }}" rel="home">{{ site.name }}</a>
                 </h1>
-                <nav role="navigation">
-                    {% include "menu.twig" with { 'menu': menu.get_items } %}
+                <nav class="global-header__menu" role="navigation">
+                    {% include "menu.twig" with { 'menu': menu_header.get_items } %}
                 </nav>
             </header>
         {% endblock %}
@@ -32,6 +32,14 @@
         {% block footer %}
             <footer class="global-footer" role="contentinfo">
                 Copyright {{ "now"|date('Y') }}
+
+                <div class="global-footer__menu">
+                    {% include "menu.twig" with { 'menu': menu_footer.get_items } %}
+                </div>
+
+                <div class="global-footer__copyright">
+                    {% include "menu.twig" with { 'menu': menu_copyright.get_items } %}
+                </div>
             </footer>
 
             {{ function('wp_footer') }}

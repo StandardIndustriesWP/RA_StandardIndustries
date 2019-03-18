@@ -33,6 +33,7 @@ class StandardIndustries extends Timber\Site {
         add_filter('get_twig', array($this, 'add_to_twig'));
 
         // Custom types
+        add_action('init', array($this, 'register_menus'));
         add_action('init', array($this, 'register_post_types'));
         add_action('init', array($this, 'register_taxonomies'));
 
@@ -56,7 +57,9 @@ class StandardIndustries extends Timber\Site {
      * @return mixed
      */
     public function add_to_context($context) {
-        $context['menu'] = new Timber\Menu();
+        $context['menu_header'] = new Timber\Menu('header');
+        $context['menu_footer'] = new Timber\Menu('footer');
+        $context['menu_copyright'] = new Timber\Menu('copyright');
         $context['site'] = $this;
         return $context;
     }
@@ -136,6 +139,17 @@ class StandardIndustries extends Timber\Site {
     public function exclaim($text) {
         $text .= '!';
         return $text;
+    }
+
+    /**
+     * Registers nav menus
+     */
+    public function register_menus() {
+        register_nav_menus(array(
+            'header' => __('Header', 'standard-industries'),
+            'footer' =>  __('Footer', 'standard-industries'),
+            'copyright' => __('Copyright', 'standard-industries')
+        ));
     }
 
     /**
