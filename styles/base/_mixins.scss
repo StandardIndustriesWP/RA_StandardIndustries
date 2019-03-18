@@ -39,6 +39,22 @@
 }
 
 /*
+ * Type
+ * ======================================================================== */
+
+@mixin rajdhani {
+  font-family: $family-rajdhani;
+  font-weight: $weight-regular;
+  text-transform: uppercase;
+}
+
+@mixin sohne {
+  font-family: $family-sohne;
+  font-weight: $weight-regular;
+  text-transform: none;
+}
+
+/*
  * Misc
  * ======================================================================== */
 

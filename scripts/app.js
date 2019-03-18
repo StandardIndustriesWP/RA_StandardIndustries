@@ -1,2 +1,2 @@
-import 'core-js/modules/es6.promise';
-import 'core-js/modules/es6.array.iterator';
+require('core-js/modules/es6.promise');
+require('core-js/modules/es6.array.iterator');

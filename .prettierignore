@@ -1,3 +1,4 @@
 .caches
 package.json
-app.js
+dist/app.js
+dist/vendor.js
