@@ -1,3 +1,1 @@
-jQuery(document).ready(function($) {
-  // Your JavaScript goes here
-});
+console.log('This is enqueued!');

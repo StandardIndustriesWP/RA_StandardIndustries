@@ -44,6 +44,9 @@ class StandardIndustries extends Timber\Site {
         add_action('admin_menu', array($this, 'disable_comments_admin_menu'));
         add_action('init', array($this, 'disable_comments_init'));
 
+        // Enqueue theme files
+        add_action('wp_enqueue_scripts', array($this, 'enqueue_theme'));
+
         parent::__construct();
     }
 
@@ -115,6 +118,14 @@ class StandardIndustries extends Timber\Site {
      */
     public function disable_comments_status() {
         return false;
+    }
+
+    /**
+     * Enqueues theme styles and scripts
+     */
+    public function enqueue_theme() {
+        wp_enqueue_style('standard-industries-styles', get_stylesheet_directory_uri() . '/dist/app.css');
+        wp_enqueue_script('standard-industries-scripts', get_stylesheet_directory_uri() . '/dist/app.js', null, false, true);
     }
 
     /**

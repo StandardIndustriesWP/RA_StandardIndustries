@@ -1,1 +1,1 @@
-{"version":3,"sources":["index.js"],"names":["jQuery","document","ready","$"],"mappings":"AAAAA,OAAOC,UAAUC,MAAM,SAASC","file":"app.js","sourcesContent":["jQuery(document).ready(function($) {\n  // Your JavaScript goes here\n});\n"]}
+{"version":3,"sources":["index.js"],"names":["console","log"],"mappings":"AAAAA,QAAQC,IAAI","file":"app.js","sourcesContent":["console.log('This is enqueued!');\n"]}
