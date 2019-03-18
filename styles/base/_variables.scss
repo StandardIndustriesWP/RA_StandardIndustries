@@ -4,6 +4,8 @@
 
 $black: #000;
 $white: #FFF;
+$red: #ED2A37;
+$gray: #91999F;
 
 $black-20: rgba(0, 0, 0, 0.2);
 $black-60: rgba(0, 0, 0, 0.6);
@@ -27,3 +29,14 @@ $medium-max-width: 1024px;
 $large-min-width: 1025px;
 $large-max-width: 1440px;
 $extra-large-min-width: 1441px;
+
+/*
+ * Layout
+ * ======================================================================== */
+
+$site-margin: 28px;
+
+$header-height-sm: 64px;
+$header-height-lg: 80px;
+
+$max-width-full: 1120px;
