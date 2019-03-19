@@ -14,7 +14,7 @@ if (!class_exists('Timber')) {
 }
 
 // Adds directories for Twig files
-Timber::$dirname = array('templates');
+Timber::$dirname = ['templates'];
 
 // Turns off Twig autoescape feature
 Timber::$autoescape = false;
@@ -22,31 +22,33 @@ Timber::$autoescape = false;
 /**
  * Class StandardIndustries
  */
-class StandardIndustries extends Timber\Site {
+class StandardIndustries extends Timber\Site
+{
     /**
      * StandardIndustries constructor, sets up Timber support
      */
-    public function __construct() {
+    public function __construct()
+    {
         // Default registrations
-        add_action('after_setup_theme', array($this, 'theme_supports'));
-        add_filter('timber_context', array($this, 'add_to_context'));
-        add_filter('get_twig', array($this, 'add_to_twig'));
+        add_action('after_setup_theme', [$this, 'theme_supports']);
+        add_filter('timber_context', [$this, 'add_to_context']);
+        add_filter('get_twig', [$this, 'add_to_twig']);
 
         // Custom types
-        add_action('init', array($this, 'register_menus'));
-        add_action('init', array($this, 'register_post_types'));
-        add_action('init', array($this, 'register_taxonomies'));
+        add_action('init', [$this, 'register_menus']);
+        add_action('init', [$this, 'register_post_types']);
+        add_action('init', [$this, 'register_taxonomies']);
 
         // Disable comments
-        add_action('admin_init', array($this, 'disable_comments_admin_init'));
+        add_action('admin_init', [$this, 'disable_comments_admin_init']);
         add_filter('comments_open', '__return_false', 20, 2);
         add_filter('pings_open', '__return_false', 20, 2);
         add_filter('comments_array', '__return_empty_array', 10, 2);
-        add_action('admin_menu', array($this, 'disable_comments_admin_menu'));
-        add_action('init', array($this, 'disable_comments_init'));
+        add_action('admin_menu', [$this, 'disable_comments_admin_menu']);
+        add_action('init', [$this, 'disable_comments_init']);
 
         // Enqueue theme files
-        add_action('wp_enqueue_scripts', array($this, 'enqueue_theme'));
+        add_action('wp_enqueue_scripts', [$this, 'enqueue_theme']);
 
         parent::__construct();
     }
@@ -56,7 +58,8 @@ class StandardIndustries extends Timber\Site {
      * @param $context
      * @return mixed
      */
-    public function add_to_context($context) {
+    public function add_to_context($context)
+    {
         $context['menu_header'] = new Timber\Menu('header');
         $context['menu_footer'] = new Timber\Menu('footer');
         $context['menu_copyright'] = new Timber\Menu('copyright');
@@ -69,16 +72,18 @@ class StandardIndustries extends Timber\Site {
      * @param $twig
      * @return mixed
      */
-    public function add_to_twig($twig) {
+    public function add_to_twig($twig)
+    {
         $twig->addExtension(new Twig_Extension_StringLoader());
-        $twig->addFilter(new Twig_SimpleFilter('exclaim', array($this, 'exclaim')));
+        $twig->addFilter(new Twig_SimpleFilter('exclaim', [$this, 'exclaim']));
         return $twig;
     }
 
     /**
      * Disables comments on admin_init hook
      */
-    public function disable_comments_admin_init() {
+    public function disable_comments_admin_init()
+    {
         // Redirect any user trying to access comments page
         global $pagenow;
 
@@ -102,14 +107,16 @@ class StandardIndustries extends Timber\Site {
     /**
      * Disables comments on admin_menu hook
      */
-    public function disable_comments_admin_menu() {
+    public function disable_comments_admin_menu()
+    {
         remove_menu_page('edit-comments.php');
     }
 
     /**
      * Disables comments on init hook
      */
-    public function disable_comments_init() {
+    public function disable_comments_init()
+    {
         if (is_admin_bar_showing()) {
             remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
         }
@@ -119,7 +126,8 @@ class StandardIndustries extends Timber\Site {
      * Disables the comment status
      * @return bool
      */
-    public function disable_comments_status() {
+    public function disable_comments_status()
+    {
         return false;
     }
 
@@ -137,7 +145,8 @@ class StandardIndustries extends Timber\Site {
      * @param $text
      * @return string
      */
-    public function exclaim($text) {
+    public function exclaim($text)
+    {
         $text .= '!';
         return $text;
     }
@@ -145,32 +154,36 @@ class StandardIndustries extends Timber\Site {
     /**
      * Registers nav menus
      */
-    public function register_menus() {
-        register_nav_menus(array(
+    public function register_menus()
+    {
+        register_nav_menus([
             'header' => __('Header', 'standard-industries'),
             'footer' =>  __('Footer', 'standard-industries'),
             'copyright' => __('Copyright', 'standard-industries')
-        ));
+        ]);
     }
 
     /**
      * Registers custom post types
      */
-    public function register_post_types() {
+    public function register_post_types()
+    {
 
     }
 
     /**
      * Registers custom taxonomies
      */
-    public function register_taxonomies() {
+    public function register_taxonomies()
+    {
 
     }
 
     /**
      * Registers theme supports
      */
-    public function theme_supports() {
+    public function theme_supports()
+    {
         // Add default posts and comments RSS feed links to head
         add_theme_support('automatic-feed-links');
 
@@ -181,24 +194,20 @@ class StandardIndustries extends Timber\Site {
         add_theme_support('post-thumbnails');
 
         // Add html5 markup support for search form, comment form, comments
-        add_theme_support(
-            'html5', array(
-                'gallery',
-                'caption',
-            )
-        );
+        add_theme_support('html5', [
+            'gallery',
+            'caption'
+        ]);
 
         // Add support for post formats (https://codex.wordpress.org/Post_Formats)
-        add_theme_support(
-            'post-formats', array(
-                'image',
-                'video',
-                'quote',
-                'link',
-                'gallery',
-                'audio',
-            )
-        );
+        add_theme_support('post-formats', [
+            'image',
+            'video',
+            'quote',
+            'link',
+            'gallery',
+            'audio'
+        ]);
 
         // Add support for menus
         add_theme_support('menus');
