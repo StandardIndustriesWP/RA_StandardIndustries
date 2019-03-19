@@ -21,7 +21,7 @@ class Modules {
      */
     private function __construct()
     {
-
+        add_action('init', [$this, 'register_modules'], 10);
     }
 
     /**
@@ -102,27 +102,34 @@ class Modules {
     }
 
     /**
-     * Registers modules (field groups) with ACF
+     * Loads all modules in the modules folder
+     * @param $path
      */
-    public function register_modules() {
-        if (function_exists('acf_add_local_field_group')) {
-            foreach ($this->sections as $section) {
-                acf_add_local_field_group($section);
+    public function load_modules($path)
+    {
+        $dir = new \DirectoryIterator($path);
+
+        foreach ($dir as $file) {
+            if (!$file->isDot() && !$file->isDir()) {
+                try {
+                    $module = $path . $file->getFilename();
+                    include_once($module);
+                } catch (Exception $e) {
+                    // Log error, but don't throw any exception
+                    error_log($e->getMessage());
+                }
             }
         }
     }
 
     /**
-     * Renders the template for a module
-     * @param $post_id
+     * Registers modules (field groups) with ACF
      */
-    public function render_modules($post_id) {
-        if (function_exists('have_rows') && have_rows('content_modules', $post_id)) {
-            while (have_rows('content_modules', $post_id)) {
-                the_row();
-
-                $layout = str_replace('_', '-', get_row_layout());
-                get_template_part('modules/' . $layout . '/template');
+    public function register_modules()
+    {
+        if (function_exists('acf_add_local_field_group')) {
+            foreach ($this->sections as $section) {
+                acf_add_local_field_group($section);
             }
         }
     }
