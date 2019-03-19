@@ -1,5 +1,7 @@
 <?php
 
+namespace RA;
+
 /**
  * Class Modules, singleton, manages modules in the theme
  */
@@ -8,7 +10,7 @@ class Modules {
      * Singleton instance of Modules
      * @var Modules
      */
-    private $instance;
+    private static $instance;
 
     /**
      * Modules sections
@@ -38,7 +40,7 @@ class Modules {
      */
     public static function singleton()
     {
-        if (isset(self::$instance)) {
+        if (!isset(self::$instance)) {
             self::$instance = new self();
         }
 
@@ -55,13 +57,12 @@ class Modules {
     public function add_module($label, $slug, $section, $fields)
     {
         $modules = &$this->sections[$section]['fields'][0]['layouts'];
-        $key = md5($slug);
+        $key = 'layout_' . md5($slug);
 
         $modules[$key] = [
             'key' => $key,
             'name' => $slug,
             'label' => $label,
-            'display' => 'block',
             'sub_fields' => $fields,
         ];
     }
@@ -75,7 +76,7 @@ class Modules {
     {
         $this->sections[$section] = [
             'key' => 'group_' . md5($section),
-            'title' => 'Content Modules',
+            'title' => 'Modular Content',
             'fields' => [
                 [
                     'key' => 'content_modules',

@@ -1,5 +1,12 @@
 <?php
 
+include_once('utils/modules.php');
+
+// Load modules
+$modules = RA\Modules::singleton();
+$modules->init_modules('page_modules', 'page');
+$modules->load_modules(get_stylesheet_directory() . '/modules/');
+
 // Serve a static HTML page if the Timber plugin is not activated
 if (!class_exists('Timber')) {
     add_action('admin_notices', function() {
@@ -29,6 +36,9 @@ class StandardIndustries extends Timber\Site
      */
     public function __construct()
     {
+        // Disable Gutenberg editor
+        add_filter('use_block_editor_for_post', '__return_false');
+
         // Default registrations
         add_action('after_setup_theme', [$this, 'theme_supports']);
         add_filter('timber_context', [$this, 'add_to_context']);
