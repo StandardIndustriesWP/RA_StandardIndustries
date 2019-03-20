@@ -4,19 +4,19 @@
         <h3 class="spotlight__heading">{{ module.heading }}</h3>
         <div class="spotlight__slides">
             <div class="spotlight__slides-wrapper">
-                {% if module.links.inner|length %}
-                    {% for link in module.links.inner %}
+                {% if module.links|length %}
+                    {% for link in module.links %}
                         <div class="spotlight__slide">
-                            <a class="spotlight__link" href="{{ link.path }}">
+                            <a class="spotlight__link" href="{{ link.post.path }}">
                                 <div class="spotlight__slide-image">
                                     <img
                                         class="spotlight__slide-img"
-                                        src="{{ link.thumbnail.src }}"
-                                        srcset="{{ link.thumbnail.srcset }}"
-                                        alt="{{ link.thumbnail.alt }}"
+                                        src="{{ link.post.thumbnail.src }}"
+                                        srcset="{{ link.post.thumbnail.srcset }}"
+                                        alt="{{ link.post.thumbnail.alt }}"
                                     />
                                 </div>
-                                <h4 class="spotlight__link-title">{{ link.title }}</h4>
+                                <h4 class="spotlight__link-title">{{ link.post.title }}</h4>
                             </a>
                         </div>
                     {% endfor %}
