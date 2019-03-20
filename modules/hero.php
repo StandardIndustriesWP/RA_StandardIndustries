@@ -56,7 +56,7 @@ $modules->add_module('Hero', 'hero', 'page_modules', [
             'class' => '',
             'id' => '',
         ),
-        'return_format' => 'url',
+        'return_format' => 'id',
         'preview_size' => 'thumbnail',
         'library' => 'all',
         'min_width' => '',

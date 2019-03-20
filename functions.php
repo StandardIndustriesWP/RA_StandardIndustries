@@ -44,6 +44,10 @@ class StandardIndustries extends Timber\Site
         add_filter('timber_context', [$this, 'add_to_context']);
         add_filter('get_twig', [$this, 'add_to_twig']);
 
+        // Custom image sizes
+        add_action('after_setup_theme', [$this, 'register_image_sizes']);
+        add_filter('image_size_names_choose', [$this, 'register_image_size_names']);
+
         // Custom types
         add_action('init', [$this, 'register_menus']);
         add_action('init', [$this, 'register_post_types']);
@@ -159,6 +163,27 @@ class StandardIndustries extends Timber\Site
     {
         $text .= '!';
         return $text;
+    }
+
+    /**
+     * Registers custom image sizes
+     */
+    public function register_image_sizes() {
+        add_image_size('extra_large', 1440, 1440);
+        add_image_size('header_large', 1920, 1920);
+    }
+
+    /**
+     * Registers custom image size names for admin
+     * @param $sizes
+     * @return array
+     */
+    public function register_image_size_names($sizes) {
+        return array_merge($sizes, [
+            'medium_large' => __('Medium Large'),
+            'extra_large' => __('Extra Large'),
+            'header_large' => __('Header Large')
+        ]);
     }
 
     /**
