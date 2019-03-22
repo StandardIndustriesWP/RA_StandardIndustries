@@ -102,4 +102,31 @@ $modules->add_module('Stats', 'stats', 'page_modules', [
             ),
         ),
     ),
+    array(
+        'key' => 'field_5c951bf140061',
+        'label' => 'Type',
+        'name' => 'type',
+        'type' => 'select',
+        'instructions' => '',
+        'required' => 1,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+            'width' => '',
+            'class' => '',
+            'id' => '',
+        ),
+        'choices' => array(
+            'light' => 'Light',
+            'dark' => 'Dark',
+        ),
+        'default_value' => array(
+            0 => 'Light',
+        ),
+        'allow_null' => 0,
+        'multiple' => 0,
+        'ui' => 0,
+        'return_format' => 'value',
+        'ajax' => 0,
+        'placeholder' => '',
+    ),
 ]);
