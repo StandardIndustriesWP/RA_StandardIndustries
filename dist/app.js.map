@@ -1,1 +1,1 @@
-{"version":3,"sources":["app.js","modules/hero.js","modules/spotlight.js"],"names":["require"],"mappings":"AAAAA,QAAQ,+BACRA,QAAQ;ACDR;ACAA","file":"app.js","sourcesContent":["require('core-js/modules/es6.promise');\nrequire('core-js/modules/es6.array.iterator');\n","",""]}
+{"version":3,"sources":["app.js","modules/hero.js","modules/spotlight.js","modules/stats.js"],"names":["require"],"mappings":"AAAAA,QAAQ,+BACRA,QAAQ;ACDR;ACAA;ACAA","file":"app.js","sourcesContent":["require('core-js/modules/es6.promise');\nrequire('core-js/modules/es6.array.iterator');\n","","",""]}

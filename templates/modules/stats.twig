@@ -1,0 +1,16 @@
+<section class="stats">
+    <div class="stats__inner">
+        <div class="stats__eyebrow">{{ module.eyebrow }}</div>
+        <h3 class="stats__heading">{{ module.heading }}</h3>
+        {% if module.statistics|length %}
+            <ul class="stats__list">
+                {% for stat in module.statistics %}
+                    <li class="stats__list-item">
+                        <span class="stats__value">{{ stat.value }}</span>
+                        <span class="stats__unit">{{ stat.unit }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</section>
