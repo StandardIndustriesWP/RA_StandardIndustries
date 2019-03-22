@@ -7,7 +7,7 @@
                 {% if module.items|length %}
                     {% for item in module.items %}
                         <div class="spotlight__slide">
-                            <a class="spotlight__item" href="{{ item.post.path }}">
+                            <a class="spotlight__slide-link" href="{{ item.post.path }}">
                                 <div class="spotlight__slide-image">
                                     <img
                                         class="spotlight__slide-img"
@@ -16,7 +16,7 @@
                                         alt="{{ item.post.thumbnail.alt }}"
                                     />
                                 </div>
-                                <h4 class="spotlight__item-title">{{ item.post.title }}</h4>
+                                <h4 class="spotlight__slide-title">{{ item.post.title }}</h4>
                             </a>
                         </div>
                     {% endfor %}
