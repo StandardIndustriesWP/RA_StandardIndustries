@@ -5,7 +5,7 @@
         <a class="news__btn" href="{{ module.button_link }}">{{ module.button_label }}</a>
         <div class="news__items">
             {% for item in module.items %}
-                <div class="news__item">
+                <article class="news__item">
                     <a class="news__item-link" href="{{ item.post.path }}">
                         <div class="news__item-image">
                             <img
@@ -18,7 +18,7 @@
                         </div>
                         <h4 class="news__item-title">{{ item.post.title }}</h4>
                     </a>
-                </div>
+                </article>
             {% endfor %}
         </div>
     </div>

@@ -1,7 +1,23 @@
-<header class="topic topic--{{ module.type }}">
-    <div class="topic__inner">
+<header
+    class="topic topic--{{ module.type }}"
+    style="background-image: url('{{ module.type == 'full-image' ? Image(module.background_image).src('hero_large') : '' }}')"
+>
+    <div class="topic__left">
         <div class="topic__eyebrow">{{ module.eyebrow }}</div>
         <h2 class="topic__heading">{{ module.heading }}</h2>
-
+        <a class="news__btn" href="{{ module.button_link }}">{{ module.button_label }}</a>
+    </div>
+    <div
+        class="topic__right"
+        style="background-image: url('{{ module.type == 'half-image' ? Image(module.background_image).src('extra_large') : '' }}')"
+    >
+        {% for item in module.items %}
+            <article class="topic__item">
+                <a class="topic__item-link" href="{{ item.post.path }}">
+                    <div class="topic__item-category">{{ item.post.categories[0].name }}</div>
+                    <h4 class="topic__item-title">{{ item.post.title }}</h4>
+                </a>
+            </article>
+        {% endfor %}
     </div>
 </header>
