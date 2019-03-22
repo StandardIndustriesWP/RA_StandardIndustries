@@ -4,19 +4,19 @@
         <h3 class="spotlight__heading">{{ module.heading }}</h3>
         <div class="spotlight__slides">
             <div class="spotlight__slides-wrapper">
-                {% if module.links|length %}
-                    {% for link in module.links %}
+                {% if module.items|length %}
+                    {% for item in module.items %}
                         <div class="spotlight__slide">
-                            <a class="spotlight__link" href="{{ link.post.path }}">
+                            <a class="spotlight__item" href="{{ item.post.path }}">
                                 <div class="spotlight__slide-image">
                                     <img
                                         class="spotlight__slide-img"
-                                        src="{{ link.post.thumbnail.src }}"
-                                        srcset="{{ link.post.thumbnail.srcset }}"
-                                        alt="{{ link.post.thumbnail.alt }}"
+                                        src="{{ item.post.thumbnail.src }}"
+                                        srcset="{{ item.post.thumbnail.srcset }}"
+                                        alt="{{ item.post.thumbnail.alt }}"
                                     />
                                 </div>
-                                <h4 class="spotlight__link-title">{{ link.post.title }}</h4>
+                                <h4 class="spotlight__item-title">{{ item.post.title }}</h4>
                             </a>
                         </div>
                     {% endfor %}
@@ -35,7 +35,7 @@
                     {% endfor %}
                 {% endif %}
             </div>
-            {% if module.links|length > 1 or module.gallery|length > 1  %}
+            {% if module.items|length > 1 or module.gallery|length > 1  %}
                 <div class="spotlight__nav">
                     <button class="spotlight__prev">
                         <span class="visually-hidden">Previous Slide</span>

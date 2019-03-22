@@ -45,8 +45,8 @@ $modules->add_module('Spotlight', 'spotlight', 'page_modules', [
     ),
     array(
         'key' => 'field_5c927eedbeec3',
-        'label' => 'Links',
-        'name' => 'links',
+        'label' => 'Items',
+        'name' => 'items',
         'type' => 'repeater',
         'instructions' => '',
         'required' => 0,
@@ -60,7 +60,7 @@ $modules->add_module('Spotlight', 'spotlight', 'page_modules', [
         'min' => 0,
         'max' => 0,
         'layout' => 'table',
-        'button_label' => 'Add Link',
+        'button_label' => 'Add Item',
         'sub_fields' => array(
             array(
                 'key' => 'field_5c927f6abeec4',
