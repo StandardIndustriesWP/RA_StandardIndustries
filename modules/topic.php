@@ -4,9 +4,9 @@ use RA\Modules;
 
 $modules = Modules::singleton();
 
-$modules->add_module('News', 'news', 'page_modules', [
+$modules->add_module('Topic', 'topic', 'page_modules', [
     array(
-        'key' => 'field_5c9534d826fce',
+        'key' => 'field_5c953d764a462',
         'label' => 'Eyebrow',
         'name' => 'eyebrow',
         'type' => 'text',
@@ -25,7 +25,7 @@ $modules->add_module('News', 'news', 'page_modules', [
         'maxlength' => '',
     ),
     array(
-        'key' => 'field_5c9534e426fcf',
+        'key' => 'field_5c953da44a463',
         'label' => 'Heading',
         'name' => 'heading',
         'type' => 'text',
@@ -44,12 +44,12 @@ $modules->add_module('News', 'news', 'page_modules', [
         'maxlength' => '',
     ),
     array(
-        'key' => 'field_5c95355a26fd1',
+        'key' => 'field_5c953db04a464',
         'label' => 'Button Label',
         'name' => 'button_label',
         'type' => 'text',
         'instructions' => '',
-        'required' => 0,
+        'required' => 1,
         'conditional_logic' => 0,
         'wrapper' => array(
             'width' => '',
@@ -63,12 +63,12 @@ $modules->add_module('News', 'news', 'page_modules', [
         'maxlength' => '',
     ),
     array(
-        'key' => 'field_5c9534f926fd0',
+        'key' => 'field_5c953dc44a465',
         'label' => 'Button Link',
         'name' => 'button_link',
         'type' => 'page_link',
         'instructions' => '',
-        'required' => 0,
+        'required' => 1,
         'conditional_logic' => 0,
         'wrapper' => array(
             'width' => '',
@@ -84,12 +84,12 @@ $modules->add_module('News', 'news', 'page_modules', [
         'multiple' => 0,
     ),
     array(
-        'key' => 'field_5c95356926fd2',
+        'key' => 'field_5c953dd64a466',
         'label' => 'Items',
         'name' => 'items',
         'type' => 'repeater',
         'instructions' => '',
-        'required' => 0,
+        'required' => 1,
         'conditional_logic' => 0,
         'wrapper' => array(
             'width' => '',
@@ -97,13 +97,13 @@ $modules->add_module('News', 'news', 'page_modules', [
             'id' => '',
         ),
         'collapsed' => '',
-        'min' => 3,
-        'max' => 3,
+        'min' => 2,
+        'max' => 2,
         'layout' => 'table',
-        'button_label' => 'Add Item',
+        'button_label' => '',
         'sub_fields' => array(
             array(
-                'key' => 'field_5c95363726fd3',
+                'key' => 'field_5c953e174a467',
                 'label' => 'Post',
                 'name' => 'post',
                 'type' => 'post_object',
@@ -125,5 +125,56 @@ $modules->add_module('News', 'news', 'page_modules', [
                 'ui' => 1,
             ),
         ),
+    ),
+    array(
+        'key' => 'field_5c953e374a468',
+        'label' => 'Background Image',
+        'name' => 'background_image',
+        'type' => 'image',
+        'instructions' => '',
+        'required' => 1,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+            'width' => '',
+            'class' => '',
+            'id' => '',
+        ),
+        'return_format' => 'id',
+        'preview_size' => 'thumbnail',
+        'library' => 'all',
+        'min_width' => '',
+        'min_height' => '',
+        'min_size' => '',
+        'max_width' => '',
+        'max_height' => '',
+        'max_size' => '',
+        'mime_types' => '',
+    ),
+    array(
+        'key' => 'field_5c953e5d4a469',
+        'label' => 'Type',
+        'name' => 'type',
+        'type' => 'select',
+        'instructions' => '',
+        'required' => 1,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+            'width' => '',
+            'class' => '',
+            'id' => '',
+        ),
+        'choices' => array(
+            'full-image' => 'Full Image',
+            'half-image' => 'Half Image',
+        ),
+        'default_value' => array(
+            0 => 'Full Image',
+        ),
+        'allow_null' => 0,
+        'multiple' => 0,
+        'ui' => 0,
+        'return_format' => 'value',
+        'ajax' => 0,
+        'placeholder' => '',
     ),
 ]);
