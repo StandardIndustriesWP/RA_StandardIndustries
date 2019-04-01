@@ -254,7 +254,7 @@
 }
 
 @mixin lowlight {
-  background-color: $black-20;
+  background: $black-grad;
   content: '';
   height: 100%;
   left: 0;
