@@ -6,7 +6,7 @@
             <div class="spotlight__slides-wrapper">
                 {% if module.items|length %}
                     {% for item in module.items %}
-                        <div class="spotlight__slide">
+                        <figure class="spotlight__slide">
                             <a class="spotlight__slide-link" href="{{ item.post.path }}">
                                 <div class="spotlight__slide-image">
                                     <img
@@ -18,20 +18,26 @@
                                 </div>
                                 <h4 class="spotlight__slide-title">{{ item.post.title }}</h4>
                             </a>
-                        </div>
+                            {% if item.caption %}
+                                <figcaption>{{ item.caption }}</figcaption>
+                            {% endif %}
+                        </figure>
                     {% endfor %}
                 {% elseif module.gallery|length %}
                     {% for image in module.gallery %}
-                    <div class="spotlight__slide">
-                        <div class="spotlight__slide-image">
-                            <img
-                                class="spotlight__slide-img"
-                                src="{{ Image(image).src }}"
-                                srcset="{{ Image(image).srcset }}"
-                                alt="{{ Image(image).alt }}"
-                            />
-                        </div>
-                    </div>
+                        <figure class="spotlight__slide">
+                            <div class="spotlight__slide-image">
+                                <img
+                                    class="spotlight__slide-img"
+                                    src="{{ Image(image).src }}"
+                                    srcset="{{ Image(image).srcset }}"
+                                    alt="{{ Image(image).alt }}"
+                                />
+                            </div>
+                            {% if Image(image).caption %}
+                                <figcaption>{{ Image(image).caption }}</figcaption>
+                            {% endif %}
+                        </figure>
                     {% endfor %}
                 {% endif %}
             </div>
