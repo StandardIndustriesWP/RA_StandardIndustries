@@ -42,6 +42,10 @@
 
       &:nth-child(2) {
         width: 41%;
+
+        .news__item-title {
+          @include heading-4;
+        }
       }
 
       &:nth-child(3) {
@@ -75,6 +79,10 @@
       bottom: 0;
       left: 0;
       position: absolute;
+    }
+
+    &-title {
+      margin-bottom: 0;
     }
   }
 }
