@@ -3,10 +3,7 @@
 {% block content %}
     <article class="page page--{{ post.post_type }}" id="page-{{ post.ID }}">
         <section class="page__body">
-            <h1>{{ post.title }}</h1>
             <div class="page__content">
-                {{ post.content }}
-
                 {% for module in post.get_field('content_modules') %}
                     {% include 'modules/'~module.acf_fc_layout~'.twig' with { 'module': module } %}
                 {% endfor %}

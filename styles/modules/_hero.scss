@@ -3,5 +3,38 @@
  * ======================================================================== */
 
 .hero {
+  @include section;
 
+  background-color: $black;
+  color: $white;
+
+  &__inner {
+    @include section-inner;
+    @include clear-last-child;
+
+    max-width: $max-width-heading;
+  }
+
+  &__image {
+    @include image-wrapper;
+    @include bg-image;
+
+    &::after {
+      @include lowlight;
+    }
+  }
+
+  &__img {
+    @include image;
+  }
+
+  &__eyebrow {
+    @include eyebrow;
+  }
+
+  &__body {
+    p {
+      @include heading-6;
+    }
+  }
 }

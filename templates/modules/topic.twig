@@ -1,8 +1,8 @@
 <header class="topic topic--{{ module.type }}">
     {% if module.type == 'full-image'  %}
-        <div class="hero__image">
+        <div class="topic__image">
             <img
-                class="hero__img"
+                class="topic__img"
                 src="{{ Image(module.background_image).src('header_large') }}"
                 srcset="{{ Image(module.background_image).srcset }}"
                 alt="{{ Image(module.background_image).alt }}"
@@ -16,12 +16,14 @@
     </div>
     <div class="topic__right">
         {% if module.type == 'half-image' %}
-            <img
-                class="hero__img"
-                src="{{ Image(module.background_image).src('extra_large') }}"
-                srcset="{{ Image(module.background_image).srcset }}"
-                alt="{{ Image(module.background_image).alt }}"
-            />
+            <div class="topic__image">
+                <img
+                    class="topic__img"
+                    src="{{ Image(module.background_image).src('extra_large') }}"
+                    srcset="{{ Image(module.background_image).srcset }}"
+                    alt="{{ Image(module.background_image).alt }}"
+                />
+            </div>
         {% endif %}
         {% for item in module.items %}
             <article class="topic__item">
