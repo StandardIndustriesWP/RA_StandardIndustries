@@ -268,7 +268,7 @@
  * ======================================================================== */
 
 @mixin flex-column {
-  align-items: flex-start;
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -281,6 +281,8 @@
 }
 
 @mixin section {
+  @include flex-column;
+
   background-color: $white;
   background-position: center center;
   background-size: cover;
@@ -297,7 +299,9 @@
 
 @mixin section-inner {
   margin: 0 $inner-margin-sm;
+  max-width: $max-width-inner;
   position: relative;
+  width: 100%;
 
   @include large-and-up {
     margin: 0 $inner-margin-lg;

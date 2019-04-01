@@ -3,5 +3,78 @@
  * ======================================================================== */
 
 .news {
+  @include section;
 
+  &__inner {
+    @include section-inner;
+  }
+
+  &__header {
+    margin-bottom: 48px;
+    max-width: $max-width-content;
+
+    @include large-and-up {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__eyebrow {
+    @include eyebrow;
+  }
+
+  &__items {
+    @include large-and-up {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    margin-bottom: 48px;
+
+    @include large-and-up {
+      margin-bottom: 0;
+
+      &:nth-child(1) {
+        margin-top: 6%;
+        width: 31%;
+      }
+
+      &:nth-child(2) {
+        width: 41%;
+      }
+
+      &:nth-child(3) {
+        width: 21%;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-link {
+      text-decoration: none;
+    }
+
+    &-image {
+      @include image-wrapper;
+
+      margin-bottom: 16px;
+      padding-bottom: 60%;
+      width: 100%;
+    }
+
+    &-img {
+      @include image;
+    }
+
+    &-category {
+      @include label;
+
+      bottom: 0;
+      left: 0;
+      position: absolute;
+    }
+  }
 }

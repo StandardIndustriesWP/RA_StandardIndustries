@@ -10,9 +10,12 @@
 
   &__inner {
     @include section-inner;
+  }
+
+  &__content {
     @include clear-last-child;
 
-    max-width: $max-width-heading;
+    max-width: $max-width-hero;
   }
 
   &__image {
