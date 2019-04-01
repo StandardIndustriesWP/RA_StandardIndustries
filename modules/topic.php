@@ -11,7 +11,7 @@ $modules->add_module('Topic', 'topic', 'page_modules', [
         'name' => 'eyebrow',
         'type' => 'text',
         'instructions' => '',
-        'required' => 1,
+        'required' => 0,
         'conditional_logic' => 0,
         'wrapper' => array(
             'width' => '',
@@ -49,7 +49,7 @@ $modules->add_module('Topic', 'topic', 'page_modules', [
         'name' => 'button_label',
         'type' => 'text',
         'instructions' => '',
-        'required' => 1,
+        'required' => 0,
         'conditional_logic' => 0,
         'wrapper' => array(
             'width' => '',
@@ -68,7 +68,7 @@ $modules->add_module('Topic', 'topic', 'page_modules', [
         'name' => 'button_link',
         'type' => 'page_link',
         'instructions' => '',
-        'required' => 1,
+        'required' => 0,
         'conditional_logic' => 0,
         'wrapper' => array(
             'width' => '',

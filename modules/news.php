@@ -11,7 +11,7 @@ $modules->add_module('News', 'news', 'page_modules', [
         'name' => 'eyebrow',
         'type' => 'text',
         'instructions' => '',
-        'required' => 1,
+        'required' => 0,
         'conditional_logic' => 0,
         'wrapper' => array(
             'width' => '',
@@ -89,7 +89,7 @@ $modules->add_module('News', 'news', 'page_modules', [
         'name' => 'items',
         'type' => 'repeater',
         'instructions' => '',
-        'required' => 0,
+        'required' => 1,
         'conditional_logic' => 0,
         'wrapper' => array(
             'width' => '',
