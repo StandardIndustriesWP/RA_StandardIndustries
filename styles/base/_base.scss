@@ -3,6 +3,8 @@
  * ======================================================================== */
 
 body {
+  @include body-1;
+
   background: $white;
   color: $black;
   font-family: $family-sohne;
@@ -30,6 +32,38 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6, p {
   margin-top: 0;
+}
+
+h1 {
+  @include heading-1;
+}
+
+h2 {
+  @include heading-2;
+}
+
+h3 {
+  @include heading-3;
+}
+
+h4 {
+  @include heading-4;
+}
+
+h5 {
+  @include heading-5;
+}
+
+h6 {
+  @include heading-6;
+}
+
+p {
+  @include body-1;
+}
+
+button {
+  transition: color 100ms linear;
 }
 
 /*

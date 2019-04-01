@@ -55,8 +55,182 @@
 }
 
 /*
+ * Headers
+ * ======================================================================== */
+
+@mixin heading-1 {
+  @include rajdhani;
+
+  font-size: 48px;
+  line-height: 1;
+
+  @include large-and-up {
+    font-size: 64px;
+    line-height: 1;
+  }
+}
+
+@mixin heading-1-alt {
+  @include sohne;
+
+  font-size: 32px;
+  line-height: 1.25;
+
+  @include large-and-up {
+    font-size: 56px;
+    line-height: 1.14;
+  }
+}
+
+@mixin heading-2 {
+  @include sohne;
+
+  font-size: 32px;
+  line-height: 1.25;
+
+  @include large-and-up {
+    font-size: 48px;
+    line-height: 1.17;
+  }
+}
+
+@mixin heading-3 {
+  @include sohne;
+
+  font-size: 24px; // 28px alt
+  line-height: 1.33; // 1.29 alt
+
+  @include large-and-up {
+    font-size: 36px;
+    line-height: 1.22;
+  }
+}
+
+@mixin heading-3-alt {
+  @include sohne;
+
+  font-size: 24px;
+  line-height: 1.33;
+
+  @include large-and-up {
+    font-size: 32px;
+    line-height: 1.25;
+  }
+}
+
+@mixin heading-4 {
+  @include sohne;
+
+  font-size: 20px;
+  line-height: 1.4;
+
+  @include large-and-up {
+    font-size: 28px;
+    line-height: 1.29;
+  }
+}
+
+@mixin heading-4-alt {
+  @include sohne;
+
+  font-size: 20px;
+  line-height: 1.4;
+
+  @include large-and-up {
+    font-size: 24px;
+    line-height: 1.33;
+  }
+}
+
+@mixin heading-5 {
+  @include sohne;
+
+  font-size: 16px;
+  line-height: 1.5;
+
+  @include large-and-up {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+}
+
+@mixin heading-6 {
+  @include sohne;
+
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/*
+ * Body
+ * ======================================================================== */
+
+@mixin body-1 {
+  @include sohne;
+
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@mixin body-2 {
+  @include sohne;
+
+  font-size: 14px;
+  line-height: 1.71;
+}
+
+@mixin body-3 {
+  @include sohne;
+
+  font-size: 12px;
+  line-height: 1.67;
+}
+
+/*
  * Misc
  * ======================================================================== */
+
+@mixin eyebrow {
+  @include body-2;
+
+  color: $red;
+  margin-bottom: 24px;
+}
+
+@mixin label {
+  @include body-3;
+
+  background-color: $red;
+  color: $white;
+  display: inline-block;
+  padding: 5px 10px;
+}
+
+@mixin stat-1 {
+  @include sohne;
+
+  color: $red;
+  font-size: 64px;
+  line-height: 1.13;
+
+  @include large-and-up {
+    font-size: 110px;
+    line-height: 1;
+  }
+}
+
+@mixin stat-2 {
+  @include sohne;
+
+  color: $red;
+  font-size: 56px;
+  line-height: 1.14;
+
+  @include large-and-up {
+    font-size: 88px;
+    line-height: 1;
+  }
+}
 
 @mixin btn-reset {
   background: none;
@@ -79,7 +253,7 @@
  * ======================================================================== */
 
 @mixin flex-column {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -88,6 +262,29 @@
 @mixin clear-last-child {
   *:last-child {
     margin-bottom: 0;
+  }
+}
+
+@mixin section {
+  background-color: $white;
+  background-position: center center;
+  background-size: cover;
+  overflow: hidden;
+  padding: 48px $site-margin-sm;
+  position: relative;
+  -webkit-transform: translate3d(0, 0, 0);
+  width: 100%;
+
+  @include large-and-up {
+    padding: 120px $site-margin-lg;
+  }
+}
+
+@mixin section-inner {
+  padding: 0 $inner-margin-sm;
+
+  @include large-and-up {
+    padding: 0 $inner-margin-lg;
   }
 }
 
