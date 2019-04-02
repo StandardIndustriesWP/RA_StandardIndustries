@@ -31,6 +31,10 @@
     margin-right: 16px;
     width: 100%;
 
+    @include large-and-up {
+      margin-right: 32px;
+    }
+
     a.spotlight__slide-link {
       color: white;
     }
