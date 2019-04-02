@@ -10,8 +10,7 @@
   }
 
   &__header {
-    margin-bottom: 48px;
-    max-width: $max-width-content;
+    @include section-header;
 
     @include large-and-up {
       margin-bottom: 24px;
@@ -20,6 +19,14 @@
 
   &__eyebrow {
     @include eyebrow;
+  }
+
+  &__heading {
+    margin-bottom: 32px;
+
+    @include large-and-up {
+      margin-bottom: 48px;
+    }
   }
 
   &__items {

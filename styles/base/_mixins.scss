@@ -283,7 +283,6 @@
 @mixin section {
   @include flex-column;
 
-  background-color: $white;
   background-position: center center;
   background-size: cover;
   overflow: hidden;
@@ -305,6 +304,17 @@
 
   @include large-and-up {
     margin: 0 $inner-margin-lg;
+  }
+}
+
+@mixin section-header {
+  @include clear-last-child;
+
+  margin-bottom: 48px;
+  max-width: $max-width-content;
+
+  @include large-and-up {
+    margin-bottom: 120px;
   }
 }
 

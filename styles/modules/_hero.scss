@@ -18,6 +18,16 @@
     max-width: $max-width-hero;
   }
 
+  &__eyebrow {
+    @include eyebrow;
+  }
+
+  &__body {
+    p {
+      @include heading-6;
+    }
+  }
+
   &__image {
     @include image-wrapper;
     @include bg-image;
@@ -29,15 +39,5 @@
 
   &__img {
     @include image;
-  }
-
-  &__eyebrow {
-    @include eyebrow;
-  }
-
-  &__body {
-    p {
-      @include heading-6;
-    }
   }
 }

@@ -1,9 +1,13 @@
 <section class="news">
     <div class="news__inner">
         <header class="news__header">
-            <div class="news__eyebrow">{{ module.eyebrow }}</div>
+            {% if module.eyebrow %}
+                <div class="news__eyebrow">{{ module.eyebrow }}</div>
+            {% endif %}
             <h3 class="news__heading">{{ module.heading }}</h3>
-            <a class="news__btn" href="{{ module.button_link }}">{{ module.button_label }}</a>
+            {% if module.button_link and module.button_label %}
+                <a class="news__btn" href="{{ module.button_link }}">{{ module.button_label }}</a>
+            {% endif %}
         </header>
         <div class="news__items">
             {% for item in module.items %}

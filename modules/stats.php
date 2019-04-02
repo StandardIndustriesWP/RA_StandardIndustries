@@ -57,7 +57,7 @@ $modules->add_module('Stats', 'stats', 'page_modules', [
             'id' => '',
         ),
         'collapsed' => '',
-        'min' => 0,
+        'min' => 3,
         'max' => 0,
         'layout' => 'table',
         'button_label' => 'Add Stat',
