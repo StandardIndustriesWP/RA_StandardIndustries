@@ -35,7 +35,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify": "^3.0.2",
+    "gulp-terser": "^1.1.7",
     "prettier": "^1.16.4",
     "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.2.0",

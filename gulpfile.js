@@ -10,7 +10,7 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const source = require('vinyl-source-stream');
 const sourceMaps = require('gulp-sourcemaps');
-const uglify = require('gulp-uglify');
+const terser = require('gulp-terser');
 
 // Compile SCSS
 gulp.task('scss', () => {
@@ -41,7 +41,7 @@ gulp.task('vendor', () => {
     .pipe(source('app.js'))
     .pipe(buffer())
     .pipe(sourceMaps.init())
-    .pipe(uglify())
+    .pipe(terser())
     .pipe(concat('vendor.js'))
     .on('error', (err) => console.log(err))
     .pipe(sourceMaps.write('./'))
@@ -54,7 +54,7 @@ gulp.task('js', () => {
     .src('./scripts/**/*.js')
     .pipe(sourceMaps.init())
     .pipe(babel())
-    .pipe(uglify())
+    .pipe(terser())
     .pipe(concat('app.js'))
     .on('error', (err) => console.log(err))
     .pipe(sourceMaps.write('./'))
