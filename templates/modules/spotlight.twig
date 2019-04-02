@@ -1,13 +1,15 @@
 <section class="spotlight">
     <div class="spotlight__inner">
-        <div class="spotlight__eyebrow">{{ module.eyebrow }}</div>
-        <h3 class="spotlight__heading">{{ module.heading }}</h3>
+        <header class="spotlight__header">
+            <div class="spotlight__eyebrow">{{ module.eyebrow }}</div>
+            <h3 class="spotlight__heading">{{ module.heading }}</h3>
+        </header>
         <div class="spotlight__slides">
             <div class="spotlight__slides-wrapper">
                 {% if module.items|length %}
                     {% for item in module.items %}
                         <figure class="spotlight__slide">
-                            <a class="spotlight__slide-link" href="{{ item.post.path }}">
+                            <a class="spotlight__slide-link spotlight__slide-content" href="{{ item.post.path }}">
                                 <div class="spotlight__slide-image">
                                     <img
                                         class="spotlight__slide-img"
@@ -26,13 +28,15 @@
                 {% elseif module.gallery|length %}
                     {% for image in module.gallery %}
                         <figure class="spotlight__slide">
-                            <div class="spotlight__slide-image">
-                                <img
-                                    class="spotlight__slide-img"
-                                    src="{{ Image(image).src }}"
-                                    srcset="{{ Image(image).srcset }}"
-                                    alt="{{ Image(image).alt }}"
-                                />
+                            <div class="spotlight__slide-content">
+                                <div class="spotlight__slide-image">
+                                    <img
+                                        class="spotlight__slide-img"
+                                        src="{{ Image(image).src }}"
+                                        srcset="{{ Image(image).srcset }}"
+                                        alt="{{ Image(image).alt }}"
+                                    />
+                                </div>
                             </div>
                             {% if Image(image).caption %}
                                 <figcaption>{{ Image(image).caption }}</figcaption>

@@ -3,5 +3,56 @@
  * ======================================================================== */
 
 .spotlight {
+  @include section;
 
+  background-color: $black !important;
+  color: $white;
+
+  &__inner {
+    @include section-inner;
+  }
+
+  &__header {
+    @include section-header;
+  }
+
+  &__eyebrow {
+    @include eyebrow;
+  }
+
+  &__slides-wrapper {
+    align-items: flex-start;
+    display: flex;
+    justify-content: flex-start;
+    transition: transform 400ms ease-out;
+  }
+
+  &__slide {
+    margin-right: 16px;
+    width: 100%;
+
+    a.spotlight__slide-link {
+      color: white;
+    }
+
+    &-content {
+      display: block;
+      padding-bottom: 64%;
+      position: relative;
+      width: 100%;
+    }
+
+    &-title {
+      position: absolute;
+    }
+
+    &-image {
+      @include image-wrapper;
+      @include bg-image;
+    }
+
+    &-img {
+      @include image;
+    }
+  }
 }
