@@ -102,10 +102,21 @@ class Spotlight {
 
     // Remove active class from all slides
     this.items.forEach((item) => {
+      const link = item.querySelector('.spotlight__slide-link');
+
+      if (link) {
+        link.tabIndex = -1;
+      }
       item.classList.remove('spotlight__slide--active');
     });
 
     // Add active class to activeSlide
+    const activeSlide = this.items[this.activeSlide];
+    const activeLink = activeSlide.querySelector('.spotlight__slide-link');
+
+    if (activeLink) {
+      activeLink.tabIndex = 0;
+    }
     this.items[this.activeSlide].classList.add('spotlight__slide--active');
   }
 

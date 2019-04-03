@@ -266,13 +266,27 @@
 }
 
 @mixin lowlight {
-  background: $black-grad;
+  background-color: $black-20;
   content: '';
   height: 100%;
   left: 0;
   position: absolute;
   top: 0;
   width: 100%;
+}
+
+@mixin lowlight-grad-80 {
+  @include lowlight;
+
+  background: $black-grad-80;
+  background-color: transparent;
+}
+
+@mixin lowlight-grad-40 {
+  @include lowlight;
+
+  background: $black-grad-40;
+  background-color: transparent;
 }
 
 @mixin arrow-link {

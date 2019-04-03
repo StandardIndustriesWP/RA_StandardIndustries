@@ -77,7 +77,15 @@
     }
 
     &-img {
+
       @include image;
+
+      transform: scale(1.2);
+      transition: transform 100ms linear;
+
+      &:hover {
+        transform: scale(1);
+      }
     }
 
     &-category {

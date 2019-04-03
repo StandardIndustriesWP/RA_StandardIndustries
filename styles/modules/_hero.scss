@@ -33,7 +33,7 @@
     @include bg-image;
 
     &::after {
-      @include lowlight;
+      @include lowlight-grad-80;
     }
   }
 
