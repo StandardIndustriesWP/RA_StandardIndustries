@@ -54,7 +54,6 @@
       .spotlight__slide--active & {
         opacity: 1;
         transform: scale(1);
-        transition: transform 100ms ease-out, opacity 400ms linear;
       }
     }
 
