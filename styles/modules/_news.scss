@@ -89,6 +89,8 @@
     }
 
     &-title {
+      @include arrow-link;
+
       margin-bottom: 0;
     }
   }

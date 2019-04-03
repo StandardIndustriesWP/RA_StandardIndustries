@@ -275,6 +275,35 @@
   width: 100%;
 }
 
+@mixin arrow-link {
+  display: block;
+
+  &::after {
+    background-image: url('../svgs/arrow-red.svg');
+    background-position: left bottom;
+    background-size: 1em;
+    content: '';
+    display: block;
+    height: 1.2em;
+    opacity: 0;
+    transition: height 100ms linear, opacity 100ms linear;
+    width: 100%;
+  }
+
+  a:hover &::after {
+    height: 1.2em;
+    opacity: 1;
+  }
+}
+
+@mixin arrow-link-white {
+  @include arrow-link;
+
+  &::after {
+    background-image: url('../svgs/arrow-white.svg');
+  }
+}
+
 /*
  * Layout
  * ======================================================================== */

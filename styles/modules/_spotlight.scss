@@ -59,12 +59,17 @@
 
     &-title {
       @include heading-3;
+      @include arrow-link-white;
 
       bottom: 16px;
       left: 16px;
       margin: 0;
       max-width: 50%;
       position: absolute;
+
+      &::after {
+        height: 0;
+      }
 
       @include large-and-up {
         @include heading-2;
