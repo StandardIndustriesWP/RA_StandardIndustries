@@ -32,7 +32,7 @@
     width: 100%;
 
     @include large-and-up {
-      margin-right: 32px;
+      margin-right: 0;
     }
 
     a.spotlight__slide-link {
@@ -41,13 +41,37 @@
 
     &-content {
       display: block;
+      opacity: 0.5;
       padding-bottom: 64%;
       position: relative;
+      transition: transform 400ms linear, opacity 400ms linear;
       width: 100%;
+
+      @include large-and-up {
+        transform: scale(0.9);
+      }
+
+      .spotlight__slide--active & {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
 
     &-title {
+      @include heading-3;
+
+      bottom: 16px;
+      left: 16px;
+      margin: 0;
+      max-width: 50%;
       position: absolute;
+
+      @include large-and-up {
+        @include heading-2;
+
+        bottom: 40px;
+        left: 40px;
+      }
     }
 
     &-image {
@@ -58,5 +82,58 @@
     &-img {
       @include image;
     }
+
+    &-caption {
+      @include clear-last-child;
+
+      margin-top: 24px;
+      opacity: 0;
+      transition: opacity 400ms linear;
+
+      p {
+        @include body-2;
+      }
+
+      .spotlight__slide--active & {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__nav {
+    display: none;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    top: 87%;
+    width: 80px;
+
+    @include large-and-up {
+      display: flex;
+    }
+
+    &-btn {
+      @include btn-reset;
+
+      background-color: $red;
+      background-position: center center;
+      background-size: 6px 10px;
+      height: 40px;
+      transition: opacity 100ms linear;
+      width: 40px;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+
+  &__prev {
+    background-color: $dark-red;
+    background-image: url('../svgs/prev.svg');
+  }
+
+  &__next {
+    background-image: url('../svgs/next.svg');
   }
 }

@@ -18,10 +18,12 @@
                                         alt="{{ item.post.thumbnail.alt }}"
                                     />
                                 </div>
-                                <h4 class="spotlight__slide-title">{{ item.post.title }}</h4>
+                                <h3 class="spotlight__slide-title">{{ item.post.title }}</h3>
                             </a>
                             {% if item.caption %}
-                                <figcaption>{{ item.caption }}</figcaption>
+                                <figcaption class="spotlight__slide-caption">
+                                    {{ item.caption }}
+                                </figcaption>
                             {% endif %}
                         </figure>
                     {% endfor %}
@@ -39,7 +41,9 @@
                                 </div>
                             </div>
                             {% if Image(image).caption %}
-                                <figcaption>{{ Image(image).caption }}</figcaption>
+                                <figcaption class="spotlight__slide-caption">
+                                    {{ Image(image).caption }}
+                                </figcaption>
                             {% endif %}
                         </figure>
                     {% endfor %}
@@ -47,10 +51,10 @@
             </div>
             {% if module.items|length > 1 or module.gallery|length > 1  %}
                 <div class="spotlight__nav">
-                    <button class="spotlight__prev">
+                    <button class="spotlight__nav-btn spotlight__prev">
                         <span class="visually-hidden">Previous Slide</span>
                     </button>
-                    <button class="spotlight__next">
+                    <button class="spotlight__nav-btn spotlight__next">
                         <span class="visually-hidden">Next Slide</span>
                     </button>
                 </div>

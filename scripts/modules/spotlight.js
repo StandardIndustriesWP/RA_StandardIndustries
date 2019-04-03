@@ -38,6 +38,8 @@ class Spotlight {
     window.addEventListener('resize', this.resize, false);
     this.prev.addEventListener('click', this.prevSlide);
     this.next.addEventListener('click', this.nextSlide);
+    this.wrapper.addEventListener('swiped-right', this.prevSlide);
+    this.wrapper.addEventListener('swiped-left', this.nextSlide);
 
     // Initialize
     this.setWrapperWidth();
@@ -52,7 +54,7 @@ class Spotlight {
     if (this.renderWidth <= MAX_WIDTH_MD) {
       return `calc(${this.slideCount} * (100% + 16px))`;
     } else {
-      return `calc(${this.slideCount} * (55% + 32px))`;
+      return `calc(${this.slideCount} * 62%`;
     }
   }
 
@@ -97,6 +99,14 @@ class Spotlight {
     this.wrapper.style.transform = `translateX(calc(-${
       this.activeSlide
     } * (100% / ${this.slideCount})))`;
+
+    // Remove active class from all slides
+    this.items.forEach((item) => {
+      item.classList.remove('spotlight__slide--active');
+    });
+
+    // Add active class to activeSlide
+    this.items[this.activeSlide].classList.add('spotlight__slide--active');
   }
 
   /**
