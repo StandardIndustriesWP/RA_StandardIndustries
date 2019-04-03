@@ -19,6 +19,9 @@
                                     />
                                 </div>
                                 <h3 class="spotlight__slide-title">{{ item.post.title }}</h3>
+                                {% if item.post.categories|length %}
+                                    <div class="spotlight__slide-category">{{ item.post.categories[0].name }}</div>
+                                {% endif %}
                             </a>
                             {% if item.caption %}
                                 <figcaption class="spotlight__slide-caption">
@@ -49,16 +52,14 @@
                     {% endfor %}
                 {% endif %}
             </div>
-            {% if module.items|length > 1 or module.gallery|length > 1  %}
-                <div class="spotlight__nav">
-                    <button class="spotlight__nav-btn spotlight__prev">
-                        <span class="visually-hidden">Previous Slide</span>
-                    </button>
-                    <button class="spotlight__nav-btn spotlight__next">
-                        <span class="visually-hidden">Next Slide</span>
-                    </button>
-                </div>
-            {% endif %}
+            <div class="spotlight__nav">
+                <button class="spotlight__nav-btn spotlight__prev">
+                    <span class="visually-hidden">Previous Slide</span>
+                </button>
+                <button class="spotlight__nav-btn spotlight__next">
+                    <span class="visually-hidden">Next Slide</span>
+                </button>
+            </div>
         </div>
     </div>
 </section>

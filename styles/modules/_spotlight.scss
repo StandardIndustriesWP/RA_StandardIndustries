@@ -74,6 +74,14 @@
       }
     }
 
+    &-category {
+      @include label;
+
+      left: 0;
+      top: 0;
+      position: absolute;
+    }
+
     &-image {
       @include image-wrapper;
       @include bg-image;
