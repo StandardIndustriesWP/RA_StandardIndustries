@@ -20,7 +20,9 @@
                                 srcset="{{ item.post.thumbnail.srcset }}"
                                 alt="{{ item.post.thumbnail.alt }}"
                             />
-                            <div class="news__item-category">{{ item.post.categories[0].name }}</div>
+                            <div class="news__item-category news__item-category--absolute">
+                                {{ item.post.categories[0].name }}
+                            </div>
                         </div>
                         <h5 class="news__item-title">{{ item.post.title }}</h5>
                     </a>

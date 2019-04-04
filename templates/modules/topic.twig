@@ -1,37 +1,33 @@
 <section class="topic topic--{{ module.type }}">
-    {% if module.type == 'full-image'  %}
-        <div class="topic__image">
-            <img
-                class="topic__img"
-                src="{{ Image(module.background_image).src('header_large') }}"
-                srcset="{{ Image(module.background_image).srcset }}"
-                alt="{{ Image(module.background_image).alt }}"
-            />
-        </div>
-    {% endif %}
-    <div class="topic__left">
-        <div class="topic__eyebrow">{{ module.eyebrow }}</div>
-        <h2 class="topic__heading">{{ module.heading }}</h2>
-        <a class="news__btn" href="{{ module.button_link }}">{{ module.button_label }}</a>
+    <div class="topic__image">
+        <img
+            class="topic__img"
+            src="{{ Image(module.background_image).src('header_large') }}"
+            srcset="{{ Image(module.background_image).srcset }}"
+            alt="{{ Image(module.background_image).alt }}"
+        />
     </div>
-    <div class="topic__right">
-        {% if module.type == 'half-image' %}
-            <div class="topic__image">
-                <img
-                    class="topic__img"
-                    src="{{ Image(module.background_image).src('extra_large') }}"
-                    srcset="{{ Image(module.background_image).srcset }}"
-                    alt="{{ Image(module.background_image).alt }}"
-                />
+    <div class="topic__inner">
+        <div class="topic__left">
+            {% if module.eyebrow %}
+                <div class="topic__eyebrow">{{ module.eyebrow }}</div>
+            {% endif %}
+            <h3 class="topic__heading">{{ module.heading }}</h3>
+            {% if module.button_link and module.button_label %}
+                <a class="topic__btn" href="{{ module.button_link }}">{{ module.button_label }}</a>
+            {% endif %}
+        </div>
+        {% if module.items|length %}
+            <div class="topic__right">
+                {% for item in module.items %}
+                    <article class="topic__item">
+                        <a class="topic__item-link" href="{{ item.post.path }}">
+                            <div class="topic__item-category">{{ item.post.categories[0].name }}</div>
+                            <h5 class="topic__item-title">{{ item.post.title }}</h5>
+                        </a>
+                    </article>
+                {% endfor %}
             </div>
         {% endif %}
-        {% for item in module.items %}
-            <article class="topic__item">
-                <a class="topic__item-link" href="{{ item.post.path }}">
-                    <div class="topic__item-category">{{ item.post.categories[0].name }}</div>
-                    <h4 class="topic__item-title">{{ item.post.title }}</h4>
-                </a>
-            </article>
-        {% endfor %}
     </div>
 </section>
