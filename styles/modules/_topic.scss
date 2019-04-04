@@ -4,6 +4,7 @@
 
 .topic {
   background-color: $white !important;
+  position: relative;
 
   @include large-and-up {
     display: flex;
@@ -127,6 +128,13 @@
     .topic__image {
       left: auto;
       right: 0;
+    }
+  }
+
+  &--without-items {
+    .topic__left {
+      padding-top: 120px;
+      padding-bottom: 120px;
     }
   }
 }

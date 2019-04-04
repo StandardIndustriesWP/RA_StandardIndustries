@@ -1,4 +1,4 @@
-<section class="topic topic--{{ module.type }}">
+<section class="topic topic--{{ module.type }} topic--{{ module.items|length ? 'with-items' : 'without-items' }}">
     {% if module.type == 'full-image' %}
         <div class="topic__image">
             <img

@@ -32,6 +32,12 @@
   }
 }
 
+@mixin full-and-up {
+  @media (min-width: #{$max-width-content}) {
+    @content;
+  }
+}
+
 @mixin extra-large-only {
   @media (min-width: #{$extra-large-min-width}) {
     @content;
