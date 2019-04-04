@@ -79,8 +79,8 @@
 @mixin heading-1-alt {
   @include sohne;
 
-  font-size: 32px;
-  line-height: 1.25;
+  font-size: 36px;
+  line-height: 1.22;
 
   @include large-and-up {
     font-size: 56px;
