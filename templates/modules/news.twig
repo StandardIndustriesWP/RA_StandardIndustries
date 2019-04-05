@@ -6,7 +6,9 @@
             {% endif %}
             <h3 class="news__heading">{{ module.heading }}</h3>
             {% if module.button_link and module.button_label %}
-                <a class="news__btn" href="{{ module.button_link }}">{{ module.button_label }}</a>
+                <a class="news__btn" href="{{ module.button_link }}">
+                    {{ module.button_label }}
+                </a>
             {% endif %}
         </header>
         <div class="news__items">

@@ -9,7 +9,9 @@
         <ul class="big-links__list">
             {% for item in module.items %}
                 <li class="big-links__list-item">
-                    <a class="big-links__link" href="{{ item.post.path }}">{{ item.post.title }}</a>
+                    <a class="big-links__link" href="{{ item.post.path }}">
+                        {{ item.post.title }}
+                    </a>
                 </li>
             {% endfor %}
         </ul>

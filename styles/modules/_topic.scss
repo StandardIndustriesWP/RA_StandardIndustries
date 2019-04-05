@@ -85,7 +85,7 @@
   &__item {
     @include news-item-inverted;
 
-    max-width: 264px;
+    max-width: $max-width-article;
 
     &:nth-child(1) {
       padding-bottom: 32px;
