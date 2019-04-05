@@ -1,0 +1,53 @@
+/*
+ * External Link Module
+ * ======================================================================== */
+
+.external-link {
+  @include section;
+
+  background-color: $red;
+  padding: 32px $site-margin-sm;
+
+  @include large-and-up {
+    padding: 72px $site-margin-lg;
+  }
+
+  &__inner {
+    @include section-inner;
+  }
+
+  a.external-link__link {
+    @include heading-3-alt-sm;
+
+    color: $white;
+    display: block;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+
+      &::after {
+        right: 10px;
+      }
+    }
+
+    &::after {
+      background-image: url('../svgs/arrow-white.svg');
+      background-size: 48px 26px;
+      content: '';
+      height: 26px;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: right 100ms linear;
+      width: 48px;
+
+      @include large-and-up {
+        background-size: 88px 48px;
+        height: 48px;
+        width: 88px;
+      }
+    }
+  }
+}
