@@ -43,7 +43,7 @@
   &__item {
     @include news-item;
 
-    margin-bottom: 48px;
+    margin-bottom: 32px;
 
     @include large-and-up {
       margin-bottom: 0;
