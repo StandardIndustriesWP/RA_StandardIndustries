@@ -21,13 +21,18 @@
 
     color: $white;
     display: block;
+    padding-right: 68px;
     text-decoration: none;
+
+    @include large-and-up {
+      padding-right: 108px;
+    }
 
     &:hover {
       text-decoration: underline;
 
       &::after {
-        right: 10px;
+        right: 0;
       }
     }
 
@@ -37,7 +42,7 @@
       content: '';
       height: 26px;
       position: absolute;
-      right: 20px;
+      right: 10px;
       top: 50%;
       transform: translateY(-50%);
       transition: right 100ms linear;

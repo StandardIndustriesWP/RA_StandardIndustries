@@ -1,0 +1,49 @@
+/*
+ * Into Module
+ * ======================================================================== */
+
+.intro {
+  @include section;
+
+  a {
+    color: $red;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__inner {
+    @include section-inner;
+  }
+
+  &__header {
+    @include section-header;
+
+    margin-bottom: 0;
+  }
+
+  &__eyebrow {
+    @include eyebrow;
+  }
+
+  &__heading {
+    p {
+      @include heading-4-alt;
+    }
+  }
+
+  &__body {
+    @include clear-last-child;
+
+    p {
+      @include heading-6;
+    }
+  }
+
+  &--dark {
+    background-color: $black !important;
+    color: $white;
+  }
+}

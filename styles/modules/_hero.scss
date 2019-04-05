@@ -23,6 +23,8 @@
   }
 
   &__body {
+    @include clear-last-child;
+
     p {
       @include heading-6;
     }

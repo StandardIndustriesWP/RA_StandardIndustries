@@ -224,7 +224,11 @@
   @include body-2;
 
   color: $red;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
+
+  @include large-and-up {
+    margin-bottom: 24px;
+  }
 }
 
 @mixin label {
