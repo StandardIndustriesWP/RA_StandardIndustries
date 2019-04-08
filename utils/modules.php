@@ -48,6 +48,14 @@ class Modules {
     }
 
     /**
+     * Registers a local field group
+     * @param $group
+     */
+    public function add_field_group($group) {
+        acf_add_local_field_group($group);
+    }
+
+    /**
      * Adds a sub-module to "content_modules" flexible content field
      * @param $label
      * @param $slug

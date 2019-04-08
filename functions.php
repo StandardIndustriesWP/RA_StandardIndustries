@@ -6,6 +6,7 @@ include_once('utils/modules.php');
 $modules = RA\Modules::singleton();
 $modules->init_modules('page_modules', 'page');
 $modules->load_modules(get_stylesheet_directory() . '/modules/');
+$modules->load_modules(get_stylesheet_directory() . '/fields/');
 
 // Serve a static HTML page if the Timber plugin is not activated
 if (!class_exists('Timber')) {

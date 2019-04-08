@@ -1,0 +1,13 @@
+<footer class="global-footer" role="contentinfo">
+    Copyright {{ 'now'|date('Y') }}
+
+    <div class="global-footer__menu">
+        {% include 'partials/menu.twig' with { 'menu': menu_footer.get_items } %}
+    </div>
+
+    <div class="global-footer__copyright">
+        {% include 'partials/menu.twig' with { 'menu': menu_copyright.get_items } %}
+    </div>
+</footer>
+
+{{ function('wp_footer') }}

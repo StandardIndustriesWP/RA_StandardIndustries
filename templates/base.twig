@@ -1,48 +1,19 @@
-{% block html_head_container %}
-
-{% include 'global/html-header.twig' %}
-    {% block head %}
-    {% endblock %}
-    </head>
+{% block html_head %}
+    {% include 'global/html-head.twig' %}
 {% endblock %}
 
-    <body class="{{ body_class }}" data-template="base.twig">
-        {% block header %}
-            <header class="global-header" role="banner">
-                <h1>
-                    <a href="{{ site.url }}" rel="home">{{ site.name }}</a>
-                </h1>
-                <nav class="global-header__menu" role="navigation">
-                    {% include "menu.twig" with { 'menu': menu_header.get_items } %}
-                </nav>
-            </header>
+<body class="{{ body_class }}" data-template="base.twig">
+    {% block header %}
+        {% include 'global/header.twig' %}
+    {% endblock %}
+
+    <main class="global-main" role="main">
+        {% block content %}
         {% endblock %}
+    </main>
 
-        <main class="global-main" role="main">
-            <div class="content">
-                {% if title %}
-                    <h2>{{ title }}</h2>
-                {% endif %}
-
-                {% block content %}
-                {% endblock %}
-            </div>
-        </main>
-
-        {% block footer %}
-            <footer class="global-footer" role="contentinfo">
-                Copyright {{ "now"|date('Y') }}
-
-                <div class="global-footer__menu">
-                    {% include "menu.twig" with { 'menu': menu_footer.get_items } %}
-                </div>
-
-                <div class="global-footer__copyright">
-                    {% include "menu.twig" with { 'menu': menu_copyright.get_items } %}
-                </div>
-            </footer>
-
-            {{ function('wp_footer') }}
-        {% endblock %}
-    </body>
+    {% block footer %}
+        {% include 'global/footer.twig' %}
+    {% endblock %}
+</body>
 </html>
