@@ -24,6 +24,7 @@ class Modules {
     private function __construct()
     {
         add_action('init', [$this, 'register_modules'], 10);
+        add_action('init', [$this, 'register_options'], 10);
     }
 
     /**
@@ -140,6 +141,20 @@ class Modules {
             foreach ($this->sections as $section) {
                 acf_add_local_field_group($section);
             }
+        }
+    }
+
+    /**
+     * Registers options page with ACF
+     */
+    public function register_options()
+    {
+        if (function_exists('acf_add_options_page')) {
+            acf_add_options_page([
+                'page_title' => 'Theme Settings',
+                'menu_title' => 'Theme Settings',
+                'menu_slug' => 'theme-settings'
+            ]);
         }
     }
 }

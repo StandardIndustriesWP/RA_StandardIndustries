@@ -38,6 +38,12 @@
       }
     }
 
+    .current-menu-parent {
+      .menu__link {
+        color: $red;
+      }
+    }
+
     .menu-item-has-children {
       .menu__link {
         padding-right: 22px;
