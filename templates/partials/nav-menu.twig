@@ -7,7 +7,7 @@
                 {% else %}
                     <a class="menu__link" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
                 {% endif %}
-                {% include 'partials/menu.twig' with { 'menu': item.get_children } %}
+                {% include 'partials/nav-sub-menu.twig' with { 'menu': item.get_children } %}
             </li>
         {% endfor %}
     </ul>

@@ -32,33 +32,6 @@ $modules->add_field_group([
             'max_size' => '',
             'mime_types' => '',
         ),
-        array(
-            'key' => 'field_5cab64011b51a',
-            'label' => 'Type',
-            'name' => 'type',
-            'type' => 'select',
-            'instructions' => '',
-            'required' => 1,
-            'conditional_logic' => 0,
-            'wrapper' => array(
-                'width' => '',
-                'class' => '',
-                'id' => '',
-            ),
-            'choices' => array(
-                'regular' => 'Regular',
-                'large' => 'Large',
-            ),
-            'default_value' => array(
-                0 => 'Regular',
-            ),
-            'allow_null' => 0,
-            'multiple' => 0,
-            'ui' => 0,
-            'return_format' => 'value',
-            'ajax' => 0,
-            'placeholder' => '',
-        ),
     ),
     'location' => array(
         array(

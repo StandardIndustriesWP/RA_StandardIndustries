@@ -7,7 +7,11 @@
         {% include 'global/header.twig' %}
     {% endblock %}
 
-    <main class="global-main" role="main">
+    <main class="global-main" role="main" aria-labelledby="title">
+        {% if title %}
+            <h2 class="visually-hidden" id="title">{{ title }}</h2>
+        {% endif %}
+
         {% block content %}
         {% endblock %}
     </main>

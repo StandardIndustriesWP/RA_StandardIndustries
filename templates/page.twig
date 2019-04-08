@@ -1,6 +1,8 @@
 {% extends 'base.twig' %}
 
 {% block content %}
+    <h2 class="visually-hidden" id="title">{{ post.title }}</h2>
+
     <article class="page page--{{ post.post_type }}" id="page-{{ post.ID }}">
         <section class="page__body">
             <div class="page__content">

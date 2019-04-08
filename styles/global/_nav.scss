@@ -1,0 +1,122 @@
+/*
+ * Global Nav
+ * ======================================================================== */
+
+.global-nav {
+  .menu__list {
+    display: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    @include large-and-up {
+      display: flex;
+    }
+
+    .menu__link {
+      display: inline-block;
+      position: relative;
+      text-decoration: none;
+      transition: color 100ms linear;
+
+      @include large-and-up {
+        @include body-3;
+
+        align-items: center;
+        display: flex;
+        height: $header-height-lg;
+      }
+
+      &:hover {
+        color: $red;
+      }
+    }
+
+    .menu__list-item {
+      @include large-and-up {
+        margin-left: 32px;
+      }
+    }
+
+    .menu-item-has-children {
+      .menu__link {
+        padding-right: 22px;
+
+        &::after {
+          background-image: url('../svgs/carat.svg');
+          background-size: 12px 6px;
+          content: '';
+          height: 6px;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 12px;
+        }
+      }
+
+      &:hover {
+        .menu__link {
+          color: $red;
+        }
+
+        .sub-menu {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  .sub-menu {
+    @include section;
+
+    display: none;
+
+    @include large-and-up {
+      background-color: $white;
+      left: 0;
+      padding: 80px $site-margin-lg;
+      position: absolute;
+      top: $header-height-lg;
+      width: 100%;
+    }
+
+    &__list {
+      @include section-inner;
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      @include large-and-up {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+      }
+    }
+
+    &__list-item {
+      @include news-item;
+
+      width: 48%;
+
+      @include large-and-up {
+        margin-right: 2%;
+        width: 23%;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      &-link:hover {
+        .sub-menu__list-item-title::after {
+          height: 1.2em;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

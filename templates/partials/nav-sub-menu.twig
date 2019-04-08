@@ -1,0 +1,30 @@
+{% if menu %}
+    <div class="sub-menu">
+        <ul class="sub-menu__list">
+            {% for item in menu %}
+                <li class="sub-menu__list-item {{ item.classes|join(' ') }}">
+                    {% if item.link == '#' %}
+                        <span class="sub-menu__list-item-link">
+                            <h5 class="sub-menu__list-item-title">{{ item.title }}</h5>
+                        </span>
+                    {% else %}
+                        <a class="sub-menu__list-item-link" target="{{ item.target }}" href="{{ item.link }}">
+                            {% if item.image %}
+                                <div class="sub-menu__list-item-image">
+                                    <img
+                                        class="sub-menu__list-item-img"
+
+                                        src="{{ Image(item.image).src('large') }}"
+                                        srcset="{{ Image(item.image).srcset }}"
+                                        alt="{{ Image(item.image).alt }}"
+                                    />
+                                </div>
+                            {% endif %}
+                            <h5 class="sub-menu__list-item-title">{{ item.title }}</h5>
+                        </a>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
