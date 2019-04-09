@@ -3,21 +3,23 @@
 {% endblock %}
 
 <body class="{{ body_class }}" data-template="base.twig">
-    {% block header %}
-        {% include 'global/header.twig' %}
-    {% endblock %}
-
-    <main class="global-main" role="main" aria-labelledby="title">
-        {% if title %}
-            <h2 class="visually-hidden" id="title">{{ title }}</h2>
-        {% endif %}
-
-        {% block content %}
+    <div class="app">
+        {% block header %}
+            {% include 'global/header.twig' %}
         {% endblock %}
-    </main>
 
-    {% block footer %}
-        {% include 'global/footer.twig' %}
-    {% endblock %}
+        <main class="global-main" role="main" aria-labelledby="title">
+            {% if title %}
+                <h2 class="visually-hidden" id="title">{{ title }}</h2>
+            {% endif %}
+
+            {% block content %}
+            {% endblock %}
+        </main>
+
+        {% block footer %}
+            {% include 'global/footer.twig' %}
+        {% endblock %}
+    </div>
 </body>
 </html>
