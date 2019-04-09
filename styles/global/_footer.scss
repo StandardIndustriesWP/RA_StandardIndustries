@@ -1,3 +1,52 @@
 /*
  * Global Footer
  * ======================================================================== */
+
+.global-footer {
+  @include section;
+
+  background-color: $black;
+  padding-bottom: 120px;
+
+  &__inner {
+    @include section-inner;
+  }
+
+  &__menu {
+    .menu__list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      .menu__link {
+        color: $white;
+      }
+
+      a.menu__link {
+        color: $gray;
+        text-decoration: none;
+
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+  }
+
+  &__copyright {
+    .menu__list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      a.menu__link {
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+  }
+}

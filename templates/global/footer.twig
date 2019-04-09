@@ -1,10 +1,12 @@
 <footer class="global-footer" role="contentinfo">
-    <div class="global-footer__menu">
-        {% include 'partials/menu.twig' with { 'menu': menu_footer.get_items } %}
-    </div>
+    <div class="global-footer__inner">
+        <div class="global-footer__menu">
+            {% include 'partials/menu.twig' with { 'menu': menu_footer.get_items } %}
+        </div>
 
-    <div class="global-footer__copyright">
-        {% include 'partials/menu.twig' with { 'menu': menu_copyright.get_items } %}
+        <div class="global-footer__copyright">
+            {% include 'partials/menu.twig' with { 'menu': menu_copyright.get_items } %}
+        </div>
     </div>
 </footer>
 
