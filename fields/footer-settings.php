@@ -137,7 +137,7 @@ $modules->add_field_group([
                         'facebook' => 'Facebook',
                         'instagram' => 'Instagram',
                         'linkedin' => 'LinkedIn',
-                        'twitter: Twitter' => 'twitter: Twitter',
+                        'twitter' => 'Twitter',
                     ),
                     'default_value' => array(
                         0 => 'Facebook',

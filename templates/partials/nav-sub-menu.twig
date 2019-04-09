@@ -1,6 +1,6 @@
 {% if menu %}
     <div class="sub-menu">
-        <ul class="sub-menu__list">
+        <ul class="sub-menu__list" role="presentation">
             {% for item in menu %}
                 <li class="sub-menu__list-item {{ item.classes|join(' ') }}">
                     {% if item.link == '#' %}
@@ -8,7 +8,11 @@
                             <h5 class="sub-menu__list-item-title">{{ item.title }}</h5>
                         </span>
                     {% else %}
-                        <a class="sub-menu__list-item-link" target="{{ item.target }}" href="{{ item.link }}">
+                        <a
+                            class="sub-menu__list-item-link"
+                            href="{{ item.link }}"
+                            target="{{ item.target ? item.target : '_self' }}"
+                        >
                             {% if item.image %}
                                 <div class="sub-menu__list-item-image">
                                     <img

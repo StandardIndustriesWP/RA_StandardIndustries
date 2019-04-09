@@ -1,6 +1,6 @@
 {% if posts.pagination.pages is not empty %}
     <nav class="pagination">
-        <ul class="pagination__list">
+        <ul class="pagination__list" role="presentation">
             {% if pagination.pages|first and pagination.pages|first.current != true %}
                 <li class="pagination__list-item pagination__list-item--first">
                     <a href="{{ pagination.pages|first.link }}">First</a>

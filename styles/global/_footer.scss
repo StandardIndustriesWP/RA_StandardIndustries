@@ -43,7 +43,7 @@
       display: block;
 
       .menu__list-item {
-        margin: 0;
+        margin-bottom: 0;
         padding: 0;
         width: auto;
       }
@@ -115,6 +115,7 @@
   &__copyright {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 
     @include large-and-up {
       width: 100%;
@@ -147,12 +148,22 @@
     }
 
     .global-footer__body {
+      margin-bottom: 48px;
+      width: 100%;
+
       @include large-and-up {
+        margin-bottom: 0;
         width: 60%;
       }
 
       p {
         @include body-3;
+      }
+    }
+
+    .social {
+      @include large-and-up {
+        max-width: 40%;
       }
     }
   }
