@@ -118,6 +118,7 @@
     justify-content: space-between;
 
     @include large-and-up {
+      align-items: flex-end;
       width: 100%;
     }
 
@@ -126,7 +127,7 @@
       width: 100%;
 
       @include large-and-up {
-        margin-bottom: 8px;
+        margin-bottom: 16px;
       }
 
       .menu__list-item {
