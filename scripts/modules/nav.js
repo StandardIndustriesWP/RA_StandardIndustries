@@ -43,7 +43,10 @@ class Nav {
     const expanded = trigger.getAttribute('aria-expanded');
 
     // Open this panel
-    trigger.setAttribute('aria-expanded', expanded === 'false' ? 'true' : 'false');
+    trigger.setAttribute(
+      'aria-expanded',
+      expanded === 'false' ? 'true' : 'false'
+    );
     trigger.classList.toggle('.menu__trigger--expanded');
     panel.classList.toggle('sub-menu--expanded');
   }
