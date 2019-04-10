@@ -1,3 +1,5 @@
 <nav class="global-nav" role="navigation">
-    {% include 'partials/nav-menu.twig' with { 'menu': menu_header.get_items } %}
+    <div class="global-nav__inner">
+        {% include 'partials/nav-menu.twig' with { 'menu': menu_header.get_items } %}
+    </div>
 </nav>
