@@ -26,11 +26,38 @@ class Nav {
     window.addEventListener('resize', this.resize, false);
 
     // Bindings
+    this.getPanelFromTrigger = this.getPanelFromTrigger.bind(this);
+    this.getTriggerFromPanel = this.getTriggerFromPanel.bind(this);
     this.togglePanel = this.togglePanel.bind(this);
-
+    this.closePanel = this.closePanel.bind(this);
     this.triggers.forEach((trigger) => {
       trigger.addEventListener('click', () => this.togglePanel(trigger));
     });
+    this.panels.forEach((panel) => {
+      const trigger = this.getTriggerFromPanel(panel);
+
+      panel.addEventListener('mouseout', () => this.closePanel(trigger));
+    });
+  }
+
+  /**
+   * Gets the panel node from the trigger node
+   * @param trigger
+   * @returns {Element | any}
+   */
+  getPanelFromTrigger(trigger) {
+    const panelId = trigger.getAttribute('aria-controls');
+    return this.el.querySelector(`#${panelId}`);
+  }
+
+  /**
+   * Gets the trigger node from the panel node
+   * @param panel
+   * @returns {Element | any}
+   */
+  getTriggerFromPanel(panel) {
+    const triggerId = panel.getAttribute('aria-labelledby');
+    return this.el.querySelector(`#${triggerId}`);
   }
 
   /**
@@ -38,8 +65,7 @@ class Nav {
    * @param trigger
    */
   togglePanel(trigger) {
-    const panelId = trigger.getAttribute('aria-controls');
-    const panel = this.el.querySelector(`#${panelId}`);
+    const panel = this.getPanelFromTrigger(trigger);
     const expanded = trigger.getAttribute('aria-expanded');
 
     // Open this panel
@@ -49,6 +75,21 @@ class Nav {
     );
     trigger.classList.toggle('.menu__trigger--expanded');
     panel.classList.toggle('sub-menu--expanded');
+
+    // Close other panels
+    this.triggers.forEach((current) => {
+      if (current !== trigger) {
+        this.closePanel(current);
+      }
+    });
+  }
+
+  closePanel(trigger) {
+    const panel = this.getPanelFromTrigger(trigger);
+
+    trigger.setAttribute('aria-expanded', 'false');
+    trigger.classList.remove('menu__trigger--expanded');
+    panel.classList.remove('sub-menu--expanded');
   }
 
   /**
