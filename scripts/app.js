@@ -4,7 +4,7 @@ require('core-js/modules/es6.promise');
 require('core-js/modules/es6.array.iterator');
 require('swiped-events');
 
-const Nav = require('./modules/nav');
+const Nav = require('./components/nav');
 const Spotlight = require('./modules/spotlight');
 
 const modules = [Nav, Spotlight];

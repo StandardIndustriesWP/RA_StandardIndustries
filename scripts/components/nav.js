@@ -1,5 +1,6 @@
 'use strict';
 
+const Modal = require('./modal');
 const { MAX_WIDTH_MD } = require('../util/constants');
 
 /**
@@ -8,12 +9,14 @@ const { MAX_WIDTH_MD } = require('../util/constants');
  */
 const selector = '.global-nav';
 
-class Nav {
+class Nav extends Modal {
   /**
    * Component constructor, sets initial state
    * @param el
    */
   constructor(el) {
+    super(el);
+
     // Elements
     this.el = el;
     this.triggers = el.querySelectorAll('.menu__trigger');

@@ -3,28 +3,23 @@
  * ======================================================================== */
 
 .global-nav {
-  background-color: $white;
-  height: 100vh;
-  left: 0;
-  position: fixed;
-  top: 0;
-  transition: opacity 400ms linear;
-  //visibility: hidden;
-  width: 100vw;
-  z-index: 1;
-
-  @include large-and-up {
-    height: auto;
-    position: static;
-    visibility: visible;
-    width: auto;
-  }
-
-  &__inner {
+  .modal__content {
     padding: 112px $site-margin-sm;
 
     @include large-and-up {
+      display: flex;
+      height: auto;
       padding: 0;
+      position: static;
+      visibility: visible;
+      width: auto;
+    }
+  }
+
+  .modal__open,
+  .modal__close {
+    @include large-and-up {
+      display: none;
     }
   }
 

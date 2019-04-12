@@ -1,0 +1,32 @@
+/*
+ * Modal Component
+ * ======================================================================== */
+
+.modal {
+  &--open {
+    overflow: hidden;
+  }
+
+  &__content {
+    display: none;
+
+    &--open {
+      background-color: $white;
+      display: block;
+      height: 100vh;
+      left: 0;
+      position: fixed;
+      top: 0;
+      width: 100vw;
+      z-index: 1;
+    }
+  }
+
+  &__open {
+    //@include btn-reset;
+  }
+
+  &__close {
+    //@include btn-reset;
+  }
+}
