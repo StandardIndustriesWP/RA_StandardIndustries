@@ -205,7 +205,46 @@ class StandardIndustries extends Timber\Site
      */
     public function register_post_types()
     {
-
+        register_post_type('team-member', [
+            'label' => __('Team Member', 'standard-industries'),
+            'description' => __('Team member profiles.', 'standard-industries'),
+            'labels' => [
+                'name'                  => _x('Team Members', 'Post Type General Name', 'standard-industries'),
+                'singular_name'         => _x('Team Member', 'Post Type Singular Name', 'standard-industries'),
+                'menu_name'             => __('Team Members', 'standard-industries'),
+                'name_admin_bar'        => __('Team Members', 'standard-industries'),
+                'archives'              => __('Team Members Archive', 'standard-industries'),
+                'attributes'            => __('Team Members Attributes', 'standard-industries'),
+                'parent_item_colon'     => __('Parent Item:', 'standard-industries'),
+                'all_items'             => __('All Team Members', 'standard-industries'),
+                'add_new_item'          => __('Add New Team Member', 'standard-industries'),
+                'add_new'               => __('Add New', 'standard-industries'),
+                'new_item'              => __('New Team Member', 'standard-industries'),
+                'edit_item'             => __('Edit Team Member', 'standard-industries'),
+                'update_item'           => __('Update Team Member', 'standard-industries'),
+                'view_item'             => __('View Team Member', 'standard-industries'),
+                'view_items'            => __('View Team Members', 'standard-industries'),
+                'search_items'          => __('Search Team Members', 'standard-industries'),
+                'not_found'             => __('Not found', 'standard-industries'),
+                'not_found_in_trash'    => __('Not found in Trash', 'standard-industries'),
+                'featured_image'        => __('Featured Image', 'standard-industries'),
+                'set_featured_image'    => __('Set featured image', 'standard-industries'),
+                'remove_featured_image' => __('Remove featured image', 'standard-industries'),
+                'use_featured_image'    => __('Use as featured image', 'standard-industries'),
+                'insert_into_item'      => __('Insert into Team Member', 'standard-industries'),
+                'uploaded_to_this_item' => __('Uploaded to this Team Member', 'standard-industries'),
+                'items_list'            => __('Team Members list', 'standard-industries'),
+                'items_list_navigation' => __('Team Members list navigation', 'standard-industries'),
+                'filter_items_list'     => __('Filter Team Members list', 'standard-industries')
+            ],
+            'supports' => ['title', 'thumbnail', 'custom-fields', 'revisions'],
+            'hierarchical' => false,
+            'show_ui' => true,
+            'show_in_menu' => true,
+            'menu_position' => 5,
+            'publicly_queryable' => true,
+            'rewrite' => false
+        ]);
     }
 
     /**

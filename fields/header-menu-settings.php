@@ -5,8 +5,8 @@ use RA\Modules;
 $modules = Modules::singleton();
 
 $modules->add_field_group([
-    'key' => 'group_' . md5('header_menu'),
-    'title' => 'Header Menu Fields',
+    'key' => 'group_' . md5('header_menu_settings'),
+    'title' => 'Header Menu Settings',
     'fields' => array(
         array(
             'key' => 'field_5cab5e74fa224',
