@@ -1,0 +1,24 @@
+<section class="team">
+    <div class="team__inner">
+        <div class="team__header">
+            <div class="team__eyebrow">{{ module.eyebrow }}</div>
+            <h3 class="team__heading">{{ module.heading }}</h3>
+        </div>
+        <div class="team__list">
+            {% for item in module.items %}
+                <article class="profiles__item">
+                    <div class="profiles__image">
+                        <img
+                            class="profiles__img"
+                            src="{{ item.team_member.thumbnail.src('large') }}"
+                            srcset="{{ item.team_member.thumbnail.srcset }}"
+                            alt="{{ item.team_member.thumbnail.alt }}"
+                        />
+                    </div>
+                    <h6 class="profiles__heading">{{ item.team_member.title }}</h6>
+                    <div class="profiles__title">{{ item.team_member.meta('title') }}</div>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>

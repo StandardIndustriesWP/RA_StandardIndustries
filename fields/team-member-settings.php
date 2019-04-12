@@ -44,7 +44,7 @@ $modules->add_field_group([
             'min' => 0,
             'max' => 0,
             'layout' => 'table',
-            'button_label' => '',
+            'button_label' => 'Add Link',
             'sub_fields' => array(
                 array(
                     'key' => 'field_5cb0e94e5f484',

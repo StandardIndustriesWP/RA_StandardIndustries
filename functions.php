@@ -238,12 +238,12 @@ class StandardIndustries extends Timber\Site
                 'filter_items_list'     => __('Filter Team Members list', 'standard-industries')
             ],
             'supports' => ['title', 'thumbnail', 'custom-fields', 'revisions'],
-            'hierarchical' => false,
+            'hierarchical' => true,
             'show_ui' => true,
             'show_in_menu' => true,
             'menu_position' => 5,
             'publicly_queryable' => true,
-            'rewrite' => false
+            'rewrite' => false,
         ]);
     }
 
