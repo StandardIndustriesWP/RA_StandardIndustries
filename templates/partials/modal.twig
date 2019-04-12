@@ -1,14 +1,20 @@
 <div class="modal">
-    <div class="modal__content">
+    <div class="modal__inner">
         <span
             class="modal__focus-start"
             tabIndex="0"
         ></span>
-        <button class="modal__close">
-            <span class="visually-hidden">Close</span>
-        </button>
-        {% block modal_content %}
-        {% endblock %}
+        <div class="modal__header">
+            <button class="modal__close">
+                {% block modal_header %}
+                {% endblock %}
+                <span class="visually-hidden">Close</span>
+            </button>
+        </div>
+        <div class="modal__content">
+            {% block modal_content %}
+            {% endblock %}
+        </div>
         <span
             class="modal__focus-end"
             tabIndex="0"

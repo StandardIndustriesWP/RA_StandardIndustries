@@ -3,24 +3,40 @@
  * ======================================================================== */
 
 .global-nav {
-  .modal__content {
-    padding: 112px $site-margin-sm;
-
+  .modal__inner {
     @include large-and-up {
       display: flex;
       height: auto;
-      padding: 0;
       position: static;
       visibility: visible;
       width: auto;
     }
   }
 
+  .modal__content {
+    padding: 48px $site-margin-sm 112px;
+
+    @include large-and-up {
+      padding: 0;
+    }
+  }
+
   .modal__open,
-  .modal__close {
+  .modal__close,
+  .modal__focus-start,
+  .modal__focus-end {
     @include large-and-up {
       display: none;
     }
+  }
+
+  .modal__open {
+    @include btn-reset;
+
+    background-image: url('../svgs/menu-black.svg');
+    background-size: 18px 8px;
+    height: 24px;
+    width: 24px;
   }
 
   .menu__list {

@@ -25,22 +25,30 @@ class Nav extends Modal {
     // State
     this.renderWidth = window.innerWidth;
 
-    // Listeners
-    window.addEventListener('resize', this.resize, false);
-
     // Bindings
+    this.closePanel = this.closePanel.bind(this);
     this.getPanelFromTrigger = this.getPanelFromTrigger.bind(this);
     this.getTriggerFromPanel = this.getTriggerFromPanel.bind(this);
+    this.resize = this.resize.bind(this);
     this.togglePanel = this.togglePanel.bind(this);
-    this.closePanel = this.closePanel.bind(this);
+
+    // Listeners
+    window.addEventListener('resize', this.resize, false);
     this.triggers.forEach((trigger) => {
       trigger.addEventListener('click', () => this.togglePanel(trigger));
     });
-    this.panels.forEach((panel) => {
-      const trigger = this.getTriggerFromPanel(panel);
+  }
 
-      panel.addEventListener('mouseout', () => this.closePanel(trigger));
-    });
+  /**
+   * Closes a menu panel
+   * @param trigger
+   */
+  closePanel(trigger) {
+    const panel = this.getPanelFromTrigger(trigger);
+
+    trigger.setAttribute('aria-expanded', 'false');
+    trigger.classList.remove('menu__trigger--expanded');
+    panel.classList.remove('sub-menu--expanded');
   }
 
   /**
@@ -61,6 +69,24 @@ class Nav extends Modal {
   getTriggerFromPanel(panel) {
     const triggerId = panel.getAttribute('aria-labelledby');
     return this.el.querySelector(`#${triggerId}`);
+  }
+
+  /**
+   * Updates the component when viewport size changes
+   */
+  resize() {
+    if (
+      (this.renderWidth <= MAX_WIDTH_MD && window.innerWidth > MAX_WIDTH_MD) ||
+      (this.renderWidth > MAX_WIDTH_MD && window.innerWidth <= MAX_WIDTH_MD)
+    ) {
+      console.log(window.innerWidth);
+      this.renderWidth = window.innerWidth;
+
+      // Close all panels
+      this.triggers.forEach((current) => {
+        this.closePanel(current);
+      });
+    }
   }
 
   /**
@@ -85,26 +111,6 @@ class Nav extends Modal {
         this.closePanel(current);
       }
     });
-  }
-
-  closePanel(trigger) {
-    const panel = this.getPanelFromTrigger(trigger);
-
-    trigger.setAttribute('aria-expanded', 'false');
-    trigger.classList.remove('menu__trigger--expanded');
-    panel.classList.remove('sub-menu--expanded');
-  }
-
-  /**
-   * Updates the component when viewport size changes
-   */
-  resize() {
-    if (
-      (this.renderWidth <= MAX_WIDTH_MD && window.innerWidth > MAX_WIDTH_MD) ||
-      (this.renderWidth > MAX_WIDTH_MD && window.innerWidth <= MAX_WIDTH_MD)
-    ) {
-      this.renderWidth = window.innerWidth;
-    }
   }
 
   /**

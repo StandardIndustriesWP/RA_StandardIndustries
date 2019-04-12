@@ -26,7 +26,7 @@ class Modal {
   constructor(el) {
     // Elements
     this.el = el;
-    this.content = el.querySelector('.modal__content');
+    this.inner = el.querySelector('.modal__inner');
     this.openTrigger = el.querySelector('.modal__open');
     this.closeTrigger = el.querySelector('.modal__close');
     this.focusStart = el.querySelector('.modal__focus-start');
@@ -35,18 +35,18 @@ class Modal {
     // State
     this.open = false;
 
+    // Bindings
+    this.closeModal = this.closeModal.bind(this);
+    this.handleReverseFocus = this.handleReverseFocus.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
+    this.restartFocus = this.restartFocus.bind(this);
+
     // Listeners
     window.addEventListener('keyup', (e) => {
       if (e.keyCode === 27) {
         this.closeModal();
       }
     });
-
-    // Bindings
-    this.closeModal = this.closeModal.bind(this);
-    this.toggleModal = this.toggleModal.bind(this);
-    this.handleReverseFocus = this.handleReverseFocus.bind(this);
-    this.restartFocus = this.restartFocus.bind(this);
     this.openTrigger.addEventListener('click', this.toggleModal);
     this.closeTrigger.addEventListener('click', this.toggleModal);
     this.focusStart.addEventListener('focus', this.handleReverseFocus);
@@ -59,9 +59,23 @@ class Modal {
   closeModal() {
     if (open) {
       this.open = false;
-      this.content.classList.remove('modal__content--open');
+      this.inner.classList.remove('modal__inner--open');
       document.body.classList.remove('modal--open');
       this.openTrigger.focus();
+    }
+  }
+
+  /**
+   * Sets focus on the last element that focus came from
+   * @param e
+   */
+  handleReverseFocus(e) {
+    const focusableElements = getFocusableChildren(this.inner);
+
+    if (e.relatedTarget === focusableElements[0]) {
+      const lastFocusable = focusableElements[focusableElements.length - 1];
+
+      lastFocusable.focus();
     }
   }
 
@@ -70,7 +84,7 @@ class Modal {
    */
   toggleModal() {
     this.open = !this.open;
-    this.content.classList.toggle('modal__content--open');
+    this.inner.classList.toggle('modal__inner--open');
     document.body.classList.toggle('modal--open');
 
     if (this.open) {
@@ -81,24 +95,10 @@ class Modal {
   }
 
   /**
-   * Sets focus on the last element that focus came from
-   * @param e
-   */
-  handleReverseFocus(e) {
-    const focusableElements = getFocusableChildren(this.content);
-
-    if (e.relatedTarget === focusableElements[0]) {
-      const lastFocusable = focusableElements[focusableElements.length - 1];
-
-      lastFocusable.focus();
-    }
-  }
-
-  /**
    * Focuses the first focusable element on the modal
    */
   restartFocus() {
-    const focusableElements = getFocusableChildren(this.content);
+    const focusableElements = getFocusableChildren(this.inner);
     const firstFocusable = focusableElements[0];
 
     firstFocusable && firstFocusable.focus();
