@@ -12,7 +12,7 @@
                         />
                     </div>
                 {% endif %}
-                <h6 class="team-list__heading">{{ item.team_member.title }}</h6>
+                <h6 class="team-list__name">{{ item.team_member.title }}</h6>
                 <div class="team-list__title">{{ item.team_member.meta('title') }}</div>
                 {% if item.team_member.meta('biography') %}
                     {% set trigger_id = 'bio-trigger-'~loop.index %}

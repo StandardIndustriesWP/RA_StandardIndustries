@@ -39,7 +39,7 @@ $modules->add_module('Intro', 'intro', 'page_modules', [
         ),
         'default_value' => '',
         'tabs' => 'text',
-        'media_upload' => 1,
+        'media_upload' => 0,
         'toolbar' => 'full',
         'delay' => 0,
     ),

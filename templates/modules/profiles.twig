@@ -1,26 +1,35 @@
 <section class="profiles">
     <div class="profiles__inner">
-        {% for item in module.items %}
-            <article class="profiles__item">
-                {% if item.team_member.thumbnail %}
-                    <div class="profiles__image">
-                        <img
-                            class="profiles__img"
-                            src="{{ item.team_member.thumbnail.src('large') }}"
-                            srcset="{{ item.team_member.thumbnail.srcset }}"
-                            alt="{{ item.team_member.thumbnail.alt }}"
-                        />
-                    </div>
-                {% endif %}
-                <h3 class="profiles__heading">{{ item.team_member.title }}</h3>
-                <div class="profiles__title">{{ item.team_member.meta('title') }}</div>
-                {% include 'partials/social.twig' with { 'socials': item.team_member.meta('social_links') } %}
-                {% if item.team_member.meta('biography') %}
-                    <div class="profiles__body">
-                        {{ item.team_member.meta('biography') }}
-                    </div>
-                {% endif %}
-            </article>
-        {% endfor %}
+        {% if module.heading %}
+            <header class="profiles__header">
+                <div class="profiles__heading">
+                    {{ module.heading }}
+                </div>
+            </header>
+        {% endif %}
+        <div class="profiles__items">
+            {% for item in module.items %}
+                <article class="profiles__item">
+                    {% if item.team_member.thumbnail %}
+                        <div class="profiles__image">
+                            <img
+                                class="profiles__img"
+                                src="{{ item.team_member.thumbnail.src('large') }}"
+                                srcset="{{ item.team_member.thumbnail.srcset }}"
+                                alt="{{ item.team_member.thumbnail.alt }}"
+                            />
+                        </div>
+                    {% endif %}
+                    <h3 class="profiles__name">{{ item.team_member.title }}</h3>
+                    <div class="profiles__title">{{ item.team_member.meta('title') }}</div>
+                    {% include 'partials/social.twig' with { 'socials': item.team_member.meta('social_links') } %}
+                    {% if item.team_member.meta('biography') %}
+                        <div class="profiles__body">
+                            {{ item.team_member.meta('biography') }}
+                        </div>
+                    {% endif %}
+                </article>
+            {% endfor %}
+        </div>
     </div>
 </section>

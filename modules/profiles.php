@@ -6,6 +6,25 @@ $modules = Modules::singleton();
 
 $modules->add_module('Profiles', 'profiles', 'page_modules', [
     array(
+        'key' => 'field_5cb4e579775f3',
+        'label' => 'Heading',
+        'name' => 'heading',
+        'type' => 'wysiwyg',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+            'width' => '',
+            'class' => '',
+            'id' => '',
+        ),
+        'default_value' => '',
+        'tabs' => 'text',
+        'media_upload' => 0,
+        'toolbar' => 'full',
+        'delay' => 0,
+    ),
+    array(
         'key' => 'field_5cb0fec6fc182',
         'label' => 'Items',
         'name' => 'items',

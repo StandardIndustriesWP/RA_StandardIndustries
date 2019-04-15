@@ -7,7 +7,23 @@
 
   &__inner {
     @include section-inner;
+  }
 
+  &__header {
+    @include section-header;
+
+    margin-bottom: 48px !important;
+  }
+
+  &__heading {
+    @include clear-last-child;
+
+    p {
+      @include heading-4-alt;
+    }
+  }
+
+  &__items {
     @include medium-and-up {
       display: flex;
       justify-content: space-between;
@@ -46,7 +62,7 @@
     object-position: 50% 0;
   }
 
-  &__heading {
+  &__name {
     @include heading-3-alt-sm;
 
     margin-bottom: 8px;
