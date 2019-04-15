@@ -8,7 +8,7 @@
   &__inner {
     @include section-inner;
 
-    @include large-and-up {
+    @include medium-and-up {
       display: flex;
       justify-content: space-between;
     }
@@ -17,7 +17,7 @@
   &__item {
     margin-bottom: 48px;
 
-    @include large-and-up {
+    @include medium-and-up {
       margin-bottom: 0;
       width: 48%;
     }
@@ -34,7 +34,7 @@
     padding-bottom: 60%;
     width: calc(100% + 56px);
 
-    @include large-and-up {
+    @include medium-and-up {
       margin: 0 0 32px;
       width: 100%;
     }
@@ -51,7 +51,7 @@
 
     margin-bottom: 8px;
 
-    @include large-and-up {
+    @include medium-and-up {
       margin-bottom: 4px;
     }
   }

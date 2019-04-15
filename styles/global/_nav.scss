@@ -150,11 +150,6 @@
       list-style-type: none;
       margin: 0;
       padding: 0;
-
-      @include large-and-up {
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-      }
     }
 
     &__list-item {
@@ -168,7 +163,6 @@
       }
 
       @include large-and-up {
-        margin: 0 2% 0 0;
         width: 23%;
 
         &:last-child {
@@ -181,6 +175,10 @@
           height: 1.2em;
           opacity: 1;
         }
+      }
+
+      &--placeholder {
+        visibility: hidden;
       }
     }
 

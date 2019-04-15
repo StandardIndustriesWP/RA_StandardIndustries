@@ -1,24 +1,26 @@
 <section class="team-list">
     <div class="team-list__inner">
         {% for item in module.items %}
-            <article class="profiles__item">
-                <div class="profiles__image">
-                    <img
-                        class="profiles__img"
-                        src="{{ item.team_member.thumbnail.src('large') }}"
-                        srcset="{{ item.team_member.thumbnail.srcset }}"
-                        alt="{{ item.team_member.thumbnail.alt }}"
-                    />
-                </div>
-                <h6 class="profiles__heading">{{ item.team_member.title }}</h6>
-                <div class="profiles__title">{{ item.team_member.meta('title') }}</div>
+            <article class="team-list__item">
+                {% if item.team_member.thumbnail %}
+                    <div class="team-list__image">
+                        <img
+                            class="team-list__img"
+                            src="{{ item.team_member.thumbnail.src('large') }}"
+                            srcset="{{ item.team_member.thumbnail.srcset }}"
+                            alt="{{ item.team_member.thumbnail.alt }}"
+                        />
+                    </div>
+                {% endif %}
+                <h6 class="team-list__heading">{{ item.team_member.title }}</h6>
+                <div class="team-list__title">{{ item.team_member.meta('title') }}</div>
                 {% if item.team_member.meta('biography') %}
-                    <div class="profiles__body">
+                    <div class="team-list__body">
                         {{ item.team_member.meta('biography') }}
                     </div>
                 {% endif %}
                 {% if item.team_member.meta('biography') %}
-                    <button class="profiles__learn-more">Learn more</button>
+                    <button class="team-list__learn-more">Learn more</button>
                 {% endif %}
             </article>
         {% endfor %}
