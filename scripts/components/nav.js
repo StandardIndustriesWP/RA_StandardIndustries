@@ -86,6 +86,9 @@ class Nav extends Modal {
       this.triggers.forEach((current) => {
         this.closePanel(current);
       });
+
+      // Close the modal
+      this.closeModal();
     }
   }
 
