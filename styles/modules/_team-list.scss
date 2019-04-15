@@ -21,10 +21,6 @@
     @include medium-and-up {
       margin-bottom: 72px;
       width: 48%;
-
-      &:nth-last-child(-n + 2) {
-        margin-bottom: 0;
-      }
     }
 
     @include large-and-up {
