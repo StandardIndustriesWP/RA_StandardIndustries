@@ -15,15 +15,21 @@
                 <h6 class="team-list__heading">{{ item.team_member.title }}</h6>
                 <div class="team-list__title">{{ item.team_member.meta('title') }}</div>
                 {% if item.team_member.meta('biography') %}
-                    <div class="team-list__body">
+                    {% set trigger_id = 'bio-trigger-'~loop.index %}
+                    {% set region_id = 'bio-region-'~loop.index %}
+
+                    <div class="team-list__body" id="{{ region_id }}" role="region">
                         {{ item.team_member.meta('biography') }}
                     </div>
-                {% endif %}
-                {% if item.team_member.meta('biography') %}
-                    <button class="team-list__learn-more">Learn more</button>
+                    <button
+                        class="team-list__learn-more"
+                        id="{{ trigger_id }}"
+                        aria-controls="{{ region_id }}"
+                        aria-expanded="false"
+                    >Learn more</button>
                 {% endif %}
             </article>
         {% endfor %}
-        <div class="team-list__item team-list__item--placeholder">
+        <div class="team-list__item team-list__item--placeholder"></div>
     </div>
 </section>

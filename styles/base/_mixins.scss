@@ -340,6 +340,32 @@
   }
 }
 
+@mixin cta-link {
+  @include btn-reset;
+  @include body-2;
+
+  display: block;
+  padding-bottom: 4px;
+  position: relative;
+
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &::after {
+    background-color: $red;
+    bottom: 0;
+    content: '';
+    height: 1px;
+    left: 0;
+    position: absolute;
+    transition: width 100ms linear;
+    width: 60%;
+  }
+}
+
 @mixin btn-arrow {
   @include btn-reset;
   @include body-3;
@@ -353,9 +379,29 @@
   text-decoration: none;
 
   &:hover {
+    &::before {
+      width: 100%;
+    }
+
     &::after {
       right: 20px;
     }
+  }
+
+  &-label {
+    position: relative;
+    z-index: 1;
+  }
+
+  &::before {
+    background-color: $red;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: width 100ms linear;
+    width: 0;
   }
 
   &::after {
