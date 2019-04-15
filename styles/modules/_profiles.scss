@@ -67,6 +67,10 @@
     @include clear-last-child;
 
     color: $body-gray;
+
+    p {
+      @include heading-6;
+    }
   }
 
   .social__link {
