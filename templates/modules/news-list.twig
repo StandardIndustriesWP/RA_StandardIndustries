@@ -1,0 +1,47 @@
+<section class="news-list">
+    <div class="news-list__inner">
+        <header class="news-list__header">
+            {% if module.eyebrow %}
+                <div class="news-list__eyebrow">{{ module.eyebrow }}</div>
+            {% endif %}
+            <h3 class="news-list__heading">{{ module.heading }}</h3>
+            {% if module.link %}
+                <a
+                    class="business-links__link"
+                    href="{{ module.link.url }}"
+                    target="{{ module.link.target ? module.link.target : '_self' }}"
+                >
+                    {{ module.link.title }}
+                </a>
+            {% endif %}
+        </header>
+        <div class="news-list__items">
+            {% for item in module.items %}
+                <article class="news-list__item {{ item.post.thumbnail ? '' : 'news-list__item--no-image' }}">
+                    <a class="news-list__item-link" href="{{ item.post.path }}">
+                        {% if item.post.thumbnail %}
+                            <div class="news-list__item-image">
+                                <img
+                                    class="news-list__item-img"
+                                    src="{{ item.post.thumbnail.src('large') }}"
+                                    srcset="{{ item.post.thumbnail.srcset }}"
+                                    alt="{{ item.post.thumbnail.alt }}"
+                                />
+                                <div class="news-list__item-category news-list__item-category--absolute">
+                                    {{ item.post.categories[0].name }}
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="news-list__item-category">
+                                {{ item.post.categories[0].name }}
+                            </div>
+                        {% endif %}
+                        <h5 class="news-list__item-title">{{ item.post.title }}</h5>
+                    </a>
+                </article>
+            {% endfor %}
+            <div class="news-list__item news__item--placeholder"></div>
+            <div class="news-list__item news__item--placeholder"></div>
+        </div>
+    </div>
+</section>

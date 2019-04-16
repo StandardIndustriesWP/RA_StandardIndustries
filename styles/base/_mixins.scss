@@ -469,6 +469,11 @@
 
     margin-bottom: 0;
   }
+
+  &--no-image {
+    border-top: 1px solid $line-gray;
+    padding-top: 32px;
+  }
 }
 
 @mixin news-item-inverted {
