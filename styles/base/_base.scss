@@ -69,6 +69,11 @@ p {
   margin-bottom: 1em;
 }
 
+strong {
+  color: $red;
+  font-weight: $weight-regular;
+}
+
 button {
   transition: color 100ms linear;
 }

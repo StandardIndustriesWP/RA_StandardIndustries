@@ -6,7 +6,7 @@
   @include section;
 
   &__inner {
-    width: 100%;
+    @include section-full;
 
     @include medium-and-up {
       display: flex;
@@ -82,7 +82,7 @@
     @include cta-link;
 
     @include large-and-up {
-      margin-top: 8px;
+      margin-top: 4px;
     }
   }
 }

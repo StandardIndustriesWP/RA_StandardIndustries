@@ -16,8 +16,6 @@
   }
 
   &__heading {
-    @include clear-last-child;
-
     p {
       @include heading-4-alt;
     }

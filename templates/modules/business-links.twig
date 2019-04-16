@@ -1,0 +1,44 @@
+<section class="business-links">
+    <div class="business-links__inner">
+        <header class="business-links__header">
+            {% if module.eyebrow %}
+                <div class="business-links__eyebrow">{{ module.eyebrow }}</div>
+            {% endif %}
+            <div class="business-links__heading">{{ module.heading }}</div>
+        </header>
+        <ul class="business-links__list business-links__list-{{ module.items|length }}-up" role="presentation">
+            {% for item in module.items %}
+                <li class="business-links__list-item">
+                    <div class="business-links__image-wrapper">
+                        <div class="business-links__image">
+                            <img
+                                class="business-links__img"
+                                src="{{ Image(item.image).src('large') }}"
+                                srcset="{{ Image(item.image).srcset }}"
+                                alt="{{ Image(item.image).alt }}"
+                            />
+                        </div>
+                        <div class="business-links__logo">
+                            <img
+                                class="business-links__img"
+                                src="{{ Image(item.logo).src('thumbnail') }}"
+                                srcset="{{ Image(item.logo).srcset }}"
+                                alt="{{ Image(item.logo).alt }}"
+                            />
+                        </div>
+                    </div>
+                    <div class="business-links__body">
+                        {{ item.body }}
+                    </div>
+                    <a
+                        class="business-links__link"
+                        href="{{ item.link.url }}"
+                        target="{{ item.link.target ? item.link.target : '_self' }}"
+                    >
+                        {{ item.link.title }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

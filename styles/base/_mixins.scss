@@ -344,9 +344,12 @@
   @include btn-reset;
   @include body-2;
 
-  display: block;
+  color: $black !important;
+  display: inline-block;
   padding-bottom: 4px;
   position: relative;
+  text-align: left;
+  text-decoration: none;
 
   &:hover {
     &::after {
@@ -511,6 +514,11 @@
   @include large-and-up {
     padding: 120px $site-margin-lg;
   }
+}
+
+@mixin section-full {
+  max-width: $max-width-full;
+  width: 100%;
 }
 
 @mixin section-inner {

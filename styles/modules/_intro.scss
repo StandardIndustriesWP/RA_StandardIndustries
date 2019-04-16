@@ -18,10 +18,10 @@
     @include section-inner;
   }
 
-  &__header {
-    @include section-header;
+  &__content {
+    @include clear-last-child;
 
-    margin-bottom: 0;
+    max-width: $max-width-content;
   }
 
   &__eyebrow {
@@ -32,6 +32,8 @@
     p {
       @include heading-4-alt;
     }
+
+    margin-bottom: 24px;
   }
 
   &__body {
