@@ -1,8 +1,8 @@
 /*
- * Hero Module
+ * Feature Article Module
  * ======================================================================== */
 
-.hero {
+.feature-article {
   @include section;
 
   background-color: $black !important;
@@ -34,13 +34,30 @@
 
   &__eyebrow {
     @include eyebrow;
+
+    color: $white;
   }
 
-  &__body {
-    @include clear-last-child;
+  &__heading {
+    @include heading-1-alt;
+  }
 
-    p {
-      @include heading-6;
+  &__link {
+    @include cta-link;
+
+    color: $white !important;
+  }
+
+  &--centered {
+    justify-content: center;
+    text-align: center;
+
+    .feature-article__content {
+      margin: 0 auto;
+    }
+
+    .feature-article__heading {
+      @include heading-2;
     }
   }
 }
