@@ -1,0 +1,51 @@
+/*
+ * Related Articles Module
+ * ======================================================================== */
+
+.related-articles {
+  @include section;
+
+  &__inner {
+    @include section-inner;
+  }
+
+  &__header {
+    @include section-header;
+
+    @include large-and-up {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__heading {
+    @include heading-3;
+
+    margin-bottom: 0;
+
+    @include large-and-up {
+      @include heading-4;
+    }
+  }
+
+  &__items {
+    @include large-and-up {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    @include news-item;
+
+    margin-bottom: 32px;
+
+    @include large-and-up {
+      margin-bottom: 0;
+      width: 31%;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
