@@ -44,6 +44,7 @@
 
   &__item {
     margin-bottom: 32px;
+    width: 100%;
 
     @include medium-and-up {
       width: 48%;

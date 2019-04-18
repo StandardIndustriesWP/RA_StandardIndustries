@@ -49,7 +49,7 @@ $modules->add_module('Stats', 'stats', 'page_modules', [
         'name' => 'statistics',
         'type' => 'repeater',
         'instructions' => '',
-        'required' => 0,
+        'required' => 1,
         'conditional_logic' => 0,
         'wrapper' => array(
             'width' => '',

@@ -53,6 +53,10 @@
         width: 31%;
       }
     }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__image-wrapper {

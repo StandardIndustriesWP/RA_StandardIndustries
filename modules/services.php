@@ -57,9 +57,9 @@ $modules->add_module('Services', 'services', 'page_modules', [
             'id' => '',
         ),
         'collapsed' => '',
-        'min' => 3,
+        'min' => 2,
         'max' => 4,
-        'layout' => 'table',
+        'layout' => 'block',
         'button_label' => 'Add Item',
         'sub_fields' => array(
             array(
