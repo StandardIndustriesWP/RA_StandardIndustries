@@ -83,7 +83,7 @@ $modules->add_module('Mosaic', 'mosaic', 'page_modules', [
                 'name' => 'image',
                 'type' => 'image',
                 'instructions' => '',
-                'required' => 0,
+                'required' => 1,
                 'conditional_logic' => 0,
                 'wrapper' => array(
                     'width' => '',

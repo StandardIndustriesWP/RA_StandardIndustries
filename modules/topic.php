@@ -75,7 +75,7 @@ $modules->add_module('Topic', 'topic', 'page_modules', [
         'min' => 0,
         'max' => 2,
         'layout' => 'table',
-        'button_label' => '',
+        'button_label' => 'Add Item',
         'sub_fields' => array(
             array(
                 'key' => 'field_5c953e174a467',
@@ -83,7 +83,7 @@ $modules->add_module('Topic', 'topic', 'page_modules', [
                 'name' => 'post',
                 'type' => 'post_object',
                 'instructions' => '',
-                'required' => 0,
+                'required' => 1,
                 'conditional_logic' => 0,
                 'wrapper' => array(
                     'width' => '',
