@@ -1,7 +1,9 @@
 <section class="spotlight">
     <div class="spotlight__inner">
         <header class="spotlight__header">
-            <div class="spotlight__eyebrow">{{ module.eyebrow }}</div>
+            {% if module.eyebrow %}
+                <div class="spotlight__eyebrow">{{ module.eyebrow }}</div>
+            {% endif %}
             <h3 class="spotlight__heading">{{ module.heading }}</h3>
         </header>
         <div class="spotlight__slides">
