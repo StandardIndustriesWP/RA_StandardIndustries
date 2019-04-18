@@ -16,9 +16,13 @@
                     <div class="topic__eyebrow">{{ module.eyebrow }}</div>
                 {% endif %}
                 <h3 class="topic__heading">{{ module.heading }}</h3>
-                {% if module.button_link and module.button_label %}
-                    <a class="topic__btn" href="{{ module.button_link }}">
-                        <span class="topic__btn-label">{{ module.button_label }}</span>
+                {% if module.button_link %}
+                    <a
+                        class="topic__btn"
+                        href="{{ module.button_link.url }}"
+                        target="{{ module.button_link.target ? module.button_link.target : '_self' }}"
+                    >
+                        <span class="topic__btn-label">{{ module.button_link.title }}</span>
                     </a>
                 {% endif %}
             </header>
