@@ -3,5 +3,151 @@
  * ======================================================================== */
 
 .info-stack {
+  @include section;
 
+  &__inner {
+    @include section-inner;
+  }
+
+  &__header {
+    @include section-header;
+  }
+
+  &__heading {
+    p {
+      @include heading-4-alt;
+    }
+  }
+
+  &__item {
+    width: 100%;
+  }
+
+  &__image {
+    @include image-wrapper;
+
+    padding-bottom: 60%;
+    width: 100%;
+  }
+
+  &__img {
+    @include image;
+  }
+
+  &__body {
+    @include clear-last-child;
+
+    color: $body-gray;
+  }
+
+  &--rows {
+    .info-stack__header {
+      @include large-and-up {
+        margin-bottom: 96px;
+      }
+    }
+
+    .info-stack__item {
+      margin-bottom: 48px;
+
+      @include large-and-up {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 72px;
+
+        &:nth-child(even) {
+          flex-direction: row-reverse;
+
+          .info-stack__image {
+            @include large-and-up {
+              margin: 0 -72px 0 0;
+            }
+          }
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .info-stack__image {
+      margin: 0 0 32px -28px;
+      width: calc(100% + 56px);
+
+      @include large-and-up {
+        margin: 0 0 0 -72px;
+        padding-bottom: 36%;
+        width: calc(53% + 72px);
+      }
+    }
+
+    .info-stack__details {
+      @include large-and-up {
+        width: 38%;
+      }
+    }
+
+    .info-stack__title {
+      @include heading-2;
+
+      margin-bottom: 8px;
+
+      @include large-and-up {
+        margin-bottom: 24px;
+      }
+    }
+
+    .info-stack__body {
+      @include heading-6;
+    }
+  }
+
+  &--columns {
+    .info-stack__header {
+      margin-bottom: 48px !important;
+    }
+
+    .info-stack__items {
+      @include medium-and-up {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      &--with-heading {
+        .info-stack__item:nth-child(odd) {
+          @include medium-and-up {
+            padding-top: 72px;
+          }
+        }
+      }
+    }
+
+    .info-stack__item {
+      margin-bottom: 48px;
+
+      @include medium-and-up {
+        margin-bottom: 72px;
+        width: 48%;
+
+        &:nth-last-child(n - 2) {
+          margin-bottom: 0;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .info-stack__image {
+      margin-bottom: 24px;
+    }
+
+    .info-stack__title {
+      margin-bottom: 16px;
+    }
+  }
 }

@@ -26,6 +26,14 @@
       display: flex;
       justify-content: space-between;
     }
+
+    &--with-heading {
+      .profiles__item:first-child {
+        @include medium-and-up {
+          padding-top: 72px;
+        }
+      }
+    }
   }
 
   &__item {

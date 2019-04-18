@@ -5,7 +5,7 @@
                 <div class="profiles__heading">{{ module.heading }}</div>
             </header>
         {% endif %}
-        <div class="profiles__items">
+        <div class="profiles__items {{ module.heading ? 'profiles__items--with-heading' : '' }}">
             {% for item in module.items %}
                 <article class="profiles__item">
                     {% if item.team_member.thumbnail %}
