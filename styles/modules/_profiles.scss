@@ -15,6 +15,10 @@
     margin-bottom: 48px !important;
   }
 
+  &__eyebrow {
+    @include eyebrow;
+  }
+
   &__heading {
     p {
       @include heading-4-alt;

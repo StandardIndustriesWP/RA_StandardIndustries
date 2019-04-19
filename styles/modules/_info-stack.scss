@@ -13,6 +13,10 @@
     @include section-header;
   }
 
+  &__eyebrow {
+    @include eyebrow;
+  }
+
   &__heading {
     p {
       @include heading-4-alt;
@@ -20,18 +24,25 @@
   }
 
   &__item {
+    margin-bottom: 48px;
     width: 100%;
   }
 
   &__image {
     @include image-wrapper;
 
+    margin: 0 0 32px -28px;
     padding-bottom: 60%;
     width: 100%;
+    width: calc(100% + 56px);
   }
 
   &__img {
     @include image;
+  }
+
+  &__title {
+    margin-bottom: 16px;
   }
 
   &__body {
@@ -41,15 +52,7 @@
   }
 
   &--rows {
-    .info-stack__header {
-      @include large-and-up {
-        margin-bottom: 96px;
-      }
-    }
-
     .info-stack__item {
-      margin-bottom: 48px;
-
       @include large-and-up {
         align-items: center;
         display: flex;
@@ -73,9 +76,6 @@
     }
 
     .info-stack__image {
-      margin: 0 0 32px -28px;
-      width: calc(100% + 56px);
-
       @include large-and-up {
         margin: 0 0 0 -72px;
         padding-bottom: 36%;
@@ -86,16 +86,6 @@
     .info-stack__details {
       @include large-and-up {
         width: 38%;
-      }
-    }
-
-    .info-stack__title {
-      @include heading-2;
-
-      margin-bottom: 8px;
-
-      @include large-and-up {
-        margin-bottom: 24px;
       }
     }
 
@@ -126,8 +116,6 @@
     }
 
     .info-stack__item {
-      margin-bottom: 48px;
-
       @include medium-and-up {
         margin-bottom: 72px;
         width: 48%;
@@ -143,11 +131,10 @@
     }
 
     .info-stack__image {
-      margin-bottom: 24px;
-    }
-
-    .info-stack__title {
-      margin-bottom: 16px;
+      @include medium-and-up {
+        margin: 0 0 24px;
+        width: 100%;
+      }
     }
   }
 }

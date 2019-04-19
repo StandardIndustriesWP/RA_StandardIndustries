@@ -6,6 +6,25 @@ $modules = Modules::singleton();
 
 $modules->add_module('Related Articles', 'related-articles', 'page_modules', [
     array(
+        'key' => 'field_5cb9e289ef6df',
+        'label' => 'Eyebrow',
+        'name' => 'eyebrow',
+        'type' => 'text',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+            'width' => '',
+            'class' => '',
+            'id' => '',
+        ),
+        'default_value' => '',
+        'placeholder' => '',
+        'prepend' => '',
+        'append' => '',
+        'maxlength' => '',
+    ),
+    array(
         'key' => 'field_5cb74e9145962',
         'label' => 'Heading',
         'name' => 'heading',

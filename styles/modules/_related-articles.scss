@@ -17,6 +17,10 @@
     }
   }
 
+  &__eyebrow {
+    @include eyebrow;
+  }
+
   &__heading {
     @include heading-3;
 

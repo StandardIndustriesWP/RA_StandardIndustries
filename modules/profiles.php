@@ -6,6 +6,25 @@ $modules = Modules::singleton();
 
 $modules->add_module('Profiles', 'profiles', 'page_modules', [
     array(
+        'key' => 'field_5cb9e27aef6de',
+        'label' => 'Eyebrow',
+        'name' => 'eyebrow',
+        'type' => 'text',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+            'width' => '',
+            'class' => '',
+            'id' => '',
+        ),
+        'default_value' => '',
+        'placeholder' => '',
+        'prepend' => '',
+        'append' => '',
+        'maxlength' => '',
+    ),
+    array(
         'key' => 'field_5cb4e579775f3',
         'label' => 'Heading',
         'name' => 'heading',

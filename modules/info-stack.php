@@ -6,6 +6,25 @@ $modules = Modules::singleton();
 
 $modules->add_module('Info Stack', 'info-stack', 'page_modules', [
     array(
+        'key' => 'field_5cb9e219e1290',
+        'label' => 'Eyebrow',
+        'name' => 'eyebrow',
+        'type' => 'text',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+            'width' => '',
+            'class' => '',
+            'id' => '',
+        ),
+        'default_value' => '',
+        'placeholder' => '',
+        'prepend' => '',
+        'append' => '',
+        'maxlength' => '',
+    ),
+    array(
         'key' => 'field_5cb8ccdbc0daf',
         'label' => 'Heading',
         'name' => 'heading',

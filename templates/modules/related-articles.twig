@@ -1,6 +1,9 @@
 <section class="related-articles">
     <div class="related-articles__inner">
         <header class="related-articles__header">
+            {% if module.eyebrow %}
+                <div class="related-articles__eyebrow">{{ module.eyebrow }}</div>
+            {% endif %}
             <h4 class="related-articles__heading">{{ module.heading }}</h4>
         </header>
         <div class="related-articles__items">

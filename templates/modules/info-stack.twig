@@ -1,8 +1,13 @@
 <section class="info-stack info-stack--{{ module.type }}">
     <div class="info-stack__inner">
-        {% if module.heading %}
+        {% if module.eyebrow or module.heading%}
             <header class="info-stack__header">
-                <div class="info-stack__heading">{{ module.heading }}</div>
+                {% if module.eyebrow %}
+                    <div class="info-stack__eyebrow">{{ module.eyebrow }}</div>
+                {% endif %}
+                {% if module.heading %}
+                    <div class="info-stack__heading">{{ module.heading }}</div>
+                {% endif %}
             </header>
         {% endif %}
         <div class="info-stack__items {{ module.heading ? 'info-stack__items--with-heading' : '' }}">
