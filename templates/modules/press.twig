@@ -1,5 +1,45 @@
 <section class="press">
     <div class="press__inner">
+        <div class="press__eyebrow">{{ module.eyebrow }}</div>
 
+        <div class="press__slides" id="press-slides" aria-live="polite">
+            {% for item in module.items %}
+                <article
+                    class="press__slide {{ loop.index == 1 ? 'press__slide--active' : '' }}"
+                    style="transform: translateX(calc(-{{ loop.index0 }} * 100%))"
+                    data-slide="{{ loop.index }}"
+                >
+                    <div class="press__quote">{{ item.quote }}</div>
+                    <a
+                        class="press__link"
+                        href="{{ item.link.url }}"
+                        target="{{ item.link.target ? item.link.target : '_self' }}"
+                    >
+                        {{ item.link.title }}
+                    </a>
+                </article>
+            {% endfor %}
+        </div>
+
+        <div class="press__nav" aria-controls="press-slides">
+            {% for item in module.items %}
+                <div
+                    class="press__nav-item  {{ loop.index == 1 ? 'press__nav-item--active' : '' }}"
+                    data-nav="{{ loop.index }}"
+                >
+                    <button class="press__nav-btn">
+                        <div class="press__image">
+                            <img
+                                class="press__img"
+                                src="{{ Image(item.logo).src('large') }}"
+                                srcset="{{ Image(item.logo).srcset }}"
+                                alt="{{ Image(item.logo).alt }}"
+                            />
+                        </div>
+                        <span class="visually-hidden">{{ item.name }}</span>
+                    </button>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </section>

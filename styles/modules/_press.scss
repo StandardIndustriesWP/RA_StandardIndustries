@@ -3,5 +3,116 @@
  * ======================================================================== */
 
 .press {
+  @include section;
 
+  background-color: $black !important;
+  color: $white;
+  text-align: center;
+
+  &__inner {
+    @include section-inner;
+  }
+
+  &__eyebrow {
+    @include eyebrow;
+
+    color: $white;
+  }
+
+  &__slides {
+    align-items: stretch;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 72px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  &__slide {
+    @include flex-column;
+
+    flex-grow: 0;
+    flex-shrink: 0;
+    opacity: 0;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    transition: opacity 400ms linear;
+    width: 100%;
+
+    &--active {
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+
+  &__quote {
+    @include clear-last-child;
+
+    margin-bottom: 32px !important;
+    max-width: $max-width-slide;
+
+    p {
+      @include heading-1-alt;
+    }
+  }
+
+  &__link {
+    @include cta-link;
+
+    color: $white !important;
+  }
+
+  &__nav {
+    border: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    @include large-and-up {
+      justify-content: space-between;
+    }
+
+    &-item {
+      display: none;
+      margin: 0 20px;
+      opacity: 0.5;
+      padding-bottom: 24px;
+      width: 150px;
+
+      @include large-and-up {
+        display: block;
+        padding-bottom: 36px;
+      }
+
+      &--active {
+        border-bottom: 2px solid $red;
+        display: block;
+        opacity: 1;
+      }
+    }
+
+    &-btn {
+      @include btn-reset;
+
+      width: 100%;
+    }
+  }
+
+  &__image {
+    @include image-wrapper;
+
+    padding-bottom: 30%;
+    width: 100%;
+  }
+
+  &__img {
+    @include image;
+
+    background-position: center center;
+    object-fit: contain;
+  }
 }

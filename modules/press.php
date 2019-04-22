@@ -44,6 +44,25 @@ $modules->add_module('Press', 'press', 'page_modules', [
         'button_label' => 'Add Item',
         'sub_fields' => array(
             array(
+                'key' => 'field_5cbdce1248048',
+                'label' => 'Name',
+                'name' => 'name',
+                'type' => 'text',
+                'instructions' => '',
+                'required' => 1,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'maxlength' => '',
+            ),
+            array(
                 'key' => 'field_5cba312c864b3',
                 'label' => 'Quote',
                 'name' => 'quote',

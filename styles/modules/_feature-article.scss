@@ -40,6 +40,8 @@
 
   &__heading {
     @include heading-1-alt;
+
+    margin-bottom: 32px !important;
   }
 
   &__link {
