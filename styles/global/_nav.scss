@@ -3,6 +3,12 @@
  * ======================================================================== */
 
 .global-nav {
+  .global-header__link {
+    @include large-and-up {
+      display: none;
+    }
+  }
+
   .modal__inner {
     @include large-and-up {
       display: flex;
