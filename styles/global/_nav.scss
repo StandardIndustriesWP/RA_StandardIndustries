@@ -97,22 +97,6 @@
 
     .menu-item-has-children {
       @include large-and-up {
-        .menu__link {
-          padding-right: 22px;
-
-          &::after {
-            background-image: url('../svgs/carat.svg');
-            background-size: 12px 6px;
-            content: '';
-            height: 6px;
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 12px;
-          }
-        }
-
         &:hover {
           .menu__link {
             color: $red;
@@ -121,6 +105,39 @@
           .sub-menu {
             display: flex;
           }
+        }
+      }
+
+      .menu__link {
+        &::after {
+          background-image: url('../svgs/carat.svg');
+          background-size: 18px 9px;
+          content: '';
+          height: 9px;
+          position: absolute;
+          right: -32px;
+          top: 50%;
+          transform: translateY(-50%) rotate(-90deg);
+          transition: transform 100ms linear;
+          width: 18px;
+        }
+
+        @include large-and-up {
+          padding-right: 22px;
+
+          &::after {
+            background-size: 12px 6px;
+            height: 6px;
+            right: 0;
+            transform: translateY(-50%) rotate(0);
+            width: 12px;
+          }
+        }
+      }
+
+      .menu__trigger--expanded {
+        &::after {
+          transform: translateY(-50%) rotate(0);
         }
       }
     }
@@ -184,6 +201,10 @@
 
     &--expanded {
       display: flex;
+
+      @include large-and-up {
+        display: none;
+      }
     }
   }
 }

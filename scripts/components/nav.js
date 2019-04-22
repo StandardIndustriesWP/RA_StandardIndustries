@@ -104,7 +104,7 @@ class Nav extends Modal {
       'aria-expanded',
       expanded === 'false' ? 'true' : 'false'
     );
-    trigger.classList.toggle('.menu__trigger--expanded');
+    trigger.classList.toggle('menu__trigger--expanded');
     panel.classList.toggle('sub-menu--expanded');
 
     // Close other panels
