@@ -1,6 +1,17 @@
 'use strict';
 
 /**
+ * Var to hold the slide timer
+ */
+let pressTimer;
+
+/**
+ * Slide interval timeout
+ * @type {number}
+ */
+const pressTimeout = 5000;
+
+/**
  * The element selector
  * @type {string}
  */
@@ -35,11 +46,13 @@ class Press {
       button.addEventListener('click', () => {
         this.activeSlide = i;
         this.setActiveSlide();
+        clearInterval(pressTimer);
       });
     });
 
     // Initialize
     this.setActiveSlide();
+    pressTimer = setInterval(this.nextSlide, pressTimeout);
   }
 
   /**
