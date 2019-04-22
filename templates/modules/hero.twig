@@ -7,6 +7,16 @@
             alt="{{ Image(module.background_image).alt }}"
         />
     </div>
+    {% if module.logo %}
+        <div class="hero__logo">
+            <img
+                class="hero__img"
+                src="{{ Image(module.logo).src('thumbnail') }}"
+                srcset="{{ Image(module.logo).srcset }}"
+                alt="{{ Image(module.logo).alt }}"
+            />
+        </div>
+    {% endif %}
     <div class="hero__inner">
         <div class="hero__content">
             {% if module.eyebrow %}

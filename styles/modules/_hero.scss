@@ -18,6 +18,14 @@
     }
   }
 
+  &__logo {
+    bottom: 0;
+    padding-bottom: 12%;
+    position: absolute;
+    right: 0;
+    width: 12%;
+  }
+
   &__img {
     @include image;
   }
