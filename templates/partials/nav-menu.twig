@@ -1,5 +1,11 @@
 {% extends 'partials/modal.twig' %}
 
+{% block modal_header %}
+    <a class="global-header__link" href="{{ site.url }}" rel="home">
+        <span class="visually-hidden">{{ site.name }}</span>
+    </a>
+{% endblock %}
+
 {% block modal_content %}
     {% if menu %}
         <ul class="menu__list" role="presentation">

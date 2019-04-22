@@ -6,10 +6,10 @@
         ></span>
         <div class="modal__header">
             <button class="modal__close">
-                {% block modal_header %}
-                {% endblock %}
                 <span class="visually-hidden">Close</span>
             </button>
+            {% block modal_header %}
+            {% endblock %}
         </div>
         <div class="modal__content">
             {% block modal_content %}
