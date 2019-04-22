@@ -5,9 +5,8 @@
         <div class="press__slides" id="press-slides" aria-live="polite">
             {% for item in module.items %}
                 <article
-                    class="press__slide {{ loop.index == 1 ? 'press__slide--active' : '' }}"
+                    class="press__slide"
                     style="transform: translateX(calc(-{{ loop.index0 }} * 100%))"
-                    data-slide="{{ loop.index }}"
                 >
                     <div class="press__quote">{{ item.quote }}</div>
                     <a
@@ -23,10 +22,7 @@
 
         <div class="press__nav" aria-controls="press-slides">
             {% for item in module.items %}
-                <div
-                    class="press__nav-item  {{ loop.index == 1 ? 'press__nav-item--active' : '' }}"
-                    data-nav="{{ loop.index }}"
-                >
+                <div class="press__nav-item">
                     <button class="press__nav-btn">
                         <div class="press__image">
                             <img
