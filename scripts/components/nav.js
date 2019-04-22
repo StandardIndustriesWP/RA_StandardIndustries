@@ -79,7 +79,6 @@ class Nav extends Modal {
       (this.renderWidth <= MAX_WIDTH_MD && window.innerWidth > MAX_WIDTH_MD) ||
       (this.renderWidth > MAX_WIDTH_MD && window.innerWidth <= MAX_WIDTH_MD)
     ) {
-      console.log(window.innerWidth);
       this.renderWidth = window.innerWidth;
 
       // Close all panels
