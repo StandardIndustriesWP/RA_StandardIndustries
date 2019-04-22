@@ -20,10 +20,20 @@
 
   &__logo {
     bottom: 0;
-    padding-bottom: 12%;
+    padding-bottom: 96px;
     position: absolute;
     right: 0;
-    width: 12%;
+    width: 96px;
+
+    @include medium-and-up {
+      padding-bottom: 12%;
+      width: 12%;
+    }
+
+    @include extra-large-only {
+      padding-bottom: 160px;
+      width: 160px;
+    }
   }
 
   &__img {
