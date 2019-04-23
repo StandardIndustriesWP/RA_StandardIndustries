@@ -1,0 +1,11 @@
+/*
+ * Contact Form Module
+ * ======================================================================== */
+
+.contact-form {
+  @include section;
+
+  &__inner {
+    @include section-inner;
+  }
+}

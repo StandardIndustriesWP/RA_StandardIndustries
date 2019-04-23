@@ -19,7 +19,7 @@ $modules->add_module('Contact List', 'contact-list', 'page_modules', [
             'id' => '',
         ),
         'collapsed' => '',
-        'min' => 0,
+        'min' => 1,
         'max' => 0,
         'layout' => 'block',
         'button_label' => 'Add Item',
