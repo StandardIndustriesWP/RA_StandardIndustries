@@ -42,7 +42,12 @@
     background-image: url('../svgs/menu-black.svg');
     background-size: 18px 8px;
     height: 24px;
+    margin-left: 24px;
     width: 24px;
+
+    @include large-and-up {
+      margin-left: 32px;
+    }
   }
 
   .menu__list {

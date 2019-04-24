@@ -37,4 +37,15 @@
       width: 116px;
     }
   }
+
+  &__nav {
+    align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
+    @include large-and-up {
+      flex-direction: row;
+    }
+  }
 }
