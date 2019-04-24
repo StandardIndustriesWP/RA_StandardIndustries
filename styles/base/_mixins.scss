@@ -419,12 +419,31 @@
     transition: right 100ms linear;
     width: 20px;
   }
+
+  input[type="submit"] {
+    @include btn-reset;
+
+    position: relative;
+    z-index: 1;
+  }
 }
 
 @mixin btn-arrow-inverted {
   @include btn-arrow;
 
   background-color: transparent;
+}
+
+@mixin btn-arrow-outline {
+  @include btn-arrow;
+
+  background-color: transparent;
+  border-color: $black;
+  color: $black !important;
+
+  &::after {
+    background-image: url('../svgs/arrow-black.svg');
+  }
 }
 
 @mixin news-item {

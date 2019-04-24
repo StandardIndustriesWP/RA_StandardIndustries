@@ -8,4 +8,36 @@
   &__inner {
     @include section-inner;
   }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    @include heading-1-alt;
+
+    appearance: none;
+    border: 0;
+    border-bottom: 1px solid $line-gray;
+    border-radius: 0;
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    resize: none;
+    width: 100%;
+
+    &::placeholder {
+      color: $gray;
+    }
+  }
+
+  input[type="email"] {
+    color: $red;
+  }
+
+  textarea {
+    border-bottom: none;
+  }
+
+  &__submit {
+    @include btn-arrow-outline;
+  }
 }
