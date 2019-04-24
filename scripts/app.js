@@ -7,10 +7,11 @@ require('swiped-events');
 const ContactForm = require('./modules/contact-form');
 const Nav = require('./components/nav');
 const Press = require('./modules/press');
+const Search = require('./components/search');
 const Spotlight = require('./modules/spotlight');
 const TeamList = require('./modules/team-list');
 
-const modules = [ContactForm, Nav, Press, Spotlight, TeamList];
+const modules = [ContactForm, Nav, Press, Search, Spotlight, TeamList];
 
 // Initialize all modules
 modules.forEach((module) => {
