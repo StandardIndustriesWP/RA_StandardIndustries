@@ -21,6 +21,10 @@
     @include eyebrow;
   }
 
+  &__title {
+    @include heading-1-alt;
+  }
+
   &__heading {
     margin-bottom: 16px;
 
