@@ -1,0 +1,11 @@
+/*
+ * Article Module
+ * ======================================================================== */
+
+.article {
+  @include section;
+
+  &__inner {
+    @include section-inner;
+  }
+}
