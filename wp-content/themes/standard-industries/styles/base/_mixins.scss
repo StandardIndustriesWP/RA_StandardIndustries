@@ -247,7 +247,7 @@
   font-size: 64px;
   line-height: 1.13;
 
-  @include large-and-up {
+  @include medium-and-up {
     font-size: 110px;
     line-height: 1;
   }
@@ -260,7 +260,7 @@
   font-size: 56px;
   line-height: 1.14;
 
-  @include large-and-up {
+  @include medium-and-up {
     font-size: 88px;
     line-height: 1;
   }

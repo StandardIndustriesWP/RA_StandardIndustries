@@ -1,6 +1,6 @@
 'use strict';
 
-const { MAX_WIDTH_MD } = require('../util/constants');
+const { MAX_WIDTH_SM } = require('../util/constants');
 
 /**
  * The element selector
@@ -51,7 +51,7 @@ class Spotlight {
    * @returns {string}
    */
   getWrapperWidth() {
-    if (this.renderWidth <= MAX_WIDTH_MD) {
+    if (this.renderWidth <= MAX_WIDTH_SM) {
       return `calc(${this.slideCount} * (100% + 16px))`;
     } else {
       return `calc(${this.slideCount} * 62%`;
@@ -83,8 +83,8 @@ class Spotlight {
    */
   resize() {
     if (
-      (this.renderWidth <= MAX_WIDTH_MD && window.innerWidth > MAX_WIDTH_MD) ||
-      (this.renderWidth > MAX_WIDTH_MD && window.innerWidth <= MAX_WIDTH_MD)
+      (this.renderWidth <= MAX_WIDTH_SM && window.innerWidth > MAX_WIDTH_SM) ||
+      (this.renderWidth > MAX_WIDTH_SM && window.innerWidth <= MAX_WIDTH_SM)
     ) {
       this.renderWidth = window.innerWidth;
       this.setWrapperWidth();

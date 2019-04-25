@@ -31,7 +31,7 @@
     margin-right: 16px;
     width: 100%;
 
-    @include large-and-up {
+    @include medium-and-up {
       margin-right: 0;
     }
 
@@ -47,7 +47,7 @@
       transition: transform 400ms ease-out, opacity 400ms linear;
       width: 100%;
 
-      @include large-and-up {
+      @include medium-and-up {
         transform: scale(0.9);
       }
 
@@ -99,7 +99,7 @@
         }
       }
 
-      @include large-and-up {
+      @include medium-and-up {
         @include heading-2;
 
         bottom: 40px;
@@ -144,15 +144,16 @@
   }
 
   &__nav {
-    display: none;
+    bottom: -48px;
+    display: flex;
     height: 40px;
     position: absolute;
-    right: 0;
-    top: 87%;
+    right: -28px;
     width: 80px;
 
     @include large-and-up {
-      display: flex;
+      bottom: auto;
+      top: 87%;
     }
 
     &-btn {

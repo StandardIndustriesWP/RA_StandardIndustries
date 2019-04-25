@@ -48,6 +48,10 @@
     margin-bottom: 32px;
     width: 100%;
 
+    @include medium-and-up {
+      width: 31%;
+    }
+
     @include large-and-up {
       margin: 0 0 0 3%;
       width: 27%;

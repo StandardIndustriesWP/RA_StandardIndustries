@@ -135,5 +135,13 @@
       padding-bottom: 120px;
       padding-top: 120px;
     }
+
+    .topic__header {
+      margin: 24px 0;
+
+      @include large-and-up {
+        margin: 60px 0;
+      }
+    }
   }
 }
