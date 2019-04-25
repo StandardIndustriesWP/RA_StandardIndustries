@@ -157,7 +157,7 @@ class StandardIndustries extends Timber\Site
      */
     public function disable_search_results_pages($query) {
         if (!is_admin() && $query->is_search) {
-            //$query->set('post_type', 'post');
+            $query->set('post_type', 'post');
         }
         return $query;
     }
