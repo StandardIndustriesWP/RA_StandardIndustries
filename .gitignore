@@ -7,9 +7,6 @@
 Thumbs.db
 .idea/
 
-# ignore plugins folder
-wp-content/plugins/*
-
 # wordpress specific
 wp-config.php
 wp-content/uploads/
