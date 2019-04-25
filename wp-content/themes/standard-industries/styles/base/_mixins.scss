@@ -444,6 +444,19 @@
   &::after {
     background-image: url('../svgs/arrow-black.svg');
   }
+
+  &:hover {
+    border-color: $white;
+    color: $white !important;
+
+    &::after {
+      background-image: url('../svgs/arrow-white.svg');
+    }
+
+    input[type="submit"] {
+      color: $white;
+    }
+  }
 }
 
 @mixin news-item {

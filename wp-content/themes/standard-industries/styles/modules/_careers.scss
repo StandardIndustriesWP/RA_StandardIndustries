@@ -8,7 +8,7 @@
   &__inner {
     @include section-inner;
 
-    @include large-and-up {
+    @include medium-and-up {
       align-items: center;
       display: flex;
       justify-content: space-between;
@@ -18,7 +18,7 @@
   &__header {
     @include section-header;
 
-    @include large-and-up {
+    @include medium-and-up {
       margin-bottom: 0;
       width: 50%;
     }
@@ -48,7 +48,7 @@
     margin: 0;
     padding: 0;
 
-    @include large-and-up {
+    @include medium-and-up {
       width: 36%;
     }
   }

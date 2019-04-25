@@ -20,6 +20,10 @@
 
     width: 100%;
 
+    @include medium-and-up {
+      margin-bottom: 16px;
+    }
+
     @include large-and-up {
       margin-bottom: 72px;
       width: 34%;
@@ -44,17 +48,22 @@
 
   &__item {
     margin-bottom: 32px;
+    position: relative;
     width: 100%;
 
     @include medium-and-up {
       width: 48%;
 
-      &:nth-last-child(-n + 2) {
-        margin-bottom: 0;
+      &:nth-child(even) {
+        top: 32px;
       }
     }
 
     @include large-and-up {
+      &:nth-child(even) {
+        top: 0;
+      }
+
       &:nth-child(2) {
         width: 60%;
       }

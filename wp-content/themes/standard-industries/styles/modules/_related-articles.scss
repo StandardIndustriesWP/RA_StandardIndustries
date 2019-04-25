@@ -32,7 +32,7 @@
   }
 
   &__items {
-    @include large-and-up {
+    @include medium-and-up {
       display: flex;
       justify-content: space-between;
     }
@@ -43,7 +43,7 @@
 
     margin-bottom: 32px;
 
-    @include large-and-up {
+    @include medium-and-up {
       margin-bottom: 0;
       width: 31%;
     }

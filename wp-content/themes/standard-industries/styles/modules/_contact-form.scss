@@ -42,14 +42,14 @@
       padding-bottom: 32px;
     }
 
+    &:focus {
+      color: $red;
+    }
+
     &::placeholder {
       color: $gray;
       opacity: 0.3;
     }
-  }
-
-  input[type="email"] {
-    color: $red;
   }
 
   textarea {
