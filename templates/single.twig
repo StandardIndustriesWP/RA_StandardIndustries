@@ -2,22 +2,17 @@
 
 {% block content %}
     <article class="post post-{{ post.post_type }}" id="post-{{ post.ID }}">
-        {% if post.get_thumbnail %}
-            <img src="{{ post.thumbnail.src|resize(1200, 300) }}" alt="" />
-        {% endif %}
-
-        <section class="post__body">
+        <div class="post__body">
             <h1>{{ post.title }}</h1>
             <a href="{{ post.edit_link }}">{{ _e('Edit') }}</a>
             <p>
                 <span>By</span>
                 <a href="{{ post.author.path }}">{{ post.author.name }}</a>
-                <span>&bull;</span>
-                {{ post.date }}
+                <span>{{ post.date }}</span>
             </p>
             <div class="post__content">
                 {{ post.content }}
             </div>
-        </section>
+        </div>
     </article>
 {% endblock %}

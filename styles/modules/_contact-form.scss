@@ -9,13 +9,26 @@
     @include section-inner;
   }
 
+  label {
+    @include heading-5-alt;
+
+    display: block;
+    margin-bottom: 16px;
+
+    @include large-and-up {
+      margin-bottom: 24px;
+    }
+  }
+
   input[type="text"],
   input[type="email"],
   input[type="tel"],
+  input[type="password"],
   textarea {
     @include heading-1-alt;
 
     appearance: none;
+    background-color: transparent;
     border: 0;
     border-bottom: 1px solid $line-gray;
     border-radius: 0;
@@ -31,6 +44,7 @@
 
     &::placeholder {
       color: $gray;
+      opacity: 0.3;
     }
   }
 

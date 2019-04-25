@@ -28,6 +28,10 @@
     @include eyebrow;
   }
 
+  &__title {
+    margin-bottom: 24px;
+  }
+
   &__heading {
     p {
       @include heading-4-alt;

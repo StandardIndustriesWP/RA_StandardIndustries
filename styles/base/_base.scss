@@ -87,13 +87,15 @@ main {
   z-index: 1;
 }
 
-section {
-  &:nth-child(even) {
-    background-color: $white;
-  }
+.page__content {
+  section {
+    &:nth-child(odd) {
+      background-color: $white;
+    }
 
-  &:nth-child(odd) {
-    background-color: $off-white;
+    &:nth-child(even) {
+      background-color: $off-white;
+    }
   }
 }
 

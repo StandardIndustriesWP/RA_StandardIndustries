@@ -4,12 +4,12 @@
     <h2 class="visually-hidden" id="title">{{ post.title }}</h2>
 
     <article class="page page--{{ post.post_type }}" id="page-{{ post.ID }}">
-        <section class="page__body">
+        <div class="page__body">
             <div class="page__content">
                 {% for module in post.get_field('content_modules') %}
                     {% include 'modules/'~module.acf_fc_layout~'.twig' with { 'module': module } %}
                 {% endfor %}
             </div>
-        </section>
+        </div>
     </article>
 {% endblock %}

@@ -62,6 +62,9 @@ class StandardIndustries extends Timber\Site
         add_action('admin_menu', [$this, 'disable_comments_admin_menu']);
         add_action('init', [$this, 'disable_comments_init']);
 
+        // Disable pages in search
+        add_filter('pre_get_posts', [$this, 'disable_search_results_pages']);
+
         // Enqueue theme files
         add_action('wp_enqueue_scripts', [$this, 'enqueue_theme']);
 
@@ -145,6 +148,18 @@ class StandardIndustries extends Timber\Site
     public function disable_comments_status()
     {
         return false;
+    }
+
+    /**
+     * Removes pages from search results
+     * @param $query
+     * @return mixed
+     */
+    public function disable_search_results_pages($query) {
+        if (!is_admin() && $query->is_search) {
+            //$query->set('post_type', 'post');
+        }
+        return $query;
     }
 
     /**

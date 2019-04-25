@@ -1,9 +1,13 @@
 {% extends "base.twig" %}
 
 {% block content %}
-    <div class="page page--plugin">
-        <section class="page__body">
-            {{ content }}
-        </section>
-    </div>
+    <h2 class="visually-hidden" id="title">{{ post.title }}</h2>
+
+    <article class="page page--plugin">
+        <div class="page__body">
+            <div class="page__content">
+                {{ content }}
+            </div>
+        </div>
+    </article>
 {% endblock %}
