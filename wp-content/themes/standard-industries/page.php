@@ -11,23 +11,28 @@ $context = Timber::get_context();
 
 $post = new TimberPost();
 
-// Get the category from the first news list and paginate
+// Get the category from the first post list and paginate
 $modules = get_field('content_modules', $post->ID);
 if ($modules) {
-    $news_lists = array_keys(array_column($modules, 'acf_fc_layout'), 'news-list');
-    $category =  count($news_lists) ? $modules[$news_lists[0]]['category'] : 1;
-    if ($category && count($news_lists) === 1) {
-        $args = [
-            'post_type' => 'post',
-            'cat' => $category,
-            'posts_per_page' => 12,
-            'paged' => $page
-        ];
-        $posts = new Timber\PostQuery($args);
+    $post_lists = array_keys(array_column($modules, 'acf_fc_layout'), 'news-list');
+    if (count($post_lists) >= 1) {
+        $posts = [];
+        foreach ($post_lists as $post_list) {
+            $category = $modules[$post_list]['category'];
+            if ($category) {
+                $args = [
+                    'post_type' => 'post',
+                    'cat' => $category,
+                    'posts_per_page' => 1,
+                    'paged' => $page
+                ];
+                $posts[$category] = new Timber\PostQuery($args);
+            }
+        }
     }
 }
 
-$context['posts'] = $posts ?: null;
+$context['items'] = isset($posts) ? $posts : null;
 
 $context['post'] = $post;
 
