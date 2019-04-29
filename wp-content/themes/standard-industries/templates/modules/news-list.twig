@@ -16,32 +16,20 @@
             {% endif %}
         </header>
         <div class="news-list__items">
-            {% for item in module.items %}
-                <article class="news-list__item {{ item.post.thumbnail ? '' : 'news-list__item--no-image' }}">
-                    <a class="news-list__item-link" href="{{ item.post.path }}">
-                        {% if item.post.thumbnail %}
-                            <div class="news-list__item-image">
-                                <img
-                                    class="news-list__item-img"
-                                    src="{{ item.post.thumbnail.src('large') }}"
-                                    srcset="{{ item.post.thumbnail.srcset }}"
-                                    alt="{{ item.post.thumbnail.alt }}"
-                                />
-                                <div class="news-list__item-category news-list__item-category--absolute">
-                                    {{ item.post.categories[0].name }}
-                                </div>
-                            </div>
-                        {% else %}
-                            <div class="news-list__item-category">
-                                {{ item.post.categories[0].name }}
-                            </div>
-                        {% endif %}
-                        <h5 class="news-list__item-title">{{ item.post.title }}</h5>
-                    </a>
-                </article>
-            {% endfor %}
+            {% if posts %}
+                {% for post in posts %}
+                    {% include 'partials/news-item.twig' with { item: post } %}
+                {% endfor %}
+            {% else %}
+                {% for item in module.items %}
+                    {% include 'partials/news-item.twig' with { item: item.post } %}
+                {% endfor %}
+            {% endif %}
             <div class="news-list__item news__item--placeholder"></div>
             <div class="news-list__item news__item--placeholder"></div>
         </div>
+        {% if posts%}
+            {% include 'partials/pagination.twig' with { pagination: posts.pagination({ show_all: false, mid_size: 3, end_size: 2 }) } %}
+        {% endif %}
     </div>
 </section>

@@ -1,0 +1,28 @@
+{% if item %}
+    <article class="news-list__item {{ item.thumbnail ? '' : 'news-list__item--no-image' }}">
+        <a class="news-list__item-link" href="{{ item.path }}">
+            {% if item.thumbnail %}
+                <div class="news-list__item-image">
+                    <img
+                        class="news-list__item-img"
+                        src="{{ item.thumbnail.src('large') }}"
+                        srcset="{{ item.thumbnail.srcset }}"
+                        alt="{{ item.thumbnail.alt }}"
+                    />
+                    {% if item.categories|length %}
+                        <div class="news-list__item-category news-list__item-category--absolute">
+                            {{ item.categories[0].name }}
+                        </div>
+                    {% endif %}
+                </div>
+            {% else %}
+                {% if item.categories|length %}
+                    <div class="news-list__item-category">
+                        {{ item.categories[0].name }}
+                    </div>
+                {% endif %}
+            {% endif %}
+            <h5 class="news-list__item-title">{{ item.title }}</h5>
+        </a>
+    </article>
+{% endif %}
