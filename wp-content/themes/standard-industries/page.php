@@ -11,7 +11,7 @@ $context = Timber::get_context();
 
 $post = new TimberPost();
 
-// Get the category from the first post list and paginate
+// Generate the news lists from their categories
 $modules = get_field('content_modules', $post->ID);
 if ($modules) {
     $post_lists = array_keys(array_column($modules, 'acf_fc_layout'), 'news-list');
