@@ -23,7 +23,7 @@ if ($modules) {
                 $args = [
                     'post_type' => 'post',
                     'cat' => $category,
-                    'posts_per_page' => 1,
+                    'posts_per_page' => 12,
                     'paged' => $page
                 ];
                 $posts[$category] = new Timber\PostQuery($args);
