@@ -27,7 +27,7 @@
 
     align-items: flex-start;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     overflow: visible;
 
     @include large-and-up {
@@ -44,7 +44,7 @@
 
     @include large-and-up {
       max-width: 900px;
-      width: 74%;
+      width: 70%;
     }
 
     h2, h3, h4 {
@@ -171,6 +171,30 @@
 
   h2.article__heading {
     margin: 0 0 48px;
+  }
+
+  &__recent {
+    display: none;
+    max-width: 500px;
+    padding: 120px 72px;
+
+    @include large-and-up {
+      display: block;
+    }
+
+    &-heading {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__item {
+    @include news-item;
+
+    margin-bottom: 32px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &--has-image {

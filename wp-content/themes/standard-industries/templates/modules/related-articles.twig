@@ -10,6 +10,7 @@
             {% for item in module.items %}
                 {% include 'partials/news-item.twig' with { type: 'related-articles', item: item.post } %}
             {% endfor %}
+            <div class="related-articles__item related-articles__item--placeholder"></div>
         </div>
     </div>
 </section>

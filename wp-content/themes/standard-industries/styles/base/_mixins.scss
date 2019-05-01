@@ -504,6 +504,13 @@
     margin-bottom: 0;
   }
 
+  &-date {
+    @include body-3;
+
+    color: $gray;
+    margin-bottom: 16px;
+  }
+
   &--no-image {
     border-top: 1px solid $line-gray;
     padding-top: 32px;

@@ -75,7 +75,7 @@ $modules->add_field_group([
                         'id' => '',
                     ),
                     'collapsed' => '',
-                    'min' => 3,
+                    'min' => 0,
                     'max' => 3,
                     'layout' => 'table',
                     'button_label' => 'Add Item',

@@ -34,6 +34,7 @@
   &__items {
     @include medium-and-up {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
     }
   }
@@ -48,8 +49,12 @@
       width: 31%;
     }
 
-    &:last-child {
+    &:nth-last-child(-n + 2) {
       margin-bottom: 0;
+    }
+
+    &--placeholder {
+      visibility: hidden;
     }
   }
 
