@@ -3,9 +3,149 @@
  * ======================================================================== */
 
 .article {
-  @include section;
+  &__hero {
+    height: 400px;
+    position: relative;
+    width: 100%;
+
+    @include medium-and-up {
+      height: 560px;
+    }
+
+    &-image {
+      @include image-wrapper;
+      @include bg-image;
+    }
+
+    &-img {
+      @include image;
+    }
+  }
+
+  &__content {
+    @include section;
+
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: visible;
+
+    @include large-and-up {
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+  }
 
   &__inner {
-    @include section-inner;
+    background-color: $white;
+    color: $body-gray;
+    position: relative;
+    width: 74%;
+
+    h2, h3, h4 {
+      color: $black;
+      margin: 32px 0;
+    }
+
+    p {
+      @include heading-6;
+      margin-bottom: 1.7em;
+    }
+
+    ol, ul {
+      @include heading-6;
+
+      margin: 32px 0;
+      padding-left: 48px;
+
+      li {
+        margin-bottom: 12px;
+      }
+    }
+
+    figure.wp-block-image {
+      margin: 32px 0;
+
+      figcaption {
+        margin: 12px 0 0;
+        text-align: left;
+      }
+    }
+
+    .wp-block-image {
+      margin: 0;
+
+      img {
+        width: 100%;
+      }
+
+      figure {
+        margin: 32px 0;
+      }
+
+      figcaption {
+        margin: 12px 0 0;
+        text-align: left;
+      }
+
+      .alignleft,
+      .alignright {
+        margin-top: 0;
+        width: 66%;
+      }
+
+      .alignleft {
+        margin-right: 24px;
+      }
+
+      .alignright {
+        margin-left: 24px;
+      }
+
+      .aligncenter {
+        width: 100%;
+      }
+    }
+
+    .wp-block-quote {
+      margin: 32px 0;
+
+      p {
+        @include heading-3-alt-sm;
+
+        color: $black;
+        margin-bottom: 24px;
+      }
+
+      cite {
+        @include body-3;
+      }
+    }
+
+    ul.wp-block-gallery {
+      margin: 32px 0;
+      padding: 0;
+    }
+
+    .wp-block-cover {
+      margin: 32px 0;
+    }
+
+    @include large-and-up {
+      padding: 120px 48px;
+    }
+  }
+
+  h2.article__heading {
+    margin: 0 0 48px;
+  }
+
+  &--has-image {
+    .article__inner {
+      @include large-and-up {
+        margin-top: -48px;
+        padding-top: 48px;
+      }
+    }
   }
 }

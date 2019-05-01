@@ -75,7 +75,9 @@ $modules->add_module('Page Links', 'page-links', 'page_modules', [
                     'class' => '',
                     'id' => '',
                 ),
-                'post_type' => '',
+                'post_type' => array(
+                    0 => 'page',
+                ),
                 'taxonomy' => '',
                 'allow_null' => 0,
                 'multiple' => 0,

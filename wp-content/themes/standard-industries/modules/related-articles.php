@@ -75,7 +75,9 @@ $modules->add_module('Related Articles', 'related-articles', 'page_modules', [
                     'class' => '',
                     'id' => '',
                 ),
-                'post_type' => '',
+                'post_type' => array(
+                    0 => 'post',
+                ),
                 'taxonomy' => '',
                 'allow_null' => 0,
                 'multiple' => 0,

@@ -6,7 +6,7 @@ $modules = Modules::singleton();
 
 $modules->add_field_group([
     'key' => 'group_5cb0e90be9362',
-    'title' => 'Local Team Member Settings',
+    'title' => 'Team Member Settings',
     'fields' => array(
         array(
             'key' => 'field_5cb0e9255f482',

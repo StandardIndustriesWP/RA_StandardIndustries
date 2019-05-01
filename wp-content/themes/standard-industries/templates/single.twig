@@ -6,16 +6,24 @@
     <article class="post post-{{ post.post_type }}" id="post-{{ post.ID }}">
         <div class="post__body">
             <div class="post__content">
-                <section class="article">
-                    <div class="article__inner">
-                        <h2>{{ post.title }}</h2>
-                        <h6>
-                            <span>By</span>
-                            <a href="{{ post.author.path }}">{{ post.author.name }}</a>,
-                            <span>{{ post.date }}</span>
-                        </h6>
-                        <p><a href="{{ post.edit_link }}">{{ _e('Edit') }}</a></p>
-                        {{ post.content }}
+                <section class="article {{ post.thumbnail ? 'article--has-image' : '' }}">
+                    <div class="article__hero">
+                        <div class="article__hero-image">
+                            <img
+                                class="article__hero-img"
+                                src="{{ post.thumbnail.src('large') }}"
+                                srcset="{{ post.thumbnail.srcset }}"
+                                alt="{{ post.thumbnail.alt }}"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="article__content">
+                        <div class="article__inner">
+                            <h2 class="article__heading">{{ post.title }}</h2>
+                            <p><a href="{{ post.edit_link }}">{{ _e('Edit') }}</a></p>
+                            {{ post.content }}
+                        </div>
                     </div>
                 </section>
             </div>

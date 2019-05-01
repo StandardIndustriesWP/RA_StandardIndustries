@@ -38,7 +38,7 @@ class StandardIndustries extends Timber\Site
     public function __construct()
     {
         // Disable Gutenberg editor
-        add_filter('use_block_editor_for_post', '__return_false');
+        // add_filter('use_block_editor_for_post', '__return_false');
 
         // Default registrations
         add_action('after_setup_theme', [$this, 'theme_supports']);
@@ -211,7 +211,8 @@ class StandardIndustries extends Timber\Site
         register_nav_menus([
             'header' => __('Header', 'standard-industries'),
             'footer' =>  __('Footer', 'standard-industries'),
-            'copyright' => __('Copyright', 'standard-industries')
+            'copyright' => __('Copyright', 'standard-industries'),
+            'news' => __('News', 'standard-industries')
         ]);
     }
 
@@ -291,14 +292,7 @@ class StandardIndustries extends Timber\Site
         ]);
 
         // Add support for post formats (https://codex.wordpress.org/Post_Formats)
-        add_theme_support('post-formats', [
-            'image',
-            'video',
-            'quote',
-            'link',
-            'gallery',
-            'audio'
-        ]);
+        add_theme_support('post-formats', []);
 
         // Add support for menus
         add_theme_support('menus');
