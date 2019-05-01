@@ -27,7 +27,21 @@
                     </div>
                 </section>
 
-                
+                {% set module = post.get_field('related_articles') %}
+                <section class="related-articles">
+                    <div class="related-articles__inner">
+                        <header class="related-articles__header">
+                            <h4 class="related-articles__heading">
+                                {{ module.heading ? module.heading : 'Related Articles' }}
+                            </h4>
+                        </header>
+                        <div class="related-articles__items">
+                            {% for item in module.items %}
+                                {% include 'partials/news-item.twig' with { type: 'related-articles', item: item.post } %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </article>

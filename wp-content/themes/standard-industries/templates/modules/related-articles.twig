@@ -8,28 +8,7 @@
         </header>
         <div class="related-articles__items">
             {% for item in module.items %}
-                <article class="related-articles__item {{ item.post.thumbnail ? '' : 'related-articles__item--no-image' }}">
-                    <a class="related-articles__item-link" href="{{ item.post.path }}">
-                        {% if item.post.thumbnail %}
-                            <div class="related-articles__item-image">
-                                <img
-                                    class="related-articles__item-img"
-                                    src="{{ item.post.thumbnail.src('large') }}"
-                                    srcset="{{ item.post.thumbnail.srcset }}"
-                                    alt="{{ item.post.thumbnail.alt }}"
-                                />
-                                <div class="related-articles__item-category related-articles__item-category--absolute">
-                                    {{ item.post.categories[0].name }}
-                                </div>
-                            </div>
-                        {% else %}
-                            <div class="related-articles__item-category">
-                                {{ item.post.categories[0].name }}
-                            </div>
-                        {% endif %}
-                        <h5 class="related-articles__item-title">{{ item.post.title }}</h5>
-                    </a>
-                </article>
+                {% include 'partials/news-item.twig' with { type: 'related-articles', item: item.post } %}
             {% endfor %}
         </div>
     </div>
