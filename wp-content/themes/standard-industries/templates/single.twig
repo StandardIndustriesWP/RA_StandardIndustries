@@ -20,10 +20,17 @@
 
                     <div class="article__content">
                         <div class="article__inner">
+                            <div class="article__category">
+                                {{ post.categories[0].name }}
+                            </div>
                             <h2 class="article__heading">{{ post.title }}</h2>
                             <p><a href="{{ post.edit_link }}">{{ _e('Edit') }}</a></p>
                             {{ post.content }}
                         </div>
+
+                        <aside class="article__recent">
+                            
+                        </aside>
                     </div>
                 </section>
 

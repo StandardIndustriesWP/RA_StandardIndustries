@@ -163,6 +163,12 @@
     }
   }
 
+  &__category {
+    @include label;
+
+    margin-bottom: 32px;
+  }
+
   h2.article__heading {
     margin: 0 0 48px;
   }
