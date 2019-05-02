@@ -80,7 +80,7 @@
     width: 100%;
 
     @include large-and-up {
-      justify-content: space-between;
+      justify-content: center;
     }
 
     &-item {
