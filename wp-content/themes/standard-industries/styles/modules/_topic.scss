@@ -121,6 +121,10 @@
     .topic__btn {
       @include btn-arrow-inverted;
     }
+
+    .topic__eyebrow {
+      color: $white;
+    }
   }
 
   &--half-image {

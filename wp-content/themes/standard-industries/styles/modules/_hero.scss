@@ -52,6 +52,8 @@
 
   &__eyebrow {
     @include eyebrow;
+
+    color: $white;
   }
 
   &__body {

@@ -17,24 +17,7 @@
         </header>
         <div class="news__items">
             {% for item in module.items %}
-                <article class="news__item">
-                    <a class="news__item-link" href="{{ item.post.path }}">
-                        {% if item.post.thumbnail %}
-                            <div class="news__item-image">
-                                <img
-                                    class="news__item-img"
-                                    src="{{ item.post.thumbnail.src('large') }}"
-                                    srcset="{{ item.post.thumbnail.srcset }}"
-                                    alt="{{ item.post.thumbnail.alt }}"
-                                />
-                                <div class="news__item-category news__item-category--absolute">
-                                    {{ item.post.categories[0].name }}
-                                </div>
-                            </div>
-                        {% endif %}
-                        <h5 class="news__item-title">{{ item.post.title }}</h5>
-                    </a>
-                </article>
+                {% include 'partials/news-item.twig' with { type: 'news', item: item.post } %}
             {% endfor %}
         </div>
     </div>
