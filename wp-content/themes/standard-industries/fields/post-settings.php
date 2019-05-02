@@ -9,25 +9,6 @@ $modules->add_field_group([
     'title' => 'Post Settings',
     'fields' => array(
         array(
-            'key' => 'field_5cb613927c198',
-            'label' => 'Author',
-            'name' => 'author',
-            'type' => 'text',
-            'instructions' => '',
-            'required' => 0,
-            'conditional_logic' => 0,
-            'wrapper' => array(
-                'width' => '',
-                'class' => '',
-                'id' => '',
-            ),
-            'default_value' => '',
-            'placeholder' => '',
-            'prepend' => '',
-            'append' => '',
-            'maxlength' => '',
-        ),
-        array(
             'key' => 'field_5cc9b2e2aa5dc',
             'label' => 'Related Articles',
             'name' => 'related_articles',

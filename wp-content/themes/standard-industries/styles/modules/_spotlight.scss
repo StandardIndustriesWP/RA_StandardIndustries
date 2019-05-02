@@ -12,8 +12,55 @@
     @include section-inner;
   }
 
+  &__content {
+    margin-bottom: 48px;
+
+    @include large-and-up {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 120px;
+    }
+  }
+
   &__header {
-    @include section-header;
+    margin-bottom: 48px;
+
+    @include large-and-up {
+      margin-bottom: 0;
+      width: 48%;
+    }
+  }
+
+  &__logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    @include large-and-up {
+      justify-content: flex-end;
+      width: 48%;
+    }
+  }
+
+  &__logo {
+    margin: 0 16px 16px 0;
+    width: 56px;
+
+    @include large-and-up {
+      margin: 0 0 16px 16px;
+    }
+
+    &-image {
+      @include image-wrapper;
+
+      padding-bottom: 100%;
+      width: 100%;
+    }
+
+    &-img {
+      @include image;
+    }
   }
 
   &__eyebrow {

@@ -18,11 +18,11 @@
         <div class="news-list__items">
             {% if items and items[module.category] %}
                 {% for item in items[module.category] %}
-                    {% include 'partials/news-item.twig' with { type: 'news-item', item: item } %}
+                    {% include 'partials/news-item.twig' with { type: 'news-list', item: item } %}
                 {% endfor %}
             {% else %}
                 {% for item in module.items %}
-                    {% include 'partials/news-item.twig' with { type: 'news-item', item: item.post } %}
+                    {% include 'partials/news-item.twig' with { type: 'news-list', item: item.post } %}
                 {% endfor %}
             {% endif %}
             <div class="news-list__item news__item--placeholder"></div>
