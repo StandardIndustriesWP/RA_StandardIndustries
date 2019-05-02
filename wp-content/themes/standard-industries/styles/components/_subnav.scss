@@ -1,0 +1,42 @@
+/*
+ * Subnav Component
+ * ======================================================================== */
+
+.subnav {
+  background-color: $black;
+  height: 52px;
+
+  @include large-and-up {
+    height: 68px;
+    padding: 0 $site-margin-lg;
+  }
+
+  .menu__list {
+    display: flex;
+    height: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    .current-menu-parent,
+    .current-menu-item {
+      .menu__link {
+        background-color: $red;
+      }
+    }
+  }
+
+  .menu__link {
+    align-items: center;
+    color: $white !important;
+    display: flex;
+    height: 100%;
+    padding: 0 $site-margin-sm;
+    text-decoration: none;
+    transition: background-color 100ms linear;
+
+    &:hover {
+      background-color: $red;
+    }
+  }
+}

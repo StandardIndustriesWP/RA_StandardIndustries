@@ -81,6 +81,7 @@ class StandardIndustries extends Timber\Site
         $context['menu_header'] = new Timber\Menu('header');
         $context['menu_footer'] = new Timber\Menu('footer');
         $context['menu_copyright'] = new Timber\Menu('copyright');
+        $context['menu_news'] = new Timber\Menu('news');
         $context['theme_settings'] = get_fields('option');
         $context['site'] = $this;
         return $context;

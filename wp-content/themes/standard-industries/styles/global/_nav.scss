@@ -100,7 +100,8 @@
       }
     }
 
-    .current-menu-parent {
+    .current-menu-parent,
+    .current-menu-item {
       .menu__link {
         color: $red;
       }
