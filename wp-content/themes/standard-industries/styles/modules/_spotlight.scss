@@ -24,7 +24,9 @@
   }
 
   &__header {
-    margin-bottom: 48px;
+    @include section-header;
+
+    margin-bottom: 24px;
 
     @include large-and-up {
       margin-bottom: 0;
