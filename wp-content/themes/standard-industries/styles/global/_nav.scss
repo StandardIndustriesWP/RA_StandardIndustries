@@ -158,6 +158,7 @@
   .sub-menu {
     @include section;
 
+    box-shadow: 0 1em 1em 0 rgba(0, 0, 0, 0.1);
     display: none;
     padding: 48px 0 0;
 
