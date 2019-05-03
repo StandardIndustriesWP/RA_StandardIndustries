@@ -1,5 +1,5 @@
 <section class="team">
-    <div class="team__inner">
+    <div class="team__inner {{ module.items|length < 3 or module.items|length > 4 ? 'team__inner--stacked' : '' }}">
         <div class="team__header">
             {% if module.eyebrow %}
                 <div class="team__eyebrow">{{ module.eyebrow }}</div>

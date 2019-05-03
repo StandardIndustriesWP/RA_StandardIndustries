@@ -13,21 +13,46 @@
       flex-wrap: wrap;
       justify-content: space-between;
     }
+
+    &--stacked {
+      .team__header {
+        @include large-and-up {
+          margin-bottom: 72px;
+          width: 34%;
+        }
+      }
+
+      .team__item {
+        &:nth-child(2),
+        &:nth-child(3) {
+          @include large-and-up {
+            width: 30%;
+
+            .team__name,
+            .team__title {
+              @include heading-6;
+            }
+          }
+        }
+      }
+    }
   }
 
   &__header {
     @include section-header;
 
+    max-width: 100%;
     width: 100%;
-
-    @include large-and-up {
-      margin-bottom: 72px;
-      width: 34%;
-    }
   }
 
   &__eyebrow {
     @include eyebrow;
+
+    max-width: $max-width-content;
+  }
+
+  &__heading {
+    max-width: $max-width-content;
   }
 
   &__item {
@@ -38,25 +63,13 @@
       margin-bottom: 72px;
       width: 48%;
 
-      &:nth-child(2),
-      &:nth-child(3) {
-        .team__name,
-        .team__title {
-          @include heading-6;
-        }
-      }
-
       &:nth-last-child(-n + 4) {
         margin-bottom: 0;
       }
     }
 
     @include large-and-up {
-      width: 30%;
-
-      &:nth-child(n + 4) {
-        width: 23%;
-      }
+      width: 23%;
 
       &:nth-last-child(-n + 6) {
         margin-bottom: 0;
