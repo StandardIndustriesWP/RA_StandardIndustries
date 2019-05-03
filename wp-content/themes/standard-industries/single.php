@@ -12,7 +12,7 @@ if ($category) {
     $args = [
         'post_type' => 'post',
         'cat' => $category,
-        'posts_per_page' => 6
+        'posts_per_page' => 4
     ];
     $posts = new Timber\PostQuery($args);
 }
