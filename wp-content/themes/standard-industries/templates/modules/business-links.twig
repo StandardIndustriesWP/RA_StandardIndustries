@@ -1,11 +1,15 @@
 <section class="business-links">
     <div class="business-links__inner">
-        <header class="business-links__header">
-            {% if module.eyebrow %}
-                <div class="business-links__eyebrow">{{ module.eyebrow }}</div>
-            {% endif %}
-            <div class="business-links__heading">{{ module.heading }}</div>
-        </header>
+        {% if module.eyebrow or module.heading%}
+            <header class="business-links__header">
+                {% if module.eyebrow %}
+                    <div class="business-links__eyebrow">{{ module.eyebrow }}</div>
+                {% endif %}
+                {% if module.heading %}
+                <div class="business-links__heading">{{ module.heading }}</div>
+                {% endif %}
+            </header>
+        {% endif %}
         <ul class="business-links__list business-links__list-{{ module.items|length }}-up" role="presentation">
             {% for item in module.items %}
                 <li class="business-links__list-item">
