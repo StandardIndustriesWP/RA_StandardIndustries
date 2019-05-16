@@ -1,5 +1,45 @@
 <section class="homepage-hero">
     <div class="homepage-hero__inner">
-
+        <div class="homepage-hero__content">
+            <header class="homepage-hero__header">
+                <h1 class="homepage-hero__heading">{{ module.heading }}</h1>
+                {% if module.body %}
+                    <div class="hero__body">{{ module.body }}</div>
+                {% endif %}
+                {% if module.button_link %}
+                    <a
+                        class="homepage-hero__btn"
+                        href="{{ module.button_link.url }}"
+                        target="{{ module.button_link.target ? module.button_link.target : '_self' }}"
+                    >
+                        <span class="homepage-hero__btn-label">{{ module.button_link.title }}</span>
+                    </a>
+                {% endif %}
+            </header>
+        </div>
+        <div class="homepage-hero__slides" id="homepage-hero-slides" aria-live="polite">
+            <div class="homepage-hero__slides-wrapper">
+                {% for item in module.items %}
+                    <div class="homepage-hero__slide">
+                        <div class="homepage-hero__slide-image">
+                            <img
+                                class="homepage-hero__slide-img"
+                                src="{{ item.post.thumbnail.src }}"
+                                srcset="{{ item.post.thumbnail.srcset }}"
+                                alt="{{ item.post.thumbnail.alt }}"
+                            />
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="homepage-hero__nav" aria-controls="homepage-hero-slides">
+            <button class="homepage-hero__nav-btn homepage-hero__prev">
+                <span class="visually-hidden">Previous Slide</span>
+            </button>
+            <button class="homepage-hero__nav-btn homepage-hero__next">
+                <span class="visually-hidden">Next Slide</span>
+            </button>
+        </div>
     </div>
 </section>

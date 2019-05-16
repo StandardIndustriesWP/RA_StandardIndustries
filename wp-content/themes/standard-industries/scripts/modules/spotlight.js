@@ -84,7 +84,9 @@ class Spotlight {
   resize() {
     if (
       (this.renderWidth <= MAX_WIDTH_SM && window.innerWidth > MAX_WIDTH_SM) ||
-      (this.renderWidth > MAX_WIDTH_SM && window.innerWidth <= MAX_WIDTH_SM)
+      (this.renderWidth > MAX_WIDTH_SM && window.innerWidth <= MAX_WIDTH_SM)(
+        this.renderWidth > MAX_WIDTH_SM && window.innerWidth <= MAX_WIDTH_SM
+      )
     ) {
       this.renderWidth = window.innerWidth;
       this.setWrapperWidth();
@@ -128,7 +130,7 @@ class Spotlight {
   }
 
   /**
-   * Initializes all spotlights on a page
+   * Initializes all instances on a page
    */
   static init() {
     const modules = document.querySelectorAll(selector);

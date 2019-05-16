@@ -39,7 +39,7 @@ class TeamList {
   }
 
   /**
-   * Initializes all spotlights on a page
+   * Initializes all instances on a page
    */
   static init() {
     const modules = document.querySelectorAll(selector);
