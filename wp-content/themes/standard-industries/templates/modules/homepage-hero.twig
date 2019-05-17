@@ -21,10 +21,28 @@
             <div class="homepage-hero__slides-wrapper">
                 {% for item in module.items %}
                     <div class="homepage-hero__slide">
-                        <div class="homepage-hero__slide-image">
+                        <div class="homepage-hero__slide-image homepage-hero__slide-image--top">
                             <img
                                 class="homepage-hero__slide-img"
-                                src="{{ item.post.thumbnail.src }}"
+                                src="{{ item.post.thumbnail.src('header_large') }}"
+                                srcset="{{ item.post.thumbnail.srcset }}"
+                                alt="{{ item.post.thumbnail.alt }}"
+                            />
+                        </div>
+
+                        <div class="homepage-hero__slide-image homepage-hero__slide-image--mid">
+                            <img
+                                class="homepage-hero__slide-img"
+                                src="{{ item.post.thumbnail.src('header_large') }}"
+                                srcset="{{ item.post.thumbnail.srcset }}"
+                                alt="{{ item.post.thumbnail.alt }}"
+                            />
+                        </div>
+
+                        <div class="homepage-hero__slide-image homepage-hero__slide-image--btm">
+                            <img
+                                class="homepage-hero__slide-img"
+                                src="{{ item.post.thumbnail.src('header_large') }}"
                                 srcset="{{ item.post.thumbnail.srcset }}"
                                 alt="{{ item.post.thumbnail.alt }}"
                             />

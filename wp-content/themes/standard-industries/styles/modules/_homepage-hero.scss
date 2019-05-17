@@ -6,7 +6,7 @@
   background-color: $black !important;
   color: $white;
   height: calc(100vh - 64px);
-  max-height: 660px;
+  //max-height: 660px;
   width: 100%;
 
   @include large-and-up {
@@ -44,14 +44,76 @@
   &__slides-wrapper {
     align-items: flex-start;
     display: flex;
+    height: 100%;
     justify-content: flex-start;
     transition: transform 400ms ease-out;
   }
 
   &__slide {
+    flex-shrink: 0;
     height: 100%;
     position: relative;
     width: 100%;
+
+    &-img {
+      height: calc(100vh - 64px);
+      object-fit: cover;
+      position: absolute !important;
+      right: 0;
+      top: 0;
+      width: 100vw;
+
+      @include large-and-up {
+        height: calc(100vh - 80px);
+      }
+    }
+
+    &-image {
+      @include image-wrapper;
+
+      overflow: hidden;
+      position: absolute;
+
+      &--top {
+        opacity: 0.6;
+        padding-bottom: 25%;
+        right: 88px;
+        width: 60%;
+
+        .homepage-hero__slide-img {
+          right: -88px;
+        }
+      }
+
+      &--mid {
+        opacity: 0.6;
+        padding-bottom: 30%;
+        right: 160px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 65%;
+
+        .homepage-hero__slide-img {
+          right: -160px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+
+      &--btm {
+        opacity: 0.8;
+        padding-bottom: 15%;
+        right: 0;
+        top: 100%;
+        transform: translateY(-100%);
+        width: 40%;
+
+        .homepage-hero__slide-img {
+          top: 100%;
+          transform: translateY(-100%);
+        }
+      }
+    }
   }
 
   &__nav {
