@@ -11,7 +11,7 @@
 
   @include large-and-up {
     height: calc(100vh - 80px);
-    max-height: 660px;
+    max-height: 720px;
   }
 
   &__inner {
@@ -27,10 +27,15 @@
     height: 100%;
     justify-content: center;
     left: 0;
+    padding-bottom: 107px;
     position: absolute;
     top: 0;
     width: 100%;
     z-index: 1;
+
+    @include medium-and-up {
+      padding-bottom: 120px;
+    }
   }
 
   &__header {
@@ -90,7 +95,7 @@
 
       @include large-and-up {
         height: calc(100vh - 80px);
-        max-height: 660px;
+        max-height: 720px;
       }
     }
 
@@ -211,6 +216,52 @@
     }
   }
 
+  &__cards {
+    background-color: $black;
+    bottom: 0;
+    display: flex;
+    max-width: 100%;
+    padding: 24px 112px 32px 32px;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+
+    @include medium-and-up {
+      width: 380px;
+    }
+  }
+
+  &__card {
+    flex-shrink: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    visibility: hidden;
+    white-space: nowrap;
+    width: 100%;
+
+    &-category {
+      @include body-3;
+
+      color: $gray;
+      margin-bottom: 8px;
+    }
+
+    &--active {
+      visibility: visible;
+    }
+  }
+
+  a.homepage-hero__card-link {
+    @include body-2;
+
+    color: $white;
+    text-decoration: none;
+
+    &:hover {
+      color: $red;
+    }
+  }
+
   &__nav {
     bottom: 0;
     display: flex;
@@ -218,6 +269,7 @@
     position: absolute;
     right: 0;
     width: 80px;
+    z-index: 2;
 
     &-btn {
       @include btn-reset;

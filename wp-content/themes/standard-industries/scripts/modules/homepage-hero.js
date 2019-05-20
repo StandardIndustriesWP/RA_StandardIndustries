@@ -15,6 +15,7 @@ class HomepageHero {
     // Elements
     this.el = el;
     this.items = el.querySelectorAll('.homepage-hero__slide');
+    this.cards = el.querySelectorAll('.homepage-hero__card');
     this.wrapper = el.querySelector('.homepage-hero__slides-wrapper');
     this.prev = el.querySelector('.homepage-hero__prev');
     this.next = el.querySelector('.homepage-hero__next');
@@ -70,8 +71,12 @@ class HomepageHero {
     this.items.forEach((item) => {
       item.classList.remove('homepage-hero__slide--active');
     });
+    this.cards.forEach((card) => {
+      card.classList.remove('homepage-hero__card--active');
+    });
 
     this.items[this.activeSlide].classList.add('homepage-hero__slide--active');
+    this.cards[this.activeSlide].classList.add('homepage-hero__card--active');
   }
 
   /**

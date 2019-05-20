@@ -51,6 +51,19 @@
                 {% endfor %}
             </div>
         </div>
+        <div class="homepage-hero__cards" aria-live="polite">
+            {% for item in module.items %}
+                <div
+                    class="homepage-hero__card"
+                    style="transform: translateX(calc(-{{ loop.index0 }} * 100%))"
+                >
+                    <div class="homepage-hero__card-category">
+                        {{ item.post.categories[0].name }}
+                    </div>
+                    <a class="homepage-hero__card-link" href="{{ item.post.path }}">{{ item.post.title }}</a>
+                </div>
+            {% endfor %}
+        </div>
         <div class="homepage-hero__nav" aria-controls="homepage-hero-slides">
             <button class="homepage-hero__nav-btn homepage-hero__prev">
                 <span class="visually-hidden">Previous Slide</span>
