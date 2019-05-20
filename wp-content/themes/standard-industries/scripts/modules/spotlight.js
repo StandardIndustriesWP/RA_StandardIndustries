@@ -84,9 +84,7 @@ class Spotlight {
   resize() {
     if (
       (this.renderWidth <= MAX_WIDTH_SM && window.innerWidth > MAX_WIDTH_SM) ||
-      (this.renderWidth > MAX_WIDTH_SM && window.innerWidth <= MAX_WIDTH_SM)(
-        this.renderWidth > MAX_WIDTH_SM && window.innerWidth <= MAX_WIDTH_SM
-      )
+      (this.renderWidth > MAX_WIDTH_SM && window.innerWidth <= MAX_WIDTH_SM)
     ) {
       this.renderWidth = window.innerWidth;
       this.setWrapperWidth();
