@@ -68,15 +68,10 @@ class HomepageHero {
 
     // Remove active class from all slides
     this.items.forEach((item) => {
-      const link = item.querySelector('.__slide-link');
-
-      if (link) {
-        link.tabIndex = -1;
-      }
-      item.classList.remove('__slide--active');
+      item.classList.remove('homepage-hero__slide--active');
     });
 
-    this.items[this.activeSlide].classList.add('__slide--active');
+    this.items[this.activeSlide].classList.add('homepage-hero__slide--active');
   }
 
   /**
