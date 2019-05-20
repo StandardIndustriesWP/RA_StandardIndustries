@@ -96,8 +96,10 @@
     &-image {
       @include image-wrapper;
 
+      background-color: $white-20;
       overflow: hidden;
       position: absolute;
+      transition: right 400ms ease-out;
 
       &--top {
         height: 100%;
