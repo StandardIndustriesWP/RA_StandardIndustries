@@ -1,6 +1,17 @@
 'use strict';
 
 /**
+ * Var to hold the slide timer
+ */
+let heroTimer;
+
+/**
+ * Slide interval timeout
+ * @type {number}
+ */
+const heroTimeout = 5000;
+
+/**
  * The element selector
  * @type {string}
  */
@@ -30,13 +41,26 @@ class HomepageHero {
     this.setActiveSlide = this.setActiveSlide.bind(this);
 
     // Listeners
-    this.prev.addEventListener('click', this.prevSlide);
-    this.next.addEventListener('click', this.nextSlide);
-    this.wrapper.addEventListener('swiped-right', this.prevSlide);
-    this.wrapper.addEventListener('swiped-left', this.nextSlide);
+    this.prev.addEventListener('click', () => {
+      this.prevSlide();
+      clearInterval(heroTimer);
+    });
+    this.next.addEventListener('click', () => {
+      this.nextSlide();
+      clearInterval(heroTimer);
+    });
+    this.wrapper.addEventListener('swiped-right', () => {
+      this.prevSlide();
+      clearInterval(heroTimer);
+    });
+    this.wrapper.addEventListener('swiped-left', () => {
+      this.nextSlide();
+      clearInterval(heroTimer);
+    });
 
     // Initialize
     this.setActiveSlide();
+    heroTimer = setInterval(this.nextSlide, heroTimeout);
   }
 
   /**
