@@ -33,6 +33,28 @@
     z-index: 1;
   }
 
+  &__header {
+    @include clear-last-child;
+  }
+
+  &__heading {
+    margin-bottom: 16px;
+
+    @include large-and-up {
+      font-size: 104px;
+      line-height: 1;
+    }
+  }
+
+  &__body {
+    margin-bottom: 48px;
+    max-width: $max-width-content;
+  }
+
+  &__btn {
+    @include btn-arrow-inverted;
+  }
+
   &__slides {
     height: 100%;
     left: 0;
