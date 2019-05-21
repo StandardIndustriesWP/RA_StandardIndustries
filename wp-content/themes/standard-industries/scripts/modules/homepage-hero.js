@@ -6,10 +6,15 @@
 let heroTimer;
 
 /**
+ * Var to hold the loading bar
+ */
+let loadingTimer;
+
+/**
  * Slide interval timeout
  * @type {number}
  */
-const heroTimeout = 5000;
+const heroTimeout = 8000;
 
 /**
  * The element selector
@@ -28,39 +33,54 @@ class HomepageHero {
     this.items = el.querySelectorAll('.homepage-hero__slide');
     this.cards = el.querySelectorAll('.homepage-hero__card');
     this.wrapper = el.querySelector('.homepage-hero__slides-wrapper');
+    this.loading = el.querySelector('.homepage-hero__timer-bar');
     this.prev = el.querySelector('.homepage-hero__prev');
     this.next = el.querySelector('.homepage-hero__next');
 
     // State
     this.slideCount = this.items.length;
     this.activeSlide = 0;
+    this.loadingPercent = 0;
 
     // Bindings
+    this.clearTimers = this.clearTimers.bind(this);
     this.prevSlide = this.prevSlide.bind(this);
     this.nextSlide = this.nextSlide.bind(this);
     this.setActiveSlide = this.setActiveSlide.bind(this);
+    this.setLoadingPercent = this.setLoadingPercent.bind(this);
 
     // Listeners
     this.prev.addEventListener('click', () => {
       this.prevSlide();
-      clearInterval(heroTimer);
+      this.clearTimers();
     });
     this.next.addEventListener('click', () => {
       this.nextSlide();
-      clearInterval(heroTimer);
+      this.clearTimers();
     });
     this.wrapper.addEventListener('swiped-right', () => {
       this.prevSlide();
-      clearInterval(heroTimer);
+      this.clearTimers();
     });
     this.wrapper.addEventListener('swiped-left', () => {
       this.nextSlide();
-      clearInterval(heroTimer);
+      this.clearTimers();
     });
 
     // Initialize
     this.setActiveSlide();
     heroTimer = setInterval(this.nextSlide, heroTimeout);
+    loadingTimer = setInterval(this.setLoadingPercent, heroTimeout / 100);
+  }
+
+  /**
+   * Clears the auto play timers
+   */
+  clearTimers() {
+    clearInterval(heroTimer);
+    clearInterval(loadingTimer);
+    this.loadingPercent = 0;
+    this.loading.style.width = `${this.loadingPercent}%`;
   }
 
   /**
@@ -101,6 +121,19 @@ class HomepageHero {
 
     this.items[this.activeSlide].classList.add('homepage-hero__slide--active');
     this.cards[this.activeSlide].classList.add('homepage-hero__card--active');
+
+    // Reset loading percentage
+    this.loadingPercent = 0;
+  }
+
+  /**
+   * Sets the loading percent for the timer
+   */
+  setLoadingPercent() {
+    if (this.loadingPercent < 100) {
+      this.loadingPercent++;
+    }
+    this.loading.style.width = `${this.loadingPercent}%`;
   }
 
   /**

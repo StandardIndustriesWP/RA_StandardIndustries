@@ -262,6 +262,21 @@
     }
   }
 
+  &__timer {
+    height: 5px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &__timer-bar {
+    background-color: $red;
+    height: 100%;
+    transition: width 80ms linear;
+    width: 0;
+  }
+
   &__nav {
     bottom: 0;
     display: flex;
