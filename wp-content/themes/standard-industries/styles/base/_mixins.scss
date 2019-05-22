@@ -651,7 +651,7 @@
   }
 }
 
-@mixin animation-triple-ease {
+@mixin animation-soft-ease {
   opacity: 0;
   transition: opacity 400ms linear, transform 600ms ease-out;
 
@@ -667,6 +667,11 @@
   &:nth-child(3) {
     transform: translateY(80px);
     transition-delay: 300ms;
+  }
+
+  &:nth-child(4) {
+    transform: translateY(80px);
+    transition-delay: 450ms;
   }
 
   .active & {
