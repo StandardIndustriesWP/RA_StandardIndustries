@@ -41,7 +41,7 @@
                         >
                             <ul class="sub-menu__list" role="presentation">
                                 {% for sub_item in item.get_children %}
-                                    <li class="sub-menu__list-item {{ sub_item.classes|join(' ') }}">
+                                    <li class="sub-menu__list-item  {{ sub_item.image ? '' : 'sub-menu__list-item--no-image' }} {{ sub_item.classes|join(' ') }}">
                                         <a
                                             class="sub-menu__list-item-link"
                                             href="{{ sub_item.link }}"

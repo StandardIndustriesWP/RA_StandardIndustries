@@ -207,6 +207,28 @@
         }
       }
 
+      &--no-image {
+        border-top: none;
+        width: 100%;
+
+        .sub-menu__list-item-link {
+          @include cta-link;
+          padding-bottom: 16px;
+
+          &::after {
+            height: 2px;
+          }
+        }
+
+        .sub-menu__list-item-title {
+          @include heading-2;
+
+          &::after {
+            display: none;
+          }
+        }
+      }
+
       &--placeholder {
         visibility: hidden;
       }

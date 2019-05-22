@@ -623,3 +623,54 @@
   position: absolute;
   width: 1px;
 }
+
+/*
+ * Animation
+ * ======================================================================== */
+
+@mixin animation-fade-in {
+  opacity: 0;
+
+  transition: opacity 400ms linear;
+
+  .active & {
+    opacity: 1;
+  }
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+@mixin animation-soft-zoom {
+  transform: scale(1.1);
+
+  .active & {
+    transform: scale(1);
+    transition: transform 2s ease-out;
+  }
+}
+
+@mixin animation-triple-ease {
+  opacity: 0;
+  transition: opacity 400ms linear, transform 600ms ease-out;
+
+  &:nth-child(1) {
+    transform: translateY(80px);
+  }
+
+  &:nth-child(2) {
+    transform: translateY(80px);
+    transition-delay: 150ms;
+  }
+
+  &:nth-child(3) {
+    transform: translateY(80px);
+    transition-delay: 300ms;
+  }
+
+  .active & {
+    opacity: 1;
+    transform: none !important;
+  }
+}
