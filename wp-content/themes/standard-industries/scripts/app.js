@@ -7,6 +7,8 @@ require('swiped-events');
 const BigLinks = require('./modules/big-links');
 const BusinessLinks = require('./modules/business-links');
 const ContactForm = require('./modules/contact-form');
+const ContactList = require('./modules/contact-list');
+const FeatureArticle = require('./modules/feature-article');
 const HomepageHero = require('./modules/homepage-hero');
 const Nav = require('./components/nav');
 const Press = require('./modules/press');
@@ -18,6 +20,8 @@ const modules = [
   BigLinks,
   BusinessLinks,
   ContactForm,
+  ContactList,
+  FeatureArticle,
   HomepageHero,
   Nav,
   Press,

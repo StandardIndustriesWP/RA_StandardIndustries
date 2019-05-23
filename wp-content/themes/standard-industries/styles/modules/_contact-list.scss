@@ -22,6 +22,8 @@
   }
 
   &__list-item {
+    @include animation-fade-in;
+
     margin-bottom: 32px;
     width: 100%;
 
