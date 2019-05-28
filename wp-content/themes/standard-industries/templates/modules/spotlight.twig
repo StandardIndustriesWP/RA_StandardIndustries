@@ -7,22 +7,6 @@
                 {% endif %}
                 <h3 class="spotlight__heading">{{ module.heading }}</h3>
             </header>
-            {% if module.logos|length %}
-                <div class="spotlight__logos">
-                    {% for logo in module.logos %}
-                        <div class="spotlight__logo">
-                            <div class="spotlight__logo-image">
-                                <img
-                                    class="spotlight__logo-img"
-                                    src="{{ Image(logo.image).src('thumbnail') }}"
-                                    srcset="{{ Image(logo.image).srcset }}"
-                                    alt="{{ Image(logo.image).alt }}"
-                                />
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            {% endif %}
         </div>
         <div class="spotlight__slides" id="spotlight-slides" aria-live="polite">
             <div class="spotlight__slides-wrapper">
