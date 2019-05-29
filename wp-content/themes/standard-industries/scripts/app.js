@@ -11,6 +11,7 @@ const ContactList = require('./modules/contact-list');
 const FeatureArticle = require('./modules/feature-article');
 const Header = require('./components/header');
 const HomepageHero = require('./modules/homepage-hero');
+const InfoStack = require('./modules/info-stack');
 const Nav = require('./components/nav');
 const Press = require('./modules/press');
 const Search = require('./components/search');
@@ -25,6 +26,7 @@ const modules = [
   FeatureArticle,
   Header,
   HomepageHero,
+  InfoStack,
   Nav,
   Press,
   Search,
