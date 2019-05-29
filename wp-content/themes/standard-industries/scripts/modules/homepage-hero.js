@@ -69,6 +69,7 @@ class HomepageHero {
 
     // Initialize
     this.setActiveSlide();
+    document.body.classList.add('body--inverted');
     heroTimer = setInterval(this.nextSlide, heroTimeout);
     loadingTimer = setInterval(this.setLoadingPercent, heroTimeout / 100);
   }

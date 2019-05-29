@@ -11,7 +11,7 @@
   padding: 0 $site-margin-sm;
   position: sticky;
   top: 0;
-  transition: background-color 100ms linear, transform 200ms linear;
+  transition: background-color 100ms linear;
   width: 100%;
   z-index: 2;
 
@@ -46,6 +46,16 @@
 
     @include large-and-up {
       flex-direction: row;
+    }
+  }
+
+  .body--inverted:not(.body--pinned) & {
+    @include large-and-up {
+      background-color: $black;
+
+      &__link {
+        background-image: url('../svgs/logo-white.svg');
+      }
     }
   }
 }

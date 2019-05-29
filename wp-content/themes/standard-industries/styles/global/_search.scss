@@ -3,6 +3,10 @@
  * ======================================================================== */
 
 .global-search {
+  .global-header__link {
+    background-image: url('../svgs/logo-white.svg');
+  }
+
   .modal__inner {
     background-color: $black;
     color: $white;
@@ -92,6 +96,14 @@
       background-size: 58px 58px;
       height: 88px;
       width: 88px;
+    }
+  }
+
+  .body--inverted:not(.body--pinned) & {
+    @include large-and-up {
+      .modal__open {
+        background-image: url('../svgs/search-white.svg');
+      }
     }
   }
 }

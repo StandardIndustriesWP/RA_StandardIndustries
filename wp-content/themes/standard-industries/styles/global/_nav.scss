@@ -10,6 +10,8 @@
   }
 
   .modal__inner {
+    transition: background-color 100ms linear;
+
     @include large-and-up {
       display: flex;
       height: auto;
@@ -168,6 +170,7 @@
       padding: 80px $site-margin-lg;
       position: absolute;
       top: $header-height-lg;
+      transition: background-color 100ms linear;
       width: 100%;
     }
 
@@ -239,6 +242,38 @@
 
       @include large-and-up {
         display: none;
+      }
+    }
+  }
+
+  .body--inverted:not(.body--pinned) & {
+    @include large-and-up {
+      .modal__inner {
+        background-color: $black;
+      }
+
+      .menu__list {
+        .menu__link {
+          color: $white;
+
+          &:hover {
+            color: $red;
+          }
+        }
+      }
+
+      .sub-menu {
+        background-color: $black;
+
+        &__list-item {
+          &-link {
+            color: $white;
+
+            &:hover {
+              color: $red;
+            }
+          }
+        }
       }
     }
   }

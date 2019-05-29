@@ -9,6 +9,7 @@ const BusinessLinks = require('./modules/business-links');
 const ContactForm = require('./modules/contact-form');
 const ContactList = require('./modules/contact-list');
 const FeatureArticle = require('./modules/feature-article');
+const Header = require('./components/header');
 const HomepageHero = require('./modules/homepage-hero');
 const Nav = require('./components/nav');
 const Press = require('./modules/press');
@@ -22,6 +23,7 @@ const modules = [
   ContactForm,
   ContactList,
   FeatureArticle,
+  Header,
   HomepageHero,
   Nav,
   Press,
