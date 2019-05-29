@@ -216,6 +216,7 @@
 
         .sub-menu__list-item-link {
           @include cta-link;
+
           padding-bottom: 16px;
 
           &::after {
@@ -271,6 +272,12 @@
 
             &:hover {
               color: $red;
+            }
+          }
+
+          &--no-image {
+            .sub-menu__list-item-link {
+              color: $white !important;
             }
           }
         }
