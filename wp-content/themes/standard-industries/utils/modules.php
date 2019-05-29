@@ -118,16 +118,24 @@ class Modules {
     public function load_modules($path)
     {
         $dir = new \DirectoryIterator($path);
+        $files = [];
 
         foreach ($dir as $file) {
             if (!$file->isDot() && !$file->isDir()) {
-                try {
-                    $module = $path . $file->getFilename();
-                    include_once($module);
-                } catch (Exception $e) {
-                    // Log error, but don't throw any exception
-                    error_log($e->getMessage());
-                }
+                $files[] = $file->getFileName();
+            }
+        }
+
+        // Sort the files alphabetically
+        asort($files);
+
+        foreach ($files as $file) {
+            try {
+                $module = $path . $file;
+                include_once($module);
+            } catch (Exception $e) {
+                // Log error, but don't throw any exception
+                error_log($e->getMessage());
             }
         }
     }
