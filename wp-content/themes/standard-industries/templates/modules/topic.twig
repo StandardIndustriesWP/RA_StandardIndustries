@@ -25,6 +25,19 @@
                         <span class="topic__btn-label">{{ module.button_link.title }}</span>
                     </a>
                 {% endif %}
+                {% if module.social_link %}
+                    {% for link in module.social_link %}
+                        <div class="topic__social topic__social--{{ link.icon }}">
+                            <a
+                                class="topic__social-link"
+                                href="{{ link.link.url }}"
+                                target="{{ link.link.target ? link.link.target : '_self' }}"
+                            >
+                                {{ link.link.title }}
+                            </a>
+                        </div>
+                    {% endfor %}
+                {% endif %}
             </header>
         </div>
     </div>

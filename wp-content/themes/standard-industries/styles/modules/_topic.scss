@@ -69,6 +69,49 @@
     @include btn-arrow;
   }
 
+  &__social {
+    align-items: center;
+    display: flex;
+    margin-top: 32px;
+
+    @include large-and-up {
+      margin-top: 48px;
+    }
+
+    &::before {
+      background-position: center center;
+      content: '';
+      display: block;
+      height: 32px;
+      margin-right: 8px;
+      width: 32px;
+    }
+
+    &--facebook::before {
+      background-image: url('../svgs/facebook-black.svg');
+      background-size: 8px 16px;
+    }
+
+    &--instagram::before {
+      background-image: url('../svgs/instagram-black.svg');
+      background-size: 16px 16px;
+    }
+
+    &--linkedin::before {
+      background-image: url('../svgs/linkedin-black.svg');
+      background-size: 16px 16px;
+    }
+
+    &--twitter::before {
+      background-image: url('../svgs/twitter-black.svg');
+      background-size: 16px 12px;
+    }
+  }
+
+  &__social-link {
+    @include cta-link;
+  }
+
   &__image {
     @include image-wrapper;
     @include bg-image;
@@ -120,6 +163,28 @@
 
     .topic__btn {
       @include btn-arrow-inverted;
+    }
+
+    .topic__social {
+      &--facebook::before {
+        background-image: url('../svgs/facebook-white.svg');
+      }
+
+      &--instagram::before {
+        background-image: url('../svgs/instagram-white.svg');
+      }
+
+      &--linkedin::before {
+        background-image: url('../svgs/linkedin-white.svg');
+      }
+
+      &--twitter::before {
+        background-image: url('../svgs/twitter-white.svg');
+      }
+    }
+
+    .topic__social-link {
+      color: $white !important;
     }
 
     .topic__eyebrow {
