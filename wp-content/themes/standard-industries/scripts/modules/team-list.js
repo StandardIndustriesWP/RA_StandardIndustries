@@ -1,5 +1,8 @@
 'use strict';
 
+const ScrollMagic = require('scrollmagic');
+const ScrollManager = require('../util/scroll-manager');
+
 /**
  * The element selector
  * @type {string}
@@ -21,6 +24,18 @@ class TeamList {
     // Listeners
     this.triggers.forEach((trigger) => {
       trigger.addEventListener('click', () => this.toggleRegion(trigger));
+    });
+
+    // Scroll animations
+    const items = el.querySelectorAll('.team-list__item');
+
+    items.forEach((item) => {
+      new ScrollMagic.Scene({
+        triggerElement: item,
+        triggerHook: 'onEnter'
+      })
+        .setClassToggle(item, 'active')
+        .addTo(ScrollManager.controller);
     });
   }
 

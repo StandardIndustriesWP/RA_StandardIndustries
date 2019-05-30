@@ -47,6 +47,7 @@
 
   &__item {
     @include news-item;
+    @include animation-fade-in;
 
     margin-bottom: 32px;
 

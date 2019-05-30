@@ -45,6 +45,8 @@
   }
 
   &__item {
+    @include animation-soft-ease;
+
     margin-bottom: 32px;
     width: 100%;
 

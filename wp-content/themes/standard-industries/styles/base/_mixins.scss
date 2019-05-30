@@ -766,6 +766,11 @@
     transition-delay: 450ms;
   }
 
+  &:nth-child(5) {
+    transform: translateY(80px);
+    transition-delay: 600ms;
+  }
+
   .active & {
     opacity: 1;
     transform: none !important;

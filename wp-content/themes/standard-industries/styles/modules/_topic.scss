@@ -123,6 +123,7 @@
 
   &__img {
     @include image;
+    @include animation-soft-zoom;
   }
 
   &__item {

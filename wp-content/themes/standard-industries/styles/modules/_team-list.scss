@@ -16,6 +16,8 @@
   }
 
   &__item {
+    @include animation-fade-in;
+
     margin-bottom: 48px;
     width: 100%;
 

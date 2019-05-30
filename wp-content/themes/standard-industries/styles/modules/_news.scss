@@ -42,6 +42,7 @@
 
   &__item {
     @include news-item;
+    @include animation-soft-ease;
 
     margin-bottom: 32px;
 

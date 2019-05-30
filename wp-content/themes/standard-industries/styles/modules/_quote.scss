@@ -16,6 +16,7 @@
 
   &__item {
     @include flex-column;
+    @include animation-soft-ease;
 
     margin-bottom: 48px;
     width: 100%;
