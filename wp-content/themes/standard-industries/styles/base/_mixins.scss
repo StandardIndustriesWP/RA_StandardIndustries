@@ -2,6 +2,12 @@
  * Media Queries
  * ======================================================================== */
 
+@mixin extra-small-only {
+  @media (max-width: #{$extra-small-max-width}) {
+    @content;
+  }
+}
+
 @mixin small-only {
   @media (max-width: #{$small-max-width}) {
     @content;
@@ -44,6 +50,12 @@
   }
 }
 
+@mixin site-min-height {
+  @media (max-height: #{$site-min-height}) {
+    @content;
+  }
+}
+
 /*
  * Type
  * ======================================================================== */
@@ -69,6 +81,11 @@
 
   font-size: 48px;
   line-height: 1;
+
+  @include extra-small-only {
+    font-size: 32px;
+    line-height: 1;
+  }
 
   @include large-and-up {
     font-size: 64px;

@@ -6,8 +6,12 @@
   background-color: $black !important;
   color: $white;
   height: calc(100vh - 64px);
-  max-height: 540px;
+  max-height: 680px;
   width: 100%;
+
+  @include medium-and-up {
+    max-height: 540px;
+  }
 
   @include large-and-up {
     height: calc(100vh - 80px);
@@ -86,12 +90,16 @@
 
     &-img {
       height: calc(100vh - 64px);
-      max-height: 540px;
+      max-height: 680px;
       object-fit: cover;
       position: absolute !important;
       right: 0;
       top: 0;
       width: 100vw;
+
+      @include medium-and-up {
+        max-height: 540px;
+      }
 
       @include large-and-up {
         height: calc(100vh - 80px);
