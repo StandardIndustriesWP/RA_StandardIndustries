@@ -495,7 +495,7 @@
     @include image;
 
     transform: scale(1.2);
-    transition: transform 100ms linear;
+    transition: transform 150ms ease-out;
 
     &:hover {
       transform: scale(1);
