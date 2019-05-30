@@ -17,7 +17,9 @@ const Mosaic = require('./modules/mosaic');
 const Nav = require('./components/nav');
 const News = require('./modules/news');
 const NewsList = require('./modules/news-list');
+const PageLinks = require('./modules/page-links');
 const Press = require('./modules/press');
+const Profiles = require('./modules/profiles');
 const Quote = require('./modules/quote');
 const RelatedArticles = require('./modules/related-articles');
 const Search = require('./components/search');
@@ -41,7 +43,9 @@ const modules = [
   Nav,
   News,
   NewsList,
+  PageLinks,
   Press,
+  Profiles,
   Quote,
   RelatedArticles,
   Search,

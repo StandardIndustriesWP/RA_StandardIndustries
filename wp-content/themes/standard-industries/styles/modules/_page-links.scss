@@ -29,6 +29,8 @@
   }
 
   &__item {
+    @include animation-soft-ease;
+
     background-color: $black-20;
     margin-bottom: 48px;
     width: 100%;
