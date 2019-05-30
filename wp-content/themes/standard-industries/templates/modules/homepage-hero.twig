@@ -1,21 +1,23 @@
 <section class="homepage-hero">
     <div class="homepage-hero__inner">
         <div class="homepage-hero__content">
-            <header class="homepage-hero__header">
-                <h1 class="homepage-hero__heading">{{ module.heading }}</h1>
-                {% if module.body %}
-                    <div class="homepage-hero__body">{{ module.body }}</div>
-                {% endif %}
-                {% if module.button_link %}
-                    <a
-                        class="homepage-hero__btn"
-                        href="{{ module.button_link.url }}"
-                        target="{{ module.button_link.target ? module.button_link.target : '_self' }}"
-                    >
-                        <span class="homepage-hero__btn-label">{{ module.button_link.title }}</span>
-                    </a>
-                {% endif %}
-            </header>
+            <div class="homepage-hero__content-inner">
+                <header class="homepage-hero__header">
+                    <h1 class="homepage-hero__heading">{{ module.heading }}</h1>
+                    {% if module.body %}
+                        <div class="homepage-hero__body">{{ module.body }}</div>
+                    {% endif %}
+                    {% if module.button_link %}
+                        <a
+                            class="homepage-hero__btn"
+                            href="{{ module.button_link.url }}"
+                            target="{{ module.button_link.target ? module.button_link.target : '_self' }}"
+                        >
+                            <span class="homepage-hero__btn-label">{{ module.button_link.title }}</span>
+                        </a>
+                    {% endif %}
+                </header>
+            </div>
         </div>
         <div class="homepage-hero__slides" id="homepage-hero-slides" aria-live="polite">
             <div class="homepage-hero__slides-wrapper">

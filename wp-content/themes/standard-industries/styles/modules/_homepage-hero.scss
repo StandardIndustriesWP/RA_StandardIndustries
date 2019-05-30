@@ -27,7 +27,6 @@
   &__content {
     @include section;
 
-    align-items: flex-start;
     height: 100%;
     justify-content: center;
     left: 0;
@@ -40,6 +39,10 @@
     @include medium-and-up {
       padding-bottom: 120px;
     }
+  }
+
+  &__content-inner {
+    @include section-inner;
   }
 
   &__header {
