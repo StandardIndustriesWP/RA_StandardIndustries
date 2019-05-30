@@ -137,28 +137,28 @@
 
     &:nth-child(1) {
       padding-bottom: 32px;
-      position: relative;
 
       @include large-and-up {
         padding-bottom: 48px;
-      }
-
-      &::after {
-        background-color: $white;
-        bottom: 0;
-        content: '';
-        height: 1px;
-        opacity: 0.3;
-        position: absolute;
-        width: 100%;
       }
     }
 
     &:nth-child(2) {
       padding-top: 32px;
+      position: relative;
 
       @include large-and-up {
         padding-top: 48px;
+      }
+
+      &::before {
+        background-color: $white;
+        content: '';
+        height: 1px;
+        opacity: 0.3;
+        position: absolute;
+        top: 0;
+        width: 100%;
       }
     }
   }
