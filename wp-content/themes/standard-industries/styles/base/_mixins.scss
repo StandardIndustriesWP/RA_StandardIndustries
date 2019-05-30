@@ -680,6 +680,8 @@
   }
 
   .wp-block-image {
+    @include animation-fade-in;
+
     margin: 0;
 
     img {

@@ -4,6 +4,7 @@ require('core-js/modules/es6.promise');
 require('core-js/modules/es6.array.iterator');
 require('swiped-events');
 
+const Article = require('./modules/article');
 const BigLinks = require('./modules/big-links');
 const BusinessLinks = require('./modules/business-links');
 const ContactForm = require('./modules/contact-form');
@@ -28,8 +29,10 @@ const Spotlight = require('./modules/spotlight');
 const Team = require('./modules/team');
 const TeamList = require('./modules/team-list');
 const Topic = require('./modules/topic');
+const Wysiwyg = require('./modules/wysiwyg');
 
 const modules = [
+  Article,
   BigLinks,
   BusinessLinks,
   ContactForm,
@@ -53,7 +56,8 @@ const modules = [
   Spotlight,
   Team,
   TeamList,
-  Topic
+  Topic,
+  Wysiwyg
 ];
 
 // Initialize all modules

@@ -19,6 +19,7 @@
 
     &-img {
       @include image;
+      @include animation-fade-in;
     }
   }
 
@@ -101,6 +102,7 @@
 
   &__item {
     @include news-item;
+    @include animation-fade-in;
 
     margin-bottom: 32px;
 
