@@ -130,6 +130,10 @@
     @include animation-soft-zoom;
   }
 
+  &__video {
+    @include image;
+  }
+
   &__item {
     @include news-item-inverted;
 

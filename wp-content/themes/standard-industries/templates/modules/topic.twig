@@ -7,6 +7,17 @@
                 srcset="{{ Image(module.background_image).srcset }}"
                 alt="{{ Image(module.background_image).alt }}"
             />
+            {% if module.background_video %}
+                <video
+                    class="topic__video"
+                    autoPlay="true"
+                    playsInline="true"
+                    loop="true"
+                    muted="true"
+                >
+                    <source src="{{ Image(module.background_video).src }}" type="video/mp4" />
+                </video>
+            {% endif %}
         </div>
     {% endif %}
     <div class="topic__left">
@@ -51,6 +62,17 @@
                         srcset="{{ Image(module.background_image).srcset }}"
                         alt="{{ Image(module.background_image).alt }}"
                     />
+                    {% if module.background_video %}
+                        <video
+                            class="topic__video"
+                            autoPlay="true"
+                            playsInline="true"
+                            loop="true"
+                            muted="true"
+                        >
+                            <source src="{{ Image(module.background_video).src }}" type="video/mp4" />
+                        </video>
+                    {% endif %}
                 </div>
             {% endif %}
             <div class="topic__inner">

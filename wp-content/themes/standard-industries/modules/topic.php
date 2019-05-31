@@ -195,7 +195,7 @@ $modules->add_module('Topic', 'topic', 'page_modules', [
         'label' => 'Background Video',
         'name' => 'background_video',
         'type' => 'file',
-        'instructions' => '',
+        'instructions' => 'Videos must be MPEG-4 H.264 codec (mp4) for browser compatibility, please keep file sizes small',
         'required' => 0,
         'conditional_logic' => 0,
         'wrapper' => array(
