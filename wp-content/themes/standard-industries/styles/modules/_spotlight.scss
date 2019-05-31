@@ -104,6 +104,7 @@
       margin: 0;
       max-width: 50%;
       position: absolute;
+      word-break: normal;
 
       &::after {
         display: none;
@@ -162,17 +163,12 @@
   }
 
   &__nav {
-    bottom: -48px;
+    bottom: 0;
     display: flex;
     height: 40px;
     position: absolute;
-    right: -28px;
+    right: 0;
     width: 80px;
-
-    @include large-and-up {
-      bottom: auto;
-      top: 87%;
-    }
 
     &-btn {
       @include btn-reset;
