@@ -41,14 +41,6 @@ class Press {
     // Listeners
     this.wrapper.addEventListener('swiped-right', this.prevSlide);
     this.wrapper.addEventListener('swiped-left', this.nextSlide);
-    this.navItems.forEach((item, i) => {
-      const button = item.querySelector('.press__nav-btn');
-      button.addEventListener('click', () => {
-        this.activeSlide = i;
-        this.setActiveSlide();
-        clearInterval(pressTimer);
-      });
-    });
 
     // Initialize
     this.setActiveSlide();

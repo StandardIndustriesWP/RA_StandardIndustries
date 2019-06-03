@@ -132,6 +132,8 @@
 
   &__video {
     @include image;
+
+    object-position: 50% 0;
   }
 
   &__item {

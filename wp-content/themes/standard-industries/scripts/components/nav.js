@@ -35,7 +35,10 @@ class Nav extends Modal {
     // Listeners
     window.addEventListener('resize', this.resize, false);
     this.triggers.forEach((trigger) => {
-      trigger.addEventListener('click', () => this.togglePanel(trigger));
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.togglePanel(trigger);
+      });
     });
   }
 

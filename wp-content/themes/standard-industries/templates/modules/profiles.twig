@@ -10,7 +10,7 @@
                 {% endif %}
             </header>
         {% endif %}
-        <div class="profiles__items {{ module.heading ? 'profiles__items--with-heading' : '' }}">
+        <div class="profiles__items">
             {% for item in module.items %}
                 <article class="profiles__item">
                     {% if item.team_member.thumbnail %}

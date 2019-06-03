@@ -48,8 +48,6 @@
   }
 
   &__body {
-    @include clear-last-child;
-
     color: $body-gray;
   }
 
@@ -105,7 +103,11 @@
     }
 
     .info-stack__body {
-      @include heading-6;
+      @include clear-last-child;
+
+      p {
+        @include heading-6;
+      }
     }
   }
 

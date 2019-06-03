@@ -15,14 +15,15 @@
 
                 <li class="menu__list-item {{ item.classes|join(' ') }}">
                     {% if item.link == '#' and item.get_children|length %}
-                        <button
+                        <a
                             class="menu__link menu__trigger"
+                            href="{{ item.link }}"
                             id="{{ trigger_id }}"
                             aria-controls="{{ panel_id }}"
                             aria-expanded="false"
                         >
                             {{ item.title }}
-                        </button>
+                        </a>
                     {% else %}
                         <a
                             class="menu__link"

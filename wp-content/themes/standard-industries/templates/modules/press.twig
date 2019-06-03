@@ -20,10 +20,10 @@
             {% endfor %}
         </div>
 
-        <div class="press__nav" aria-controls="press-slides">
+        <div class="press__nav">
             {% for item in module.items %}
                 <div class="press__nav-item">
-                    <button class="press__nav-btn">
+                    <div class="press__nav-btn">
                         <div class="press__image">
                             <img
                                 class="press__img"
@@ -33,7 +33,7 @@
                             />
                         </div>
                         <span class="visually-hidden">{{ item.name }}</span>
-                    </button>
+                    </div>
                 </div>
             {% endfor %}
         </div>

@@ -23,7 +23,7 @@
     align-items: stretch;
     display: flex;
     justify-content: flex-start;
-    margin-bottom: 72px;
+    margin-bottom: 48px;
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -34,6 +34,7 @@
 
     flex-grow: 0;
     flex-shrink: 0;
+    justify-content: center;
     opacity: 0;
     overflow: hidden;
     position: relative;
@@ -86,25 +87,14 @@
     &-item {
       display: none;
       margin: 0 20px;
-      opacity: 0.5;
-      padding-bottom: 24px;
       width: 150px;
 
-      @include large-and-up {
-        display: block;
-        padding-bottom: 36px;
-      }
-
       &--active {
-        border-bottom: 2px solid $red;
         display: block;
-        opacity: 1;
       }
     }
 
     &-btn {
-      @include btn-reset;
-
       width: 100%;
     }
   }
