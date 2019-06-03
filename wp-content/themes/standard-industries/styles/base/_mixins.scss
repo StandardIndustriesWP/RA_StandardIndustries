@@ -264,6 +264,11 @@
   font-size: 64px;
   line-height: 1.13;
 
+  @include extra-small-only {
+    font-size: 56px;
+    line-height: 1.14;
+  }
+
   @include medium-and-up {
     font-size: 110px;
     line-height: 1;
