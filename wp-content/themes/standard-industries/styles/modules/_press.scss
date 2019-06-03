@@ -73,24 +73,25 @@
   }
 
   &__nav {
-    border: none;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    width: 100%;
+    height: 45px;
+    margin: 0 auto;
+    position: relative;
+    width: 150px;
 
     @include large-and-up {
       justify-content: center;
     }
 
     &-item {
-      display: none;
-      margin: 0 20px;
+      height: 45px;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      transition: opacity 400ms linear;
       width: 150px;
 
       &--active {
-        display: block;
+        opacity: 1;
       }
     }
 
