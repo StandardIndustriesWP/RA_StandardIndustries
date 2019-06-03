@@ -39,32 +39,34 @@
                             id="{{ panel_id }}"
                             aria-labelledby="{{ trigger_id }}"
                         >
-                            <ul class="sub-menu__list" role="presentation">
-                                {% for sub_item in item.get_children %}
-                                    <li class="sub-menu__list-item  {{ sub_item.image ? '' : 'sub-menu__list-item--no-image' }} {{ sub_item.classes|join(' ') }}">
-                                        <a
-                                            class="sub-menu__list-item-link"
-                                            href="{{ sub_item.link }}"
-                                            target="{{ sub_item.target ? sub_item.target : '_self' }}"
-                                        >
-                                            {% if sub_item.image %}
-                                                <div class="sub-menu__list-item-image">
-                                                    <img
-                                                        class="sub-menu__list-item-img"
+                            <div class="sub-menu__inner">
+                                <ul class="sub-menu__list" role="presentation">
+                                    {% for sub_item in item.get_children %}
+                                        <li class="sub-menu__list-item  {{ sub_item.image ? '' : 'sub-menu__list-item--no-image' }} {{ sub_item.classes|join(' ') }}">
+                                            <a
+                                                class="sub-menu__list-item-link"
+                                                href="{{ sub_item.link }}"
+                                                target="{{ sub_item.target ? sub_item.target : '_self' }}"
+                                            >
+                                                {% if sub_item.image %}
+                                                    <div class="sub-menu__list-item-image">
+                                                        <img
+                                                            class="sub-menu__list-item-img"
 
-                                                        src="{{ Image(sub_item.image).src('large') }}"
-                                                        srcset="{{ Image(sub_item.image).srcset }}"
-                                                        alt="{{ Image(sub_item.image).alt }}"
-                                                    />
-                                                </div>
-                                            {% endif %}
-                                            <h5 class="sub-menu__list-item-title">{{ sub_item.title }}</h5>
-                                        </a>
-                                    </li>
-                                {% endfor %}
-                                <li class="sub-menu__list-item sub-menu__list-item--placeholder"></li>
-                                <li class="sub-menu__list-item sub-menu__list-item--placeholder"></li>
-                            </ul>
+                                                            src="{{ Image(sub_item.image).src('large') }}"
+                                                            srcset="{{ Image(sub_item.image).srcset }}"
+                                                            alt="{{ Image(sub_item.image).alt }}"
+                                                        />
+                                                    </div>
+                                                {% endif %}
+                                                <h5 class="sub-menu__list-item-title">{{ sub_item.title }}</h5>
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+                                    <li class="sub-menu__list-item sub-menu__list-item--placeholder"></li>
+                                    <li class="sub-menu__list-item sub-menu__list-item--placeholder"></li>
+                                </ul>
+                            </div>
                         </div>
                     {% endif %}
                 </li>

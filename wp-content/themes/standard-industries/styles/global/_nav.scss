@@ -15,6 +15,7 @@
     @include large-and-up {
       display: flex;
       height: auto;
+      overflow: visible;
       position: static;
       visibility: visible;
       width: auto;
@@ -158,20 +159,26 @@
   }
 
   .sub-menu {
-    @include section;
-
     display: none;
-    padding: 48px 0 0;
 
     @include large-and-up {
       background-color: $white;
       box-shadow: 0 1em 1em 0 rgba(0, 0, 0, 0.1);
       left: 0;
-      padding: 80px $site-margin-lg;
       position: absolute;
       top: $header-height-lg;
       transition: background-color 100ms linear;
       width: 100%;
+    }
+
+    &__inner {
+      @include section;
+
+      padding: 48px 0 0;
+
+      @include large-and-up {
+        padding: 80px $site-margin-lg;
+      }
     }
 
     &__list {
