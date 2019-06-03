@@ -7,6 +7,7 @@
   color: $white;
   height: calc(100vh - 64px);
   max-height: 680px;
+  overflow: hidden;
   width: 100%;
 
   @include medium-and-up {
