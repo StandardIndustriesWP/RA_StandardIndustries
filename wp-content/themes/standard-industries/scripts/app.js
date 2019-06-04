@@ -26,6 +26,7 @@ const RelatedArticles = require('./modules/related-articles');
 const Search = require('./components/search');
 const Services = require('./modules/services');
 const Spotlight = require('./modules/spotlight');
+const Stats = require('./modules/stats');
 const Team = require('./modules/team');
 const TeamList = require('./modules/team-list');
 const Topic = require('./modules/topic');
@@ -54,6 +55,7 @@ const modules = [
   Search,
   Services,
   Spotlight,
+  Stats,
   Team,
   TeamList,
   Topic,
