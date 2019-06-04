@@ -14,17 +14,23 @@
             {% for item in module.items %}
                 <li class="business-links__list-item">
                     <div class="business-links__image-wrapper">
-                        <div class="business-links__image">
-                            <img
-                                class="business-links__img"
-                                src="{{ Image(item.image).src('large') }}"
-                                srcset="{{ Image(item.image).srcset }}"
-                                alt="{{ Image(item.image).alt }}"
-                            />
-                        </div>
+                        <a
+                            class="business-links__image-link"
+                            href="{{ item.link.url }}"
+                            target="{{ item.link.target ? item.link.target : '_self' }}"
+                        >
+                            <div class="business-links__image">
+                                <img
+                                    class="business-links__img"
+                                    src="{{ Image(item.image).src('large') }}"
+                                    srcset="{{ Image(item.image).srcset }}"
+                                    alt="{{ Image(item.image).alt }}"
+                                />
+                            </div>
+                        </a>
                         <div class="business-links__logo">
                             <img
-                                class="business-links__img"
+                                class="business-links__logo-img"
                                 src="{{ Image(item.logo).src('medium') }}"
                                 srcset="{{ Image(item.logo).srcset }}"
                                 alt="{{ Image(item.logo).alt }}"
