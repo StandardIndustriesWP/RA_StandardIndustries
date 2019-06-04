@@ -41,10 +41,20 @@ class Stats {
   animateStats() {
     if (!this.hasAnimated) {
       this.stats.forEach((item) => {
-        const data = item.textContent.split(/(\d+)/);
+        const raw = item.textContent.split(
+          /(\d+(?:,\d+))|(\d+(?:\.\d+))|(\d+)/
+        );
+        const data = raw.filter((a) => a !== undefined);
+        const decimals = data[1].includes('.')
+          ? data[1].split('.')[1].length
+          : 0;
+        const comma = data[1].includes(',') ? ',' : '';
+        const value = data[1].replace(/,/g, '');
         if (data.length === 3) {
-          const countUp = new CountUp(item, data[1], {
+          const countUp = new CountUp(item, value, {
+            decimalPlaces: decimals,
             prefix: data[0],
+            separator: comma,
             suffix: data[2]
           });
           countUp.start();
