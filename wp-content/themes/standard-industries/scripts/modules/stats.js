@@ -41,7 +41,7 @@ class Stats {
   animateStats() {
     if (!this.hasAnimated) {
       this.stats.forEach((item) => {
-        const data = item.textContent.split(/(\d+)/);
+        const data = item.textContent.replace(/,/g, '').split(/(\d+)/);
         if (data.length) {
           const countUp = new CountUp(item, data[1], {
             prefix: data[0],
