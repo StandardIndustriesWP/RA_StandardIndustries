@@ -1,5 +1,17 @@
 <section class="team-list">
     <div class="team-list__inner">
+        {% if module.eyebrow or module.heading %}
+            <header class="team-list__header">
+                {% if module.eyebrow %}
+                    <div class="team-list__eyebrow">{{ module.eyebrow }}</div>
+                {% endif %}
+                {% if module.heading %}
+                    <div class="team-list__heading">{{ module.heading }}</div>
+                {% endif %}
+            </header>
+        {% endif %}
+    </div>
+    <div class="team-list__items">
         {% for item in module.items %}
             <article class="team-list__item">
                 {% if item.team_member.thumbnail %}

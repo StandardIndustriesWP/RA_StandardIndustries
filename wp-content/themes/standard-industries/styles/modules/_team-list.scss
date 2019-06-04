@@ -6,6 +6,28 @@
   @include section;
 
   &__inner {
+    @include section-inner;
+  }
+
+  &__header {
+    @include section-header;
+
+    @include large-and-up {
+      margin-bottom: 72px;
+    }
+  }
+
+  &__eyebrow {
+    @include eyebrow;
+  }
+
+  &__heading {
+    p {
+      @include heading-4-alt;
+    }
+  }
+
+  &__items {
     @include section-full;
 
     @include medium-and-up {
