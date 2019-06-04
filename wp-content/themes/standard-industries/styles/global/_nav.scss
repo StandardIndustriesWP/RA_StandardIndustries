@@ -111,14 +111,6 @@
     }
 
     .menu-item-has-children {
-      @include large-and-up {
-        &:hover {
-          .menu__link {
-            color: $red;
-          }
-        }
-      }
-
       .menu__link {
         &::after {
           background-image: url('../svgs/carat.svg');
@@ -152,6 +144,8 @@
         }
 
         @include large-and-up {
+          color: $red;
+
           &::after {
             transform: translateY(-50%) rotate(180deg);
           }
@@ -266,6 +260,10 @@
             color: $red;
           }
         }
+      }
+
+      .menu__trigger--expanded {
+        color: $red !important;
       }
 
       .sub-menu {
