@@ -116,10 +116,6 @@
           .menu__link {
             color: $red;
           }
-
-          .sub-menu {
-            display: flex;
-          }
         }
       }
 
@@ -153,6 +149,12 @@
       .menu__trigger--expanded {
         &::after {
           transform: translateY(-50%) rotate(0);
+        }
+
+        @include large-and-up {
+          &::after {
+            transform: translateY(-50%) rotate(180deg);
+          }
         }
       }
     }
@@ -247,10 +249,6 @@
 
     &--expanded {
       display: flex;
-
-      @include large-and-up {
-        display: none;
-      }
     }
   }
 
