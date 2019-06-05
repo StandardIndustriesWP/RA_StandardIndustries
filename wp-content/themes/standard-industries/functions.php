@@ -168,8 +168,7 @@ class StandardIndustries extends Timber\Site
      */
     public function enqueue_theme() {
         wp_enqueue_style('standard-industries-styles', get_stylesheet_directory_uri() . '/dist/app.css');
-        wp_enqueue_script('standard-industries-scripts', get_stylesheet_directory_uri() . '/dist/vendor.js', null, false, true);
-        wp_enqueue_script('standard-industries-scripts', get_stylesheet_directory_uri() . '/dist/app.js', null, false, true);
+        wp_enqueue_script('standard-industries-scripts', get_stylesheet_directory_uri() . '/dist/bundle.js', null, false, true);
     }
 
     /**

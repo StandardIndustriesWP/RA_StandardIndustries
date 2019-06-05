@@ -2,6 +2,9 @@
 
 require('core-js/modules/es6.promise');
 require('core-js/modules/es6.array.iterator');
+require('core-js/modules/es6.array.for-each');
+require('nodelist-foreach-polyfill');
+require('@babel/polyfill');
 require('swiped-events');
 
 const Article = require('./modules/article');
