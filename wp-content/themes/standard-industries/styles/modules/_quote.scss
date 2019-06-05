@@ -49,15 +49,15 @@
   }
 
   &__content {
-    margin: 0 0 48px;
+    padding: 0 0 48px;
     width: 100%;
 
     @include medium-and-up {
-      margin: 0 48px 72px 0;
+      padding: 0 48px 72px 0;
     }
 
     @include large-and-up {
-      margin: 0 72px 96px 0;
+      padding: 0 72px 96px 0;
     }
   }
 
