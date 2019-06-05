@@ -50,6 +50,7 @@
 
   &__content {
     margin: 0 0 48px;
+    width: 100%;
 
     @include medium-and-up {
       margin: 0 48px 72px 0;

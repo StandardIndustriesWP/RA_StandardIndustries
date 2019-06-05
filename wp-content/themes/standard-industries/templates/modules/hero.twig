@@ -5,6 +5,7 @@
             src="{{ Image(module.background_image).src('header_large') }}"
             srcset="{{ Image(module.background_image).srcset }}"
             alt="{{ Image(module.background_image).alt }}"
+            data-object-fit
         />
     </div>
     {% if module.logo %}
@@ -14,6 +15,7 @@
                 src="{{ Image(module.logo).src('thumbnail') }}"
                 srcset="{{ Image(module.logo).srcset }}"
                 alt="{{ Image(module.logo).alt }}"
+                data-object-fit
             />
         </div>
     {% endif %}

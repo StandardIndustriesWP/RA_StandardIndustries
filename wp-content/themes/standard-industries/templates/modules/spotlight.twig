@@ -20,6 +20,7 @@
                                         src="{{ item.post.thumbnail.src('large') }}"
                                         srcset="{{ item.post.thumbnail.srcset }}"
                                         alt="{{ item.post.thumbnail.alt }}"
+                                        data-object-fit
                                     />
                                 </div>
                                 <h3 class="spotlight__slide-title">{{ item.post.title }}</h3>
@@ -46,6 +47,7 @@
                                         src="{{ Image(image).src }}"
                                         srcset="{{ Image(image).srcset }}"
                                         alt="{{ Image(image).alt }}"
+                                        data-object-fit
                                     />
                                 </div>
                             </div>

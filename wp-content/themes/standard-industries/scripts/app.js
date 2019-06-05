@@ -5,6 +5,7 @@ require('core-js/modules/es6.array.iterator');
 require('core-js/modules/es6.array.for-each');
 require('nodelist-foreach-polyfill');
 require('@babel/polyfill');
+require('objectFitPolyfill');
 require('swiped-events');
 
 const Article = require('./modules/article');

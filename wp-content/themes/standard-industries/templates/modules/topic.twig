@@ -6,6 +6,7 @@
                 src="{{ Image(module.background_image).src('header_large') }}"
                 srcset="{{ Image(module.background_image).srcset }}"
                 alt="{{ Image(module.background_image).alt }}"
+                data-object-fit
             />
             {% if module.background_video %}
                 <video
@@ -14,6 +15,8 @@
                     playsInline="true"
                     loop="true"
                     muted="true"
+                    data-object-fit="cover"
+                    data-object-position="50% 0"
                 >
                     <source src="{{ Image(module.background_video).src }}" type="video/mp4" />
                 </video>
@@ -61,6 +64,7 @@
                         src="{{ Image(module.background_image).src('extra_large') }}"
                         srcset="{{ Image(module.background_image).srcset }}"
                         alt="{{ Image(module.background_image).alt }}"
+                        data-object-fit
                     />
                     {% if module.background_video %}
                         <video
@@ -69,6 +73,8 @@
                             playsInline="true"
                             loop="true"
                             muted="true"
+                            data-object-fit="cover"
+                            data-object-position="50% 0"
                         >
                             <source src="{{ Image(module.background_video).src }}" type="video/mp4" />
                         </video>

@@ -8,6 +8,7 @@
                         src="{{ item.thumbnail.src('large') }}"
                         srcset="{{ item.thumbnail.srcset }}"
                         alt="{{ item.thumbnail.alt }}"
+                        data-object-fit
                     />
                     {% if item.categories|length %}
                         <div class="{{ type }}__item-category {{ type }}__item-category--absolute">
