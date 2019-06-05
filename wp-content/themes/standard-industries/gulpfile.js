@@ -21,7 +21,7 @@ gulp.task('scss', () => {
     .pipe(concat('app.css'))
     .pipe(
       autoPrefixer({
-        browsers: ['last 4 versions'],
+        browsers: ['> 1%', 'last 4 versions', 'not ie <= 10', 'ie 11'],
         cascade: false
       })
     )
@@ -36,19 +36,17 @@ gulp.task('bundle', () => {
     debug: true
   });
 
-  return (
-    b
-      .transform(babel)
-      .bundle()
-      .pipe(source('app.js'))
-      .pipe(buffer())
-      .pipe(sourceMaps.init())
-      .pipe(terser())
-      .pipe(concat('bundle.js'))
-      .on('error', (err) => console.log(err))
-      .pipe(sourceMaps.write('./'))
-      .pipe(gulp.dest('./dist/'))
-  );
+  return b
+    .transform(babel)
+    .bundle()
+    .pipe(source('app.js'))
+    .pipe(buffer())
+    .pipe(sourceMaps.init())
+    .pipe(terser())
+    .pipe(concat('bundle.js'))
+    .on('error', (err) => console.log(err))
+    .pipe(sourceMaps.write('./'))
+    .pipe(gulp.dest('./dist/'));
 });
 
 // Default task

@@ -7,10 +7,10 @@
         "targets": {
           "browsers": [
             "> 1%",
-            "last 2 versions",
-            "not ie <= 10"
-          ],
-          "ie": "11"
+            "last 4 versions",
+            "not ie <= 10",
+            "ie 11"
+          ]
         }
       }
     ]
