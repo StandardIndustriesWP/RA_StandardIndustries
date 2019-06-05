@@ -3,13 +3,15 @@
         <div class="careers__header">
             <div class="careers__eyebrow">{{ module.eyebrow }}</div>
             <h3 class="careers__heading">{{ module.heading }}</h3>
-            <a
-                class="careers__btn"
-                href="{{ module.button_link.url }}"
-                target="{{ module.button_link.target ? module.button_link.target : '_self' }}"
-            >
-                <span class="careers__btn-label">{{ module.button_link.title }}</span>
-            </a>
+            {% if module.button_link %}
+                <a
+                    class="careers__btn"
+                    href="{{ module.button_link.url }}"
+                    target="{{ module.button_link.target ? module.button_link.target : '_self' }}"
+                >
+                    <span class="careers__btn-label">{{ module.button_link.title }}</span>
+                </a>
+            {% endif %}
         </div>
 
         <ul class="careers__list" role="presentation">

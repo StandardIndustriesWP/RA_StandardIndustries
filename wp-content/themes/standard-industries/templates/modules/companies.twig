@@ -3,13 +3,15 @@
         <div class="companies__header">
             <div class="companies__eyebrow">{{ module.eyebrow }}</div>
             <h3 class="companies__heading">{{ module.heading }}</h3>
-            <a
-                class="companies__btn"
-                href="{{ module.button_link.url }}"
-                target="{{ module.button_link.target ? module.button_link.target : '_self' }}"
-            >
-                <span class="companies__btn-label">{{ module.button_link.title }}</span>
-            </a>
+            {% if module.button_link %}
+                <a
+                    class="companies__btn"
+                    href="{{ module.button_link.url }}"
+                    target="{{ module.button_link.target ? module.button_link.target : '_self' }}"
+                >
+                    <span class="companies__btn-label">{{ module.button_link.title }}</span>
+                </a>
+            {% endif %}
         </div>
 
         <ul class="companies__list" role="presentation">
