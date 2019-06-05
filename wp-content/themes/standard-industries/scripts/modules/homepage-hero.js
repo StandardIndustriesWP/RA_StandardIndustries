@@ -108,9 +108,7 @@ class HomepageHero {
    * Sets the active slide by transforming the wrapper
    */
   setActiveSlide() {
-    this.wrapper.style.transform = `translateX(calc(-${
-      this.activeSlide
-    } * 100%))`;
+    this.wrapper.style.transform = `translateX(-${this.activeSlide * 100}%)`;
 
     // Remove active class from all slides
     this.items.forEach((item) => {

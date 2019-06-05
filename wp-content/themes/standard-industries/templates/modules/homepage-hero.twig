@@ -60,7 +60,7 @@
             {% for item in module.items %}
                 <div
                     class="homepage-hero__card"
-                    style="transform: translateX(calc(-{{ loop.index0 }} * 100%))"
+                    style="transform: translateX(-{{ loop.index0 * 100 }}%)"
                 >
                     <div class="homepage-hero__card-category">
                         {{ item.post.categories[0].name }}

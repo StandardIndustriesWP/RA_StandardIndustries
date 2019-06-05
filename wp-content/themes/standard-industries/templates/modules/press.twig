@@ -6,7 +6,7 @@
             {% for item in module.items %}
                 <article
                     class="press__slide"
-                    style="transform: translateX(calc(-{{ loop.index0 }} * 100%))"
+                    style="transform: translateX(-{{ loop.index0 * 100 }}%)"
                 >
                     <div class="press__quote">{{ item.quote }}</div>
                     <a

@@ -96,9 +96,8 @@ class Spotlight {
    * Sets the active slide by transforming the wrapper
    */
   setActiveSlide() {
-    this.wrapper.style.transform = `translateX(calc(-${
-      this.activeSlide
-    } * (100% / ${this.slideCount})))`;
+    this.wrapper.style.transform = `translateX(-${this.activeSlide *
+      (100 / this.slideCount)}%)`;
 
     // Remove active class from all slides
     this.items.forEach((item) => {
