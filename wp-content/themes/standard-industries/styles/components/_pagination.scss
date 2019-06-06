@@ -31,15 +31,21 @@
   }
 
   &__link {
-    color: $gray;
-    text-decoration: none;
-
     &--current {
       color: $black;
     }
 
     &--disabled {
       color: $line-gray;
+    }
+  }
+
+  a.pagination__link {
+    color: $gray;
+    text-decoration: none;
+
+    &:hover {
+      color: $red;
     }
   }
 }

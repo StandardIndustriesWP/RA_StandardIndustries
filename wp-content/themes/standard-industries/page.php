@@ -1,10 +1,10 @@
 <?php
 
-global $page;
+global $paged;
 
 // Set pagination if it doesn't yet exist
-if (!isset($page) || !$page){
-    $page = 1;
+if (!isset($paged) || !$paged){
+    $paged = 1;
 }
 
 $context = Timber::get_context();
@@ -24,7 +24,7 @@ if ($modules) {
                     'post_type' => 'post',
                     'cat' => $category,
                     'posts_per_page' => 12,
-                    'paged' => $page
+                    'paged' => $paged
                 ];
                 $posts[$category] = new Timber\PostQuery($args);
             }
