@@ -63,7 +63,7 @@ class StandardIndustries extends Timber\Site
         add_action('init', [$this, 'disable_comments_init']);
 
         // Disable pages in search
-        add_filter('pre_get_posts', [$this, 'disable_search_results_pages']);
+        //add_filter('pre_get_posts', [$this, 'disable_search_results_pages']);
 
         // Enqueue theme files
         add_action('wp_enqueue_scripts', [$this, 'enqueue_theme']);
