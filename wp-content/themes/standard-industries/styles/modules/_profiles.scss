@@ -11,6 +11,10 @@
 
   &__header {
     @include section-header;
+
+    @include large-and-up {
+      margin-bottom: 72px;
+    }
   }
 
   &__eyebrow {
