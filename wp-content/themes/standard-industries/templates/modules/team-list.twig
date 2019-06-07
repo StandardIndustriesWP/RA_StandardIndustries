@@ -1,4 +1,4 @@
-<section class="team-list team-list--{{ module.type }}">
+<section class="team-list">
     <div class="team-list__inner">
         {% if module.eyebrow or module.heading %}
             <header class="team-list__header">
@@ -13,7 +13,7 @@
     </div>
     <div class="team-list__items">
         {% for item in module.items %}
-            <article class="team-list__item">
+            <article class="team-list__item team-list__item--{{ item.type }}">
                 {% if item.team_member.thumbnail %}
                     <div class="team-list__image">
                         <img

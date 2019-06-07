@@ -12,7 +12,7 @@
         {% endif %}
         <div class="profiles__items">
             {% for item in module.items %}
-                <article class="profiles__item">
+                <article class="profiles__item profiles__item--{{ item.type }}">
                     {% if item.team_member.thumbnail %}
                         <div class="profiles__image">
                             <img

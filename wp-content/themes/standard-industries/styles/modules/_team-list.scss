@@ -73,7 +73,11 @@
     padding-bottom: 60%;
     width: 100%;
 
-    .team-list--portrait & {
+    .team-list__item--square & {
+      padding-bottom: 100%;
+    }
+
+    .team-list__item--portrait & {
       padding-bottom: 140%;
     }
   }

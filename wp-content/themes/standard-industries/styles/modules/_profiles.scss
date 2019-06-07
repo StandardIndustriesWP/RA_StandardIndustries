@@ -59,6 +59,14 @@
       margin: 0 0 32px;
       width: 100%;
     }
+
+    .profiles__item--square & {
+      padding-bottom: 100%;
+    }
+
+    .profiles__item--portrait & {
+      padding-bottom: 140%;
+    }
   }
 
   &__img {
