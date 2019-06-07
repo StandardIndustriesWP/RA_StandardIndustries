@@ -41,6 +41,8 @@
   }
 
   &__right {
+    min-height: 350px;
+
     @include large-and-up {
       align-items: flex-start;
       padding-left: 0;
