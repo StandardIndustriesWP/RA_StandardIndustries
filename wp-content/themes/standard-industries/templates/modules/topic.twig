@@ -55,7 +55,7 @@
             </header>
         </div>
     </div>
-    {% if module.items|length %}
+    {% if module.items|length or module.type == 'half-image' %}
         <div class="topic__right">
             {% if module.type == 'half-image' %}
                 <div class="topic__image">
