@@ -76,6 +76,8 @@
     }
 
     &-link {
+      overflow: hidden;
+
       &:hover {
         .spotlight__slide-img {
           transform: scale(1);
