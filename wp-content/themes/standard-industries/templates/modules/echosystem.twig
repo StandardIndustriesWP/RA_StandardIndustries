@@ -1,0 +1,48 @@
+<section class="echosystem intro intro--light">
+    <div class="echosystem__items intro__inner">
+        {% for item in module.items %}
+            <article class="echosystem__item echosystem__item--{{ item.type }}">
+            
+
+                {% if item.image %}
+                   {% if item.link %}
+                   	<a  href="{{ item.link }}" target="_self">
+                    <div class="echosystem__image">
+                        <img
+                            class="echosystem__img"
+                            src="{{ Image(item.image).src('large') }}"
+                            srcset="{{ Image(item.image).srcset }}"
+                            alt="{{ Image(item.image).alt }}"
+                            data-object-fit="cover"
+                            data-object-position="50% 0"
+                        />
+                    </div>
+                    </a>
+                	{% else %}
+                    <div class="echosystem__image">
+                        <img
+                            class="echosystem__img"
+                            src="{{ Image(item.image).src('large') }}"
+                            srcset="{{ Image(item.image).srcset }}"
+                            alt="{{ Image(item.image).alt }}"
+                            data-object-fit="cover"
+                            data-object-position="50% 0"
+                        />
+                    </div>
+                    {% endif %}
+                {% endif %}
+				
+                <div class="echosystem__title">
+				
+				{% if item.link %}
+					<a class="echo_url" href="{{ item.link }}" target="_self">{{ item.heading }}</a>
+				{% else %}
+					{{ item.heading }}
+				{% endif %}
+				
+				</div>
+				
+            </article>
+        {% endfor %}
+    </div>
+</section>

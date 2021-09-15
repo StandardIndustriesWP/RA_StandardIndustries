@@ -16,6 +16,9 @@ const ContactList = require('./modules/contact-list');
 const FeatureArticle = require('./modules/feature-article');
 const Header = require('./components/header');
 const Hero = require('./modules/hero');
+const StaticCol = require('./modules/static-col');
+// const InfoText = require('./modules/info-text');
+const joinUsHero = require('./modules/join-us-hero');
 const HomepageHero = require('./modules/homepage-hero');
 const InfoStack = require('./modules/info-stack');
 const Mosaic = require('./modules/mosaic');
@@ -35,6 +38,7 @@ const Team = require('./modules/team');
 const TeamList = require('./modules/team-list');
 const Topic = require('./modules/topic');
 const Wysiwyg = require('./modules/wysiwyg');
+const WysiwygScript = require('./modules/wysiwyg-script');
 
 const modules = [
   Article,
@@ -45,6 +49,8 @@ const modules = [
   FeatureArticle,
   Header,
   Hero,
+  //InfoText,
+  joinUsHero,
   HomepageHero,
   InfoStack,
   Mosaic,
@@ -59,10 +65,12 @@ const modules = [
   Search,
   Services,
   Spotlight,
+  StaticCol,
   Stats,
   Team,
   TeamList,
   Topic,
+  WysiwygScript,
   Wysiwyg
 ];
 

@@ -1,0 +1,65 @@
+<section class="intro intro--light three_col_heading_copy">
+    <div class="intro__inner">
+        <div class="intro__content">
+            {% if module.body %}
+                <div class="intro__eyebrow">{{ module.body }}</div>
+            {% endif %}
+        </div>
+		
+        <div class="intro__content stat_lay">
+            <div class="stat_lay_three">
+				{% if module.col_one %}
+					{{ module.col_one }}
+				{% endif %}
+			</div>
+            <div class="stat_lay_three">
+				{% if module.col_two %}
+					{{ module.col_two }}
+				{% endif %}
+			</div>
+            <div class="stat_lay_three">
+				{% if module.col_three %}
+					{{ module.col_three }}
+				{% endif %}
+			</div>
+        </div>
+    </div>
+	<style type="text/css">
+		.three_col_heading_copy .intro__eyebrow p{
+			font-size:17px;
+		}
+		.three_col_heading_copy .intro__eyebrow{
+			color:inherit;
+		}
+		.three_col_heading_copy .intro__content{
+			max-width:100%;
+		}
+		.stat_lay_three {
+			width: calc(33% - 20px);
+			display: inline-block;
+			float: left;
+			border-top: 1px solid #333;
+			margin: 10px;
+			padding-top: 15px;
+		}
+		.intro__content.stat_lay {
+			margin-top: 10px;
+		}
+		.stat_lay_three:first-child{
+			margin-left: 0;
+		}
+		.stat_lay_three:last-child {
+			margin-right: 0;
+		}
+		@media only screen and (max-width:1040px){
+			.stat_lay_three {
+				width: 100%;
+				display: inline-block;
+				float: left;
+				border-top: 1px solid #333;
+				margin: 10px;
+				padding-top: 15px;
+			}
+		}
+	</style>
+</section>

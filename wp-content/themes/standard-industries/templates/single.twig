@@ -29,7 +29,7 @@
                                 {{ post.categories[0].name }}
                             </div>
                             <h2 class="article__heading">{{ post.title }}</h2>
-                            <p><a href="{{ post.edit_link }}">{{ _e('Edit') }}</a></p>
+                            <!-- <p><a href="{{ post.edit_link }}">{{ _e('Edit') }}</a></p>  -->
                             {{ post.content }}
                         </div>
 
@@ -65,7 +65,9 @@
                             </header>
                             <div class="related-articles__items">
                                 {% for item in module.items %}
-                                    {% include 'partials/news-item.twig' with { type: 'related-articles', item: item.post } %}
+								
+                                    {% include 'partials/news-item.twig' with { type: 'related-articles', item: item } %}
+									
                                 {% endfor %}
                                 <div class="related-articles__item related-articles__item--placeholder"></div>
                             </div>
