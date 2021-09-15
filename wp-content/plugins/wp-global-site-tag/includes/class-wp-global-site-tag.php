@@ -70,7 +70,7 @@ class WP_Global_Site_Tag {
 		if ( defined( 'DA_WP_GST' ) ) {
 			$this->version = DA_WP_GST;
 		} else {
-			$this->version = '1.0.0';
+			$this->version = '1.0.6';
 		}
 		$this->plugin_name = 'wp-global-site-tag';
 

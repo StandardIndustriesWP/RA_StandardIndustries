@@ -8,17 +8,17 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://digitalapps.co
+ * @link              https://digitalapps.com
  * @since             1.0.0
  * @package           WP_GST
  *
  * @wordpress-plugin
  * Plugin Name:       WP Global Site Tag
- * Plugin URI:        http://digitalapps.co/wp-global-site-tag/
+ * Plugin URI:        https://digitalapps.com/wp-global-site-tag/
  * Description:       WP Global Site Tag (gtag.js) plugin - Analytics replacement from Google. Supports multiple properties.
- * Version:           1.0.4
+ * Version:           1.0.6
  * Author:            Digital Apps
- * Author URI:        http://digitalapps.co/
+ * Author URI:        https://digitalapps.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       wp-global-site-tag
@@ -35,7 +35,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'DA_WP_GST', '1.0.4' );
+define( 'DA_WP_GST', '1.0.6' );
 
 /**
  * The code that runs during plugin activation.

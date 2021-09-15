@@ -1,9 +1,9 @@
-﻿=== Plugin Name ===
+=== Plugin Name ===
 Contributors: digitalapps
-Donate link: https://digitalapps.co/
+Donate link: https://digitalapps.com
 Tags: global site tag, analytics, google analytics, google, gtm, google tag manager, global site tag, gtag
 Requires at least: 3.0.1
-Tested up to: 5.2
+Tested up to: 5.5
 Stable tag: 5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,7 +12,7 @@ Global Site Tag (gtag.js) is a new Google Analytics replacement – giving you b
 
 == Description ==
 
-<a href="https://digitalapps.co/wordpress-plugins/wp-global-site-tag/" title="WP Global Site Tag">Global Site Tag</a> (gtag.js) is a new Google Analytics replacement. WP Global Site Tag provides a framework for streamlined web page tagging – giving you better control while making implementation easier. Using gtag.js lets you benefit from the latest tracking features and integrations as they become available. This is the WordPress version.
+<a href="https://digitalapps.com/wordpress-plugins/wp-global-site-tag/" title="WP Global Site Tag">Global Site Tag</a> (gtag.js) is a new Google Analytics replacement. WP Global Site Tag provides a framework for streamlined web page tagging – giving you better control while making implementation easier. Using gtag.js lets you benefit from the latest tracking features and integrations as they become available. This is the WordPress version.
 
 To use gtag.js to track your site, install the plugin and activate.
 
@@ -41,7 +41,7 @@ Install:
 Universal Analytics(analytics.js) is only used for installing Google Analytics, and global tag can be used to install multiple tools like, GA and GTM.
 
 Tracking:
-Universal Analytics uses trackers(ga(‘create’, ‘UA-XXXXX-Y’, ‘auto’);) to send pageviews to Google Analytics while gtag send pageviews to GA property identified by the GA_Tracking_ID(gtag(‘config’,’GA_Tracking_ID’)).
+Universal Analytics uses trackers(ga(‘create’, ‘G-XXXXX-Y’, ‘auto’);) to send pageviews to Google Analytics while gtag send pageviews to GA property identified by the GA_Tracking_ID(gtag(‘config’,’GA_Tracking_ID’)).
 
 Use:
 Global Site Tag can be used for conversion tracking and remarketing while universal analytics can’t.
@@ -71,3 +71,7 @@ Follow these steps to install the plugin on your site.
 * Move settings page under Settings.
 * Add update/install handlers.
 * Add new screenshot.
+= 1.0.5 =
+* Updated label
+= 1.0.6 =
+* Added mime type

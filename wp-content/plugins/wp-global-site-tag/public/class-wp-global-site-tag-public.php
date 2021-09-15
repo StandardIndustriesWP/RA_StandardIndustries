@@ -64,8 +64,8 @@ class WP_Global_Site_Tag_Public {
 			$snippets = "gtag('config', '" . $tracking_id . "');";
 		}
 
-		$output .= '<script async src="https://www.googletagmanager.com/gtag/js?id=' . $tracking_id . '"></script>';
-		$output .= '<script>';
+		$output .= '<script async src="https://www.googletagmanager.com/gtag/js?id=' . $tracking_id . '" type="text/javascript"></script>';
+		$output .= '<script type="text/javascript">';
 		$output .= 'window.dataLayer = window.dataLayer || [];';
 		$output .= 'function gtag(){dataLayer.push(arguments);}';
 		$output .= 'gtag(\'js\', new Date());';

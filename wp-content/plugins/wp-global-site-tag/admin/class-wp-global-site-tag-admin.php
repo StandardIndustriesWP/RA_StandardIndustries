@@ -245,13 +245,13 @@ class WP_Global_Site_Tag_Admin {
 
     	add_settings_field(
             $this->plugin_name . '-tracking-id',
-            apply_filters( $this->plugin_name . 'label-title', esc_html__( 'Tracking ID:', 'wp-global-site-tag' ) ),
+            apply_filters( $this->plugin_name . 'label-title', esc_html__( 'Measurement ID (Tracking ID):', 'wp-global-site-tag' ) ),
             array( $this, 'field_text' ),
             $this->plugin_name . '-basic-settings-page',
             $this->plugin_name . '-basic',
             array(
                 'id'                => $this->plugin_name . '-tracking-id',
-                'description'       => 'UA-XXXXXXXX-X',
+                'description'       => 'G-XXXXXXXXXX',
                 'value'             => ''
             )
         );
