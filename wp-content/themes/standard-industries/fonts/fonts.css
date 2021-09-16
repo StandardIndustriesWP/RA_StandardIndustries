@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Sohne';
+    src: url('Sohne-Leicht.eot');
+    src: url('Sohne-Leicht.eot?#iefix') format('embedded-opentype'),
+        url('Sohne-Leicht.woff2') format('woff2'),
+        url('Sohne-Leicht.woff') format('woff'),
+        url('Sohne-Leicht.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sohne';
+    src: url('Sohne-Mager.eot');
+    src: url('Sohne-Mager.eot?#iefix') format('embedded-opentype'),
+        url('Sohne-Mager.woff2') format('woff2'),
+        url('Sohne-Mager.woff') format('woff'),
+        url('Sohne-Mager.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

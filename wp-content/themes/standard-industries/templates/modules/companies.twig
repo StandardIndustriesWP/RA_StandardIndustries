@@ -17,7 +17,15 @@
         <ul class="companies__list" role="presentation">
             {% for item in module.items %}
                 <li class="companies__list-item">
-                    <a class="companies__link" href="{{ item.post.path }}">
+				
+				{% if item.company_url %}
+					<a class="companies__link" target="_blank" href="{{ item.company_url }}">
+				{% else %}
+					<a class="companies__link" target="_blank" href="{{ item.post.path }}">
+				{% endif %}
+                    
+					
+					
                         <div class="companies__image">
                             <img
                                 class="companies__img"
@@ -28,10 +36,14 @@
                             />
                         </div>
                     </a>
+					
+					
                 </li>
             {% endfor %}
+          <!--  
+			<li class="companies__list-item companies__list-item--placeholder"></li>
             <li class="companies__list-item companies__list-item--placeholder"></li>
-            <li class="companies__list-item companies__list-item--placeholder"></li>
+			-->
         </ul>
     </div>
 </section>

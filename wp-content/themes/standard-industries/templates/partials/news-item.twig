@@ -1,29 +1,136 @@
-{% if item %}
-    <article class="{{ type }}__item {{ item.thumbnail ? '' : type~'__item--no-image' }}">
-        <a class="{{ type }}__item-link" href="{{ item.path }}">
-            {% if item.thumbnail %}
-                <div class="{{ type }}__item-image">
-                    <img
-                        class="{{ type }}__item-img"
-                        src="{{ item.thumbnail.src('large') }}"
-                        srcset="{{ item.thumbnail.srcset }}"
-                        alt="{{ item.thumbnail.alt }}"
-                        data-object-fit
-                    />
-                    {% if item.categories|length %}
-                        <div class="{{ type }}__item-category {{ type }}__item-category--absolute">
-                            {{ item.categories[0].name }}
-                        </div>
-                    {% endif %}
-                </div>
-            {% else %}
-                {% if item.categories|length %}
+
+
+{% if item.post %}
+    <article class="post_item_img custom_selec {{ type }}__item {{ type }}__post-item {{ item.post.logo ? 'item_has_image' : type~'__item--no-image' }}">
+        <a class="{{ type }}__item-link" href="{% if item.link %}{{item.link.url}}{% elseif item.post.path %}{{ item.post.path }}{% endif %}" target="{{item.link.target}}">
+            {% if item.logo %}
+				{% if item.logo %}	
+					<div class="{{ type }}__item-image">
+						<img
+								class="{{ type }}__item-img"
+								src="{{ Image(item.logo).src('large') }}"
+								srcset="{{ Image(item.logo).srcset }}"
+								alt="{{ Image(item.logo).alt }}"
+								data-object-fit
+						/>
+						{% if item.post.categories|length %}
+							<div class="{{ type }}__item-category {{ type }}__item-category--absolute">
+								{{ item.post.categories[0].name }}
+							</div>
+						{% endif %}
+					</div>
+				{% endif %}
+				{% else %}
+                
+				 {% if item.post.categories|length %}
                     <div class="{{ type }}__item-category">
-                        {{ item.categories[0].name }}
+                        {{ item.post.categories[0].name }}
                     </div>
                 {% endif %}
+                
             {% endif %}
-            <h5 class="{{ type }}__item-title">{{ item.title }}</h5>
+            <h6 class="{{ type }}__item-title">{{ item.post.title }}</h6>
         </a>
     </article>
+{% elseif item %}
+
+	{% if feature_or_logo == 'logo' %}
+
+		<article class="custom_selec has_{{feature_or_logo}} {{ type }}__item {{ item.logo ? 'item_has_image' : type~'__item--no-image' }}">
+			<a class="{{ type }}__item-link" href="{{ item.path }}">
+
+				{% if item.logo %}
+					<div class="{{ type }}__item-image">
+					
+							<img
+									class="{{ type }}__item-img"
+									src="{{ Image(item.logo).src('large') }}"
+									srcset="{{ Image(item.logo).srcset }}"
+									alt="{{ Image(item.logo).alt }}"
+									data-object-fit
+							/>
+
+						
+						{% if item.categories|length %}
+							{% if cat_name == 'yes' %}
+								<div class="{{ type }}__item-category {{ type }}__item-category--absolute">
+									{{ item.categories[0].name }}
+								</div>
+							{% endif %}
+						{% endif %}
+					</div>
+					
+				{% else %}
+				
+					{% if item.categories|length %}
+						{% if cat_name == 'yes' %}
+							<div class="{{ type }}__item-category">
+								{{ item.categories[0].name }}
+							</div>
+						{% endif %}
+				   
+					{% endif %}
+				{% endif %}
+				
+				
+					
+					
+					
+				{% if item.title %}
+					<h5 class="{{ type }}__item-title">{{ item.title }}</h5>
+				{% else %}
+					<h5 class="{{ type }}__item-title">{{ item.link.title }}</h5>
+				{% endif %}
+			</a>
+		</article>
+		
+	{% else %}	
+		<article class="has_{{feature_or_logo}} {{ type }}__item {{ item.logo ? 'item_has_image' : type~'__item--no-image' }}">
+			<a class="{{ type }}__item-link" href="{{ item.path }}">
+
+				{% if item._thumbnail_id %}
+					<div class="{{ type }}__item-image">
+					
+							<img
+									class="{{ type }}__item-img"
+									src="{{ Image(item._thumbnail_id).src('large') }}"
+									srcset="{{ Image(item._thumbnail_id).srcset }}"
+									alt="{{ Image(item._thumbnail_id).alt }}"
+									data-object-fit
+							/>
+
+						
+						{% if item.categories|length %}
+							{% if cat_name == 'yes' %}
+								<div class="{{ type }}__item-category {{ type }}__item-category--absolute">
+									{{ item.categories[0].name }}
+								</div>
+							{% endif %}
+						{% endif %}
+					</div>
+					
+				{% else %}
+				
+					{% if item.categories|length %}
+						{% if cat_name == 'yes' %}
+							<div class="{{ type }}__item-category">
+								{{ item.categories[0].name }}
+							</div>
+						{% endif %}
+				   
+					{% endif %}
+				{% endif %}
+				
+				
+					
+					
+					
+				{% if item.title %}
+					<h5 class="{{ type }}__item-title">{{ item.title }}</h5>
+				{% else %}
+					<h5 class="{{ type }}__item-title">{{ item.link.title }}</h5>
+				{% endif %}
+			</a>
+		</article>
+	{% endif %}
 {% endif %}

@@ -4,7 +4,9 @@
             {% if module.eyebrow %}
                 <div class="news__eyebrow">{{ module.eyebrow }}</div>
             {% endif %}
+            {% if module.heading %}
             <h3 class="news__heading">{{ module.heading }}</h3>
+            {% endif %}
             {% if module.button_link %}
                 <a
                     class="news__btn"

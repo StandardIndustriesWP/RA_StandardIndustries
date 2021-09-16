@@ -1,0 +1,80 @@
+<section class="intro intro--light two_img_layout">
+	<div class="intro__inner">
+		<div class="intro__content">
+		
+			<div class="col_two_lay lay_col_left">
+				{% if module.img_left_side %}
+					{% for img_col_left in module.img_left_side %}
+						 <img
+                            class="two_img"
+                            src="{{ Image(img_col_left.img_left).src('large') }}"
+                            srcset="{{ Image(img_col_left.img_left).srcset }}"
+                            alt="{{ Image(img_col_left.img_left).alt }}"
+                            data-object-fit
+                        />
+					{% endfor %}
+			
+				{% endif %}
+			</div>
+			<div class="col_two_lay lay_col_right">
+				{% if module.img_right_side %}
+					{% for img_col_right in module.img_right_side %}
+						 <img
+                            class="two_img"
+                            src="{{ Image(img_col_right.img_right).src('large') }}"
+                            srcset="{{ Image(img_col_right.img_right).srcset }}"
+                            alt="{{ Image(img_col_right.img_right).alt }}"
+                            data-object-fit
+                        />
+					{% endfor %}
+				{% endif %}
+			</div>
+		
+			
+		</div>
+    </div>
+	<style type="text/css">
+	section.intro.intro--light.two_img_layout .intro__content {
+		max-width: 100%;
+	}
+	.col_two_lay {
+		display: inline-block;
+		float: left;
+		width: 50%;
+	}
+	img.two_img {
+		max-width: 100%;
+	}
+	.lay_col_left img.two_img {
+		margin-right:15px;
+		margin-bottom: 30px;
+	}
+        .lay_col_left img {
+    float: right;
+}
+
+.lay_col_right img {
+    float: left;
+}
+	.lay_col_right img.two_img {
+		margin-left:15px;
+		margin-bottom: 30px;
+	}
+	.col_two_lay.lay_col_right {
+		margin-top: 100px;
+	}
+	@media only screen and (max-width:768px){
+		.col_two_lay {
+			width: 100%;
+		}
+		.lay_col_right img.two_img {
+			margin-left:0px;
+			margin-bottom: 30px;
+		}
+		.col_two_lay.lay_col_right {
+			margin-top: 0px;
+		}
+	}
+	
+	</style>
+</section>

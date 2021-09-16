@@ -1,0 +1,57 @@
+<section class="intro intro--{{ module.type }} layout_two_col">
+    <div class="intro__inner">
+        <div class="intro__content">
+			<div class="layout_left stat_col">
+                {% if module.heading %}
+				<div class="intro__heading" style="color:#ED2A37;">{{ module.heading }}</div>
+                {% endif %}
+				{% if module.eyebrow %}
+					<div class="stat_content intro__eyebrow">{{ module.eyebrow }}</div>
+				{% endif %}
+			</div>
+			<div class="layout_right stat_col">
+				{% if module.image %}
+					<div class="intro__eyebrow">
+						<img
+								class="static_img"
+								src="{{ Image(module.image).src('header_large') }}"
+								srcset="{{ Image(module.image).srcset }}"
+								alt="{{ Image(module.image).alt }}"
+								data-object-fit
+							/>
+					</div>
+				{% endif %}
+			</div>
+        </div>
+    </div>
+	<style type="text/css">
+.stat_content.intro__eyebrow {
+color:unset;
+}
+.stat_col {
+    max-width: 50%;
+    display: inline-block;
+    float: right;
+    padding: 25px;
+	width: 50%;
+}
+@media only screen and (max-width:1040px){
+.stat_col {
+    max-width: 100%;
+	width: 100%;
+}
+}
+img.static_img {
+    max-width: 100%;
+	width: 100%;
+}
+section.intro.intro--.layout_two_col .intro__content {
+    max-width: 100%;
+	width: 100%;
+}
+.stat_content.intro__eyebrow {
+    color: #666;
+}
+	</style>
+	
+</section>
