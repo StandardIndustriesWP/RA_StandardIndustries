@@ -15,18 +15,16 @@
                 </a>
             {% endif %}
         </header>
-        <div class="news-list__items">
+        <div class="news-list__items has_{{module.image_or_logo}}_itm">
             {% if items and items[module.category] %}
                 {% for item in items[module.category] %}
-                    {% include 'partials/news-item.twig' with { type: 'news-list', item: item } %}
+                    {% include 'partials/news-item.twig' with { type: 'news-list', item: item, cat_name: module.category_nme, feature_or_logo: module.image_or_logo  } %}
                 {% endfor %}
             {% else %}
                 {% for item in module.items %}
-                    {% include 'partials/news-item.twig' with { type: 'news-list', item: item.post } %}
+                    {% include 'partials/news-item.twig' with { type: 'news-list', item: item } %}
                 {% endfor %}
             {% endif %}
-            <div class="news-list__item news__item--placeholder"></div>
-            <div class="news-list__item news__item--placeholder"></div>
         </div>
         {% if items and items[module.category] and items|length == 1 %}
             {% include 'partials/pagination.twig' with { pagination: items[module.category].pagination({ show_all: false, mid_size: 3, end_size: 2 }) } %}

@@ -300,3 +300,73 @@ class StandardIndustries extends Timber\Site
 }
 
 new StandardIndustries();
+
+
+
+function st_custom_scripts(){
+	?>
+	<style type="text/css">
+
+		
+	.static_img_left .stat_col {
+		float: left;
+	}
+	section.intro.intro--.layout_two_col.static_img_left {
+    background: transparent;
+}
+.layout_two_col {
+    padding-bottom: 0;
+    padding-top: 40px;
+}
+.layout_two_col:first-child{
+    padding-top: 120px;
+}
+.layout_two_col:last-child {
+    padding-bottom: 120px;
+}
+.layout_two_col .intro__inner {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 40px;
+}
+.layout_two_col:last-child .intro__inner {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+	</style>
+	<script type="text/javascript">
+		var l_i = 0;
+		jQuery('.layout_two_col').each(function(){
+			
+			l_i++;
+			
+			if(l_i % 2 == 0){
+				jQuery(this).addClass('static_img_left');
+			}else{
+			 jQuery(this).addClass('static_img_right');
+			}
+		});
+		
+		jQuery('.layout_two_col ').last().find('.intro__inner').attr('style', 'border-bottom:1px solid transparent !important;');
+
+	
+	
+	</script>
+	<?php 
+}
+add_action('wp_footer', 'st_custom_scripts');
+
+/*
+ *  custom fonts & scripts
+ * */
+function custom_enqueue(){
+    wp_enqueue_style('custom_fonts', get_template_directory_uri() . '/fonts/fonts.css', array(), '1.0.0', 'all' );
+    wp_enqueue_style('stnd_custom_css', get_template_directory_uri() . '/styles/custom.css', array(), '1.0.0', 'all' );
+    
+	wp_enqueue_script('jquery');
+	
+	wp_enqueue_script('standard_isotope_script', get_template_directory_uri() . '/scripts/plugins/isotope.min.js', array('jquery'), '1.0.0', true);
+    
+    wp_enqueue_script('stnd_custom_script', get_template_directory_uri() . '/scripts/custom.js', array('jquery'), '1.0.0', true );
+    
+}
+add_action('wp_enqueue_scripts', 'custom_enqueue');

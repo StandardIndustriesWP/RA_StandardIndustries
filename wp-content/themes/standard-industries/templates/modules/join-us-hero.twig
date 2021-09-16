@@ -1,0 +1,44 @@
+<header class="hero join_us_hero">
+    <div class="hero__image">
+        <img
+            class="hero__img"
+            src="{{ Image(module.background_image).src('header_large') }}"
+            srcset="{{ Image(module.background_image).srcset }}"
+            alt="{{ Image(module.background_image).alt }}"
+            data-object-fit
+        />
+    </div>
+    {% if module.logo %}
+        <div class="hero__logo">
+            <img
+                class="hero__img"
+                src="{{ Image(module.logo).src('thumbnail') }}"
+                srcset="{{ Image(module.logo).srcset }}"
+                alt="{{ Image(module.logo).alt }}"
+                data-object-fit
+            />
+        </div>
+    {% endif %}
+    <div class="hero__inner">
+        <div class="hero__content">
+            {% if module.eyebrow %}
+                <div class="hero__eyebrow">{{ module.eyebrow }}</div>
+            {% endif %}
+            <h1 class="hero__heading">{{ module.heading }}</h1>
+            {% if module.body %}
+                <div class="hero__body">{{ module.body }}</div>
+            {% endif %}
+        </div>
+    </div>
+	<style type="text/css">
+	.join_us_hero .hero__image{
+		height: {% if module.bg_position %}{{ module.bg_position }}{% else %}170{% endif %}%;
+	}
+	@media (min-width: 1025px){
+		.hero.join_us_hero {
+			padding: 180px 88px;
+		}
+	}
+	
+	</style>
+</header>
