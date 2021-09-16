@@ -3,7 +3,7 @@
 */
 section.intro.hover_transition.gallery_deck.standard_portfolio {
     background-color: #f7f7f7;
-        
+
 }
 .hero__content h3, section.intro.hover_transition.gallery_deck.standard_portfolio, .grid_caption h2, .grid_caption a, .grid_caption p, .hover_section_title h2 {
     font-family: Rajdhani, sans-serif !important;
@@ -49,7 +49,7 @@ margin-right: 0px;
 	top:0;
 }
 
-.grid_single { 
+.grid_single {
   flex: 1 0 calc(25% - 20px);
   max-width: calc(25% - 20px);
   min-width: calc(25% - 20px);
@@ -146,9 +146,7 @@ section.intro.hover_transition a:hover {
 .global-footer__copyright ul li a {
   font-size: 12px;
 }
-.intro .intro__heading strong {
-  color: inherit;
-}
+
 .social_links a {
   display: inline-block;
   width: 30px;
@@ -173,11 +171,7 @@ section.intro.hover_transition a:hover {
 .caption_element a:hover h2 {
   color: inherit;
 }
-header.business-links__header {
-  text-align: center;
-  margin: 0 auto;
-  margin-bottom: 48px;
-}
+
 @media only screen and (max-width: 767px) {
   .grid_single {
     flex: 1 0 calc(100% - 20px);
@@ -304,7 +298,7 @@ article.custom_selec.news-list__item.active, article.news-list__item.active {
     display: none;
 }
 /*
- * 
+ *
  * */
 
 article.post_item_img .related-articles__item-image {
