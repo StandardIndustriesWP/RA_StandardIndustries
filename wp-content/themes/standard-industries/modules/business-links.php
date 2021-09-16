@@ -58,7 +58,6 @@ $modules->add_module('Buisiness Links', 'business-links', 'page_modules', [
         ),
         'collapsed' => '',
         'min' => 1,
-        'max' => 3,
         'layout' => 'block',
         'button_label' => 'Add Item',
         'sub_fields' => array(
@@ -109,6 +108,23 @@ $modules->add_module('Buisiness Links', 'business-links', 'page_modules', [
                 'max_height' => '',
                 'max_size' => '',
                 'mime_types' => '',
+            ),
+            array(
+                'key' => 'field_5cb5f0e498685',
+                'label' => 'Heading',
+                'name' => 'heading',
+                'type' => 'text',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'placeholder' => '',
+                'maxlength' => '',
             ),
             array(
                 'key' => 'field_5cb5f0e498683',

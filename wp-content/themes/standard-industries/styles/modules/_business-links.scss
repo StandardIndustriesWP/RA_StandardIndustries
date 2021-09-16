@@ -31,6 +31,7 @@
     @include medium-and-up {
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
     }
   }
 
@@ -42,17 +43,20 @@
 
     @include medium-and-up {
       margin-bottom: 0;
+      width: 31%;
 
       .business-links__list-1-up & {
         width: 75%;
+        max-width: 75%;
       }
 
       .business-links__list-2-up & {
         width: 48%;
+        max-width: 48%;
       }
 
-      .business-links__list-3-up & {
-        width: 31%;
+      & + & + & + & {
+        margin-top: 60px;
       }
     }
 
@@ -84,7 +88,11 @@
   }
 
   &__img {
-    @include image;
+     @include image;
+     transform: scale(1);
+   }
+
+  .scale-on-hover &__img {
 
     transform: scale(1.2);
     transition: transform 150ms ease-out;
