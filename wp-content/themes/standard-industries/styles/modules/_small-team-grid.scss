@@ -1,0 +1,97 @@
+/*
+ * Team List Module
+ * ======================================================================== */
+
+.small-team-grid {
+  @include section;
+
+  padding: 0 18px;
+
+  @include large-and-up {
+    padding: 0 78px;
+  }
+
+  &__items {
+    @include section-full;
+
+    max-width: 1284px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  &__item {
+    @include animation-fade-in;
+
+    margin: 0 10px 20px;
+    width: calc(50% - 20px);
+    min-width: 124px;
+
+    @media (min-width: 523px ) {
+      margin-bottom: 40px;
+      width: calc(33% - 20px);
+    }
+
+    @include medium-and-up {
+      width: calc(20% - 20px);
+    }
+
+    @include large-and-up {
+      width: calc(16.66% - 20px);
+
+      &:nth-last-child(-n + 3) {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (min-width: 1308px) {
+      width: calc(14.25% - 20px);
+    }
+
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+
+    &--placeholder {
+      visibility: hidden;
+    }
+  }
+
+  &__image {
+    @include image-wrapper;
+
+    margin-bottom: 16px;
+    padding-bottom: 60%;
+    width: 100%;
+
+    .small-team-grid__item--square & {
+      padding-bottom: 100%;
+    }
+  }
+
+  &__img {
+    @include image;
+
+    object-position: 50% 0;
+  }
+
+  &__name {
+    margin-bottom: 0;
+  }
+
+  &__title {
+    @include heading-6;
+
+    color: $gray;
+    padding-bottom: 16px;
+  }
+
+  &__body {
+    @include clear-last-child;
+
+    color: $body-gray;
+    display: none;
+    padding-bottom: 16px;
+
+  }
+}

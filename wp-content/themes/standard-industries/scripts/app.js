@@ -33,6 +33,7 @@ const RelatedArticles = require('./modules/related-articles');
 const Search = require('./components/search');
 const Services = require('./modules/services');
 const Spotlight = require('./modules/spotlight');
+const SmallTeamGrid = require('./modules/small-team-grid');
 const Stats = require('./modules/stats');
 const Team = require('./modules/team');
 const TeamList = require('./modules/team-list');
@@ -64,6 +65,7 @@ const modules = [
   RelatedArticles,
   Search,
   Services,
+  SmallTeamGrid,
   Spotlight,
   StaticCol,
   Stats,
