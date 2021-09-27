@@ -13,12 +13,14 @@
         <ul class="business-links__list business-links__list-{{ module.items|length }}-up" role="presentation">
             {% for item in module.items %}
                 <li class="business-links__list-item">
-                    <div class="business-links__image-wrapper">
-                        <a
-                            class="business-links__image-link"
-                            href="{{ item.link.url }}"
-                            target="{{ item.link.target ? item.link.target : '_self' }}"
-                        >
+                    <div class="business-links__image-wrapper{% if item.link %} scale-on-hover{% endif %}">
+                        {% if item.link %}
+                            <a
+                                class="business-links__image-link"
+                                href="{{ item.link.url }}"
+                                target="{{ item.link.target ? item.link.target : '_self' }}"
+                            >
+                        {% endif %}
                             <div class="business-links__image">
                                 <img
                                     class="business-links__img"
@@ -29,16 +31,21 @@
                                 />
                             </div>
                         </a>
-                        <div class="business-links__logo">
-                            <img
-                                class="business-links__logo-img"
-                                src="{{ Image(item.logo).src('medium') }}"
-                                srcset="{{ Image(item.logo).srcset }}"
-                                alt="{{ Image(item.logo).alt }}"
-                                data-object-fit
-                            />
-                        </div>
+                        {% if item.logo %}
+                            <div class="business-links__logo">
+                                <img
+                                    class="business-links__logo-img"
+                                    src="{{ Image(item.logo).src('medium') }}"
+                                    srcset="{{ Image(item.logo).srcset }}"
+                                    alt="{{ Image(item.logo).alt }}"
+                                    data-object-fit
+                                />
+                            </div>
+                        {% endif %}
                     </div>
+                    {% if item.heading %}
+                        <h5 class="business-links__item-heading">{{ item.heading }}</h5>
+                    {% endif %}
                     <div class="business-links__body">
                         {{ item.body }}
                     </div>
