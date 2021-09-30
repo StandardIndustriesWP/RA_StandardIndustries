@@ -1,9 +1,7 @@
 /*
 	Hover Transition CSS
 */
-section.intro.hover_transition.gallery_deck.standard_portfolio.bg-dark {
-    background-color: #f7f7f7;
-}
+
 .hero__content h3, section.intro.hover_transition.gallery_deck.standard_portfolio, .grid_caption h2, .grid_caption a, .grid_caption p, .hover_section_title h2 {
     font-family: Rajdhani, sans-serif;
 }
