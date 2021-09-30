@@ -120,11 +120,12 @@ $modules->add_module(' Standard Portfolio', 'standard-portfolio', 'page_modules'
             'id' => '',
         ),
         'choices' => array(
+            'bg-default' => 'Default',
             'bg-light' => 'Light',
             'bg-dark' => 'Dark',
         ),
         'default_value' => array(
-            0 => 'Light',
+            0 => 'Default',
         ),
         'allow_null' => 0,
         'multiple' => 0,
