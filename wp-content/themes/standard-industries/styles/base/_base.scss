@@ -92,12 +92,22 @@ main {
 }
 
 .page__content {
-  section {
+  section:not(.bg-light):not(.bg-dark) {
     &:nth-child(odd) {
       background-color: $white;
     }
 
     &:nth-child(even) {
+      background-color: $off-white;
+    }
+  }
+
+  section {
+    &.bg-light {
+      background-color: $white;
+    }
+
+    &.bg-dark {
       background-color: $off-white;
     }
   }

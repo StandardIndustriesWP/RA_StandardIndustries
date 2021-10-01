@@ -2,105 +2,137 @@
  * Standard Portfolio
  * ======================================================================== */
 
-.standard_portfolio .alternate-grid {
-  align-items: flex-start;
+.standard_portfolio {
 
-  .masonry-item-no-hover {
-    height: unset;
+  .masonry-gallery {
+    width: calc(100% + 20px);
+    max-width: 1300px;
+    margin: 20px -10px 0;
+  }
 
-    @media only screen and (max-width: 480px) {
+  .alternate-grid {
+    align-items: flex-start;
+
+    @include medium-and-up {
+      margin-top: 80px;
+    }
+
+    .masonry-item-no-hover {
+      height: unset;
+
+      @media only screen and (max-width: 480px) {
         flex: 1 0 calc(100% - 20px);
         max-width: calc(100% - 20px);
         width: calc(100% - 20px);
-    }
+      }
 
-    @media only screen and (min-width: 481px) and (max-width: $medium-max-width) {
+      @media only screen and (min-width: 481px) and (max-width: $medium-max-width) {
         flex: 1 0 calc(50% - 20px);
         max-width: calc(50% - 20px);
         width: calc(50% - 20px);
-    }
-
-    @media only screen and (min-width: $large-min-width) {
-      flex: 1 0 calc(25% - 20px);
-      max-width: calc(25% - 20px);
-      width: calc(50% - 20px);
-    }
-
-    &:hover {
-      transform: scale(1);
-      z-index: unset;
-    }
-
-    .company_pos {
-      width: fit-content;
-      max-width: calc(100% - 16px);
-      margin: 0;
-      padding: 0 8px 0 3px;
-      display: flex;
-      align-items: flex-start;
-      border-radius: 0;
-      left: 4px;
-      top: 4px;
-      color: $body-gray;
-
-      img {
-        width: 22px;
-        height: 19px !important; // override previous style set with !important declaration
-        margin: 0;
       }
 
-      p {
-        @include body-3;
-
-        margin: 0;
-        font-style: normal;
+      @media only screen and (min-width: $large-min-width) {
+        flex: 1 0 calc(25% - 20px);
+        max-width: calc(25% - 20px);
+        width: calc(50% - 20px);
       }
-    }
 
-    .grid_image {
-      height: 160px;
-      transition: 0.3s;
-      -webkit-transition: 0.3s;
-      -ms-transition: 0.3s;
-      -o-transition: 0.3s;
-    }
+      &:hover {
+        transform: scale(1);
+        z-index: unset;
+        -webkit-transition: 0s;
+        -ms-transition: 0s;
+        -o-transition: 0s;
+        transition: 0s;
+      }
 
-    .grid_image-link:hover .grid_image img {
-      transform: scale(1.03);
-    }
-
-    .grid_caption {
-      background-color: unset;
-      align-items: flex-start;
-      padding: 12px 0;
-      position: relative;
-      opacity: 1;
-      height: unset;
-
-      .caption_element {
-        @include body-2;
-
-        padding: 0;
+      .company_pos {
+        max-width: calc(100% - 16px);
+        margin: 0;
+        padding: 0 8px 0 3px;
+        display: flex;
+        flex: 0 0 auto;
+        align-items: flex-start;
+        border-radius: 0;
+        left: 4px;
+        top: 4px;
+        right: unset;
         color: $body-gray;
-        position: relative;
-        opacity: 1;
+        font-weight: normal;
 
-        p {
-          @include body-2;
+        img {
+          width: 22px;
+          height: 19px !important; // override previous style set with !important declaration
+          margin: 0;
         }
 
-        a {
+        p {
+          @include body-3;
+
+          margin: 0;
+          font-style: normal;
+        }
+      }
+
+      .grid_image {
+        height: 160px;
+
+        &.img_logo_dark img {
+          background-color: #F5F5F4;
+        }
+
+        & > img,
+        .company_pos {
+          -webkit-transition: 0.3s;
+          -ms-transition: 0.3s;
+          -o-transition: 0.3s;
+          transition: 0.3s;
+        }
+      }
+
+      .grid_image-link:hover {
+        .grid_image > img {
+          transform: scale(1.03);
+        }
+
+        .company_pos {
+          opacity: 0;
+        }
+      }
+
+      .grid_caption {
+        background-color: unset;
+        align-items: flex-start;
+        padding: 12px 0;
+        position: relative;
+        opacity: 1;
+        height: unset;
+
+        .caption_element {
           @include body-2;
 
-          color: inherit;
-          text-decoration: underline;
+          padding: 0;
+          color: $body-gray;
+          position: relative;
+          opacity: 1;
 
-          &:hover {
-            text-decoration: none;
+          p {
+            @include body-2;
+          }
+
+          a {
+            @include body-2;
+
+            color: inherit;
+            text-decoration: underline;
+
+            &:hover {
+              text-decoration: none;
+            }
           }
         }
       }
     }
-
   }
 }
