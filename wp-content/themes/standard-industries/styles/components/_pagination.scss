@@ -19,14 +19,23 @@
   }
 
   &__list-item {
-    margin-right: 32px;
+    margin-right: 4%;
+
+    @include medium-and-up {
+      margin-right: 32px;
+    }
 
     &--prev {
-      margin-right: 48px;
+      margin-right: 16px;
+
+      @include medium-and-up {
+        margin-right: 48px;
+      }
     }
 
     &--next {
       margin-left: 16px;
+      margin-right: 0;
     }
   }
 

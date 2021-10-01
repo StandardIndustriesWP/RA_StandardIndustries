@@ -1,69 +1,104 @@
-<section class="intro hover_transition gallery_deck standard_portfolio">
+<section class="intro hover_transition gallery_deck standard_portfolio {{ module.bg_color }}">
 
 	{% if module.sec_title %}
-        <div class="hover_section_title">
+        <div class="hover_section_title" style="text-align: {{ module.title_alignment }}">
 			<h3>{{ module.sec_title }}</h3>
         </div>
     {% endif %}
-<div class="masonry-gallery">
+	<div class="masonry-gallery">
 
-<div class="filters filters-style-one">
-	<ul class="filter-tabs filter-btns clearfix">
-		<li class="active filter view_all" data-role="button" data-filter=".all">View All</li>
-			{% if module.transition_items|length %}
-				{% for transition_item in module.transition_items %}
-				
-					{% if transition_item.category_name %}
-					
-						<li class="filter order_by_letter" data-role="button" data-filter=".{{ transition_item.category_name  | split(' ', 4)[0] }}{% set cat_name = transition_item.category_name  | split(' ', 4) %}{% if cat_name[1] != '&' and  cat_name[1] != '' %}.{{ transition_item.category_name  | split(' ', 4)[1]}}{% endif %}">{{ transition_item.category_name}}</li>
-						  
-					{% endif %}  
-				
+	{% if module.enable_filter == "yes" %}
+		<div class="filters filters-style-one">
+			<ul class="filter-tabs filter-btns clearfix">
+				<li class="active filter view_all" data-role="button" data-filter=".all">View All</li>
+					{% if module.items|length %}
+						{% for item in module.items %}
+
+							{% if item.category_name %}
+
+								<li class="filter order_by_letter" data-role="button" data-filter=".{{ item.category_name  | split(' ', 4)[0] }}{% set cat_name = item.category_name  | split(' ', 4) %}{% if cat_name[1] != '&' and  cat_name[1] != '' %}.{{ item.category_name  | split(' ', 4)[1]}}{% endif %}">{{ item.category_name}}</li>
+
+							{% endif %}
+
+						{% endfor %}
+					{% endif %}
+			</ul>
+		</div>
+	{% endif %}
+
+
+	{% if module.enable_hover == "yes" %}
+		<div class="outer-container row clearfix gird_area">
+
+			{% if module.items|length %}
+				{% for item in module.items %}
+					<div class="default-portfolio-item masonry-item all grid_single {{ item.category_name }} group_{{ item.grouped_item }}" data-masisotop="hover_transition">
+							<div class="grid_image {{ item.img_type }}">
+								{% if item.company_position %}
+									<div class="company_pos"><img src="{{theme.link}}/images/favicon.png"> {{ item.company_position }}</div>
+								{% endif %}
+
+
+								<img src="{{ Image(item.image).src('large') }}" alt="" />
+							</div>
+
+							<div class="grid_caption">
+								<div class="caption_element">
+									{% if item.web_link %}
+										<a href="{{ item.web_link }}" target="_blank"><h2>{{ item.heading }}</h2> </a>
+									{% else %}
+										<a href="{{ item.link_post.path }}" target="_blank"><h2>{{ item.heading }}</h2> </a>
+									{% endif %}
+
+									<p>{{ item.description }}</p>
+									<div class="arrow_right">
+										{% if item.web_link %}
+											<a href="{{ item.web_link }}" target="_blank">&#8594;</a>
+										{% else %}
+											<a href="{{ item.link_post.path }}" target="_blank">&#8594;</a>
+										{% endif %}
+
+									</div>
+								</div>
+							</div>
+					</div>
 				{% endfor %}
 			{% endif %}
-	</ul>
-</div>
-	
-	 
-<div class="outer-container row clearfix gird_area">
-
-	{% if module.transition_items|length %}
-	{% for transition_item in module.transition_items %}
-	
-	<div class="default-portfolio-item masonry-item all grid_single {{ transition_item.category_name }} group_{{ transition_item.grouped_item }}" data-masisotop="hover_transition">
-			<div class="grid_image {{ transition_item.img_type }}">
-				{% if transition_item.company_position %}
-					<div class="company_pos"><img src="{{theme.link}}/images/favicon.png"> {{ transition_item.company_position }}</div>
-				{% endif %}
-				
-				
-				<img src="{{ Image(transition_item.hover_image).src('large') }}" alt="" />
 			</div>
-			
-			<div class="grid_caption">
-				<div class="caption_element">
-					{% if transition_item.web_link %}
-						<a href="{{ transition_item.web_link }}" target="_blank"><h2>{{ transition_item.hover_heading }}</h2> </a>
-					{% else %}
-						<a href="{{ transition_item.link_post.path }}" target="_blank"><h2>{{ transition_item.hover_heading }}</h2> </a>
-					{% endif %}	
-						
-					<p>{{ transition_item.hover_description }}</p>
-					<div class="arrow_right">
-						{% if transition_item.web_link %}
-							<a href="{{ transition_item.web_link }}" target="_blank">&#8594;</a>
-						{% else %}
-							<a href="{{ transition_item.link_post.path }}" target="_blank">&#8594;</a>
-						{% endif %}	
-						
+		</div>
+
+	{% else %}
+		<div class="outer-container row clearfix gird_area alternate-grid">
+			{% if module.items|length %}
+				{% for item in module.items %}
+					<div class="default-portfolio-item masonry-item all grid_single masonry-item-no-hover {{ item.category_name }} group_{{ item.grouped_item }}">
+						{% if item.web_link %}
+							<a href="{{ item.web_link }}" target="_blank" class="grid_image-link">
+						{% elseif item.link_post %}
+							<a href="{{ item.link_post.path }}" target="_blank" class="grid_image-link">
+						{% endif %}
+
+						<div class="grid_image {{ item.img_type }}">
+							{% if item.company_position %}
+								<div class="company_pos"><img src="{{theme.link}}/images/favicon.png"><p>{{ item.company_position }}</p></div>
+							{% endif %}
+
+							<img src="{{ Image(item.image).src('large') }}" alt="" />
+						</div>
+
+						{% if item.link_post or item.web_link %}
+							</a>
+						{% endif %}
+
+						<div class="grid_caption">
+							<div class="caption_element">
+								<p>{{ item.description }}</p>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-	</div>
-
-	{% endfor %}
-	{% endif %}	
-	</div>	
-	</div>	
+				{% endfor %}
+			{% endif %}
+		</div>
+	{% endif %}
 
 </section>
