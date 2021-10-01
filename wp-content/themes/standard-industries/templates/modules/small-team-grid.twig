@@ -1,0 +1,23 @@
+<section class="small-team-grid {{ module.bg_color }}">
+    <div class="small-team-grid__items">
+        {% for item in module.items %}
+            <article class="small-team-grid__item small-team-grid__item--square">
+                {% if item.team_member.thumbnail %}
+                    <div class="small-team-grid__image">
+                        <img
+                            class="small-team-grid__img"
+                            src="{{ item.team_member.thumbnail.src('large') }}"
+                            srcset="{{ item.team_member.thumbnail.srcset }}"
+                            alt="{{ item.team_member.thumbnail.alt }}"
+                            data-object-fit="cover"
+                            data-object-position="50% 0"
+                        />
+                    </div>
+                {% endif %}
+                <h6 class="small-team-grid__name">{{ item.team_member.title }}</h6>
+                <div class="small-team-grid__title">{{ item.team_member.meta('title') }}</div>
+            </article>
+        {% endfor %}
+        <div class="small-team-grid__item small-team-grid__item--placeholder"></div>
+    </div>
+</section>
